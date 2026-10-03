@@ -39,6 +39,16 @@
       .cta:hover { background: #12583d; }
       .proof { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 15px; color: #858c86; font-size: 11px; }
       .proof svg { color: var(--green); }
+      .upload-input { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+      .check-status { max-width: 620px; margin: 20px auto 0; text-align: left; }
+      .check-status:empty { display: none; }
+      .status-message { margin: 0 0 12px; color: var(--muted); font-size: 13px; text-align: center; }
+      .result-total { padding: 18px 22px; border-bottom: 1px solid var(--line); font-size: 13px; font-weight: 700; }
+      .result-total span { float: right; }
+      .result-line { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; padding: 13px 22px; border-bottom: 1px solid #f0f0eb; font-size: 12px; }
+      .result-line small { display: block; margin-top: 5px; color: var(--muted); }
+      .result-line strong { white-space: nowrap; }
+      .sum-check { padding: 14px 22px; font-size: 12px; }
       .example-wrap { max-width: 740px; margin: 0 auto; }
       .example-label { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 13px; color: #78817a; font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
       .example-label::before, .example-label::after { content: ""; height: 1px; width: 34px; background: #dcded6; }
@@ -74,8 +84,10 @@
         <section class="hero" aria-labelledby="headline">
           <div class="eyebrow">A clearer look at your garage bill</div>
           <h1 id="headline">Pune car owners: see which lines on your garage bill are <span>overpriced.</span></h1>
-          <p class="privacy">Names and phone numbers on your bill are hidden.</p>
-          <button class="cta" type="button">Check my bill</button>
+          <p class="privacy">Please cover names and phone numbers before uploading.</p>
+          <input class="upload-input" id="bill-photo" type="file" accept="image/jpeg,image/png,image/webp,image/heic" />
+          <button class="cta" id="check-bill" type="button">Check my bill</button>
+          <div class="check-status" id="bill-result" aria-live="polite"></div>
           <div class="proof">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5 13 3.4v3.8c0 3.2-2.1 5.9-5 7.3-2.9-1.4-5-4.1-5-7.3V3.4L8 1.5Z" stroke="currentColor" stroke-width="1.4"/><path d="m5.7 7.8 1.5 1.5 3.2-3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Your bill details stay private
@@ -99,5 +111,37 @@
       </main>
       <footer>Garage Check · Pune</footer>
     </div>
+    <script type="module">
+      import { ConvexHttpClient } from "https://esm.sh/convex@1.46.0/browser";
+      const convex = new ConvexHttpClient("https://shiny-trout-943.ap-southeast-2.convex.cloud");
+      const button = document.getElementById("check-bill");
+      const input = document.getElementById("bill-photo");
+      const result = document.getElementById("bill-result");
+      const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
+      const amount = (value, currency) => value == null ? "Not clear" : `${currency || ""}${Number(value).toLocaleString(undefined, { maximumFractionDigits: 2 })}`;
+      button.addEventListener("click", () => input.click());
+      input.addEventListener("change", async () => {
+        const file = input.files?.[0];
+        if (!file) return;
+        result.innerHTML = '<p class="status-message">Reading your bill…</p>';
+        button.disabled = true;
+        try {
+          const uploadUrl = await convex.mutation("bills:createUploadUrl", {});
+          const upload = await fetch(uploadUrl, { method: "POST", headers: { "Content-Type": file.type }, body: file });
+          if (!upload.ok) throw new Error("The photo could not be uploaded. Please try again.");
+          const { storageId } = await upload.json();
+          const bill = await convex.action("bills:analyze", { storageId, mimeType: file.type, size: file.size });
+          const lineMarkup = bill.lines.map((line) => `<div class="result-line"><div>${escapeHtml(line.name)}<small>Qty: ${line.quantity == null ? "Not clear" : escapeHtml(line.quantity)} · ${escapeHtml(line.type)}</small></div><strong>${amount(line.price, bill.currency)}</strong></div>`).join("");
+          const knownSum = bill.lines.every((line) => typeof line.price === "number") ? bill.lines.reduce((sum, line) => sum + line.price, 0) : null;
+          const reconciles = knownSum != null && bill.billTotal != null && Math.abs(knownSum - bill.billTotal) < 0.02;
+          result.innerHTML = `<article class="bill"><div class="result-total">Bill total <span>${amount(bill.billTotal, bill.currency)}</span></div><div class="rows">${lineMarkup || '<div class="result-line">No line items could be read.</div>'}</div><div class="sum-check">Lines ${knownSum == null ? "could not be fully totalled" : `add up to ${amount(knownSum, bill.currency)}`} · ${reconciles ? "Matches bill total" : bill.billTotal == null || knownSum == null ? "Could not verify against bill total" : "Does not match bill total"}</div>${bill.note ? `<div class="bill-foot">${escapeHtml(bill.note)}</div>` : ""}</article>`;
+        } catch (error) {
+          result.innerHTML = `<p class="status-message">${escapeHtml(error.message || "Something went wrong. Please try again.")}</p>`;
+        } finally {
+          button.disabled = false;
+          input.value = "";
+        }
+      });
+    </script>
   </body>
 </html>
