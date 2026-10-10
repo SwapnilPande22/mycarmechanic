@@ -1,0 +1,15 @@
+{
+  "files": {
+    "convex/panels.ts": "5b7c6df66d58545c732846155199e3dc1e2d05205edba015a4dd1647e04bb305",
+    "convex/priceEstimates.ts": "5521d6584851edb78352fb57a7295ec41099a537ea37e7ef3da4af3da5c47f7f",
+    "convex/inspections.ts": "18a79fae452980556279249087e71086b770e54c0030ca5b4610112526544b8d",
+    "convex/garages.ts": "c2d84e933cf5e5f48018dc5f1f0cde56173cc85efbe3459ae18919132612cc9c",
+    "convex/garagePresentation.ts": "fd402bfffca1027ba80e0cc2ef28901c2543c581e81589b9538944120c0f4074",
+    "convex/data/carVariants.ts": "a920b2f2b930b86c5da9cf0675c091f45ed1643cdc6dd28a6890dedfd9044245",
+    "convex/locations.ts": "0d1564173dbbda5fe6b2a540ca37d23ea8e37d243f248fe569f5446404d0892c"
+  },
+  "adminAuth": "function requirePassword(password: string) {\n  const expected = process.env.ADMIN_PASSWORD;\n  if (!expected || password.length !== expected.length) throw new Error(\"Admin password is incorrect or not configured.\");\n  let difference = 0;\n  for (let index = 0; index < expected.length; index += 1) difference |= expected.charCodeAt(index) ^ password.charCodeAt(index);\n  if (difference !== 0) throw new Error(\"Admin password is incorrect or not configured.\");\n}\n\n",
+  "availability": "export const isAvailable = action({\n  args: {},\n  handler: async () => Boolean(process.env.QUOTE_PHONE?.replace(/\\D/g, \"\").match(/^\\d{7,15}$/)),\n});\n\n",
+  "phoneGate": "    const destination = (process.env.QUOTE_PHONE || \"\").replace(/\\D/g, \"\");\n    if (!/^\\d{7,15}$/.test(destination)) {\n      await Promise.all(args.photos.map((id) => ctx.storage.delete(id)));\n      return { paused: true as const };\n    }\n",
+  "garageSearch": " "
+}

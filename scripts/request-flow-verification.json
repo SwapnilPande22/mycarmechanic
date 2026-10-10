@@ -1,0 +1,39 @@
+{
+  "liveUrl": "https://earnest-rhinoceros-454.convex.site",
+  "viewportWidth": 375,
+  "oneTestRequestSubmitted": true,
+  "validationMessage": "Please enter a valid 10-digit WhatsApp number.",
+  "initialStatus": "new",
+  "car": "Volkswagen Polo GT TSI",
+  "make": "Volkswagen",
+  "model": "Polo",
+  "variant": "GT TSI",
+  "area": "Kothrud",
+  "city": "Pune",
+  "parts": [
+    {
+      "panel": "front_bumper",
+      "partName": "Front bumper",
+      "workNeeded": "Dent & paint"
+    }
+  ],
+  "photos": 1,
+  "noPricesStored": true,
+  "noCustomerWhatsappOpened": true,
+  "noLinkShown": true,
+  "doneClosesPopup": true,
+  "oldRequestsStillVisible": true,
+  "oldRequestCount": 12,
+  "newestFirst": true,
+  "photoThumbnailOpensFullSize": true,
+  "adminButtons": 3,
+  "markedStatus": "sent to garages",
+  "garageMessage": "Hi, I need a repair quote for this car.\nCar: Volkswagen Polo GT TSI\nLocation: Kothrud, Pune\nDamage:\n1. Front bumper – Dent & paint\nPlease reply with your total price and when you can take the car.",
+  "screenshots": [
+    "request-received-375.png",
+    "admin-request-375.png"
+  ],
+  "phoneNumbersRedactedInSharedScreenshots": true,
+  "newCountMatchesBadges": true,
+  "adminWhatsappCustomerButtonVerified": true
+}

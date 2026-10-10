@@ -1,0 +1,672 @@
+[
+  {
+    "label": "5 Polo photos — run 1",
+    "photoHash": "971a5460f260f4dcd057e2eb19c6c6b365df68d8e323679c2ab3384a615cdfc3",
+    "isCarPhoto": true,
+    "parts": [
+      {
+        "needsAnotherPhoto": false,
+        "panel": "front_bumper",
+        "reason": "Visible scratches and paint damage on lower front bumper",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "rear_bumper",
+        "reason": "Visible cracks and scratches on rear bumper below boot",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "bonnet",
+        "reason": "Visible scratches and dents on bonnet near left side",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "front_lhs_door",
+        "reason": "Visible dent and paint damage near door hinge and mirror mount",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "front_rhs_door",
+        "reason": "Visible dent and paint damage near door handle and lower edge",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_fender",
+        "reason": "Visible scratches and dents on left fender near headlight",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_quarter_panel",
+        "reason": "Visible dent and paint damage on left rear quarter panel near wheel arch",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_mirror",
+        "reason": "Left side mirror housing is visibly damaged and cracked",
+        "repairType": "replacement"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "rhs_mirror",
+        "reason": "Right mirror shows visible damage and deformation",
+        "repairType": "replacement"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_headlight",
+        "reason": "Left headlight has visible scratches and paint damage around it",
+        "repairType": "replacement"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_tail_light",
+        "reason": "Left tail light shows visible cracks and damage",
+        "repairType": "replacement"
+      }
+    ],
+    "prices": [
+      {
+        "high": 5000,
+        "low": 3500,
+        "panel": "front_bumper",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 5000,
+        "low": 3500,
+        "panel": "rear_bumper",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 7000,
+        "low": 4500,
+        "panel": "bonnet",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 6000,
+        "low": 4000,
+        "panel": "front_lhs_door",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 6000,
+        "low": 4000,
+        "panel": "front_rhs_door",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 4500,
+        "low": 3000,
+        "panel": "lhs_fender",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 6000,
+        "low": 4000,
+        "panel": "lhs_quarter_panel",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 2500,
+        "low": 1500,
+        "panel": "lhs_mirror",
+        "repairType": "replacement"
+      },
+      {
+        "high": 2500,
+        "low": 1500,
+        "panel": "rhs_mirror",
+        "repairType": "replacement"
+      },
+      {
+        "high": 6000,
+        "low": 4000,
+        "panel": "lhs_headlight",
+        "repairType": "replacement"
+      },
+      {
+        "high": 4500,
+        "low": 3000,
+        "panel": "lhs_tail_light",
+        "repairType": "replacement"
+      }
+    ],
+    "rows": [
+      "Front bumper\n\nVisible scratches and paint damage on lower front bumper\n\nDent & paint\n₹4,250\nrange ₹3,500–₹5,000 est.",
+      "Rear bumper\n\nVisible cracks and scratches on rear bumper below boot\n\nDent & paint\n₹4,250\nrange ₹3,500–₹5,000 est.",
+      "Bonnet\n\nVisible scratches and dents on bonnet near left side\n\nDent & paint\n₹5,750\nrange ₹4,500–₹7,000 est.",
+      "Front LHS door\n\nVisible dent and paint damage near door hinge and mirror mount\n\nDent & paint\n₹5,000\nrange ₹4,000–₹6,000 est.",
+      "Front RHS door\n\nVisible dent and paint damage near door handle and lower edge\n\nDent & paint\n₹5,000\nrange ₹4,000–₹6,000 est.",
+      "LHS fender\n\nVisible scratches and dents on left fender near headlight\n\nDent & paint\n₹3,750\nrange ₹3,000–₹4,500 est.",
+      "LHS quarter panel\n\nVisible dent and paint damage on left rear quarter panel near wheel arch\n\nDent & paint\n₹5,000\nrange ₹4,000–₹6,000 est.",
+      "LHS mirror\n\nLeft side mirror housing is visibly damaged and cracked\n\nReplace\n₹2,000\nrange ₹1,500–₹2,500 est.",
+      "RHS mirror\n\nRight mirror shows visible damage and deformation\n\nReplace\n₹2,000\nrange ₹1,500–₹2,500 est.",
+      "LHS headlight\n\nLeft headlight has visible scratches and paint damage around it\n\nReplace\n₹5,000\nrange ₹4,000–₹6,000 est.",
+      "LHS tail light\n\nLeft tail light shows visible cracks and damage\n\nReplace\n₹3,750\nrange ₹3,000–₹4,500 est."
+    ],
+    "total": [
+      "Total ₹45,750\nRange ₹36,500–₹55,000 est."
+    ],
+    "message": ""
+  },
+  {
+    "label": "5 Polo photos — run 2",
+    "photoHash": "971a5460f260f4dcd057e2eb19c6c6b365df68d8e323679c2ab3384a615cdfc3",
+    "isCarPhoto": true,
+    "parts": [
+      {
+        "needsAnotherPhoto": false,
+        "panel": "front_bumper",
+        "reason": "Visible scratches and paint damage on lower front bumper",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "rear_bumper",
+        "reason": "Visible cracks and scratches on rear bumper below boot",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "bonnet",
+        "reason": "Visible scratches and dents on bonnet near left side",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "front_lhs_door",
+        "reason": "Visible dent and paint damage near door hinge and mirror mount",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "front_rhs_door",
+        "reason": "Visible dent and paint damage near door handle and lower edge",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_fender",
+        "reason": "Visible scratches and dents on left fender near headlight",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_quarter_panel",
+        "reason": "Visible dent and paint damage on left rear quarter panel near wheel arch",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_mirror",
+        "reason": "Left side mirror housing is visibly damaged and cracked",
+        "repairType": "replacement"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "rhs_mirror",
+        "reason": "Right mirror shows visible damage and deformation",
+        "repairType": "replacement"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_headlight",
+        "reason": "Left headlight has visible scratches and paint damage around it",
+        "repairType": "replacement"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_tail_light",
+        "reason": "Left tail light shows visible cracks and damage",
+        "repairType": "replacement"
+      }
+    ],
+    "prices": [
+      {
+        "high": 5000,
+        "low": 3500,
+        "panel": "front_bumper",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 5000,
+        "low": 3500,
+        "panel": "rear_bumper",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 7000,
+        "low": 4500,
+        "panel": "bonnet",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 6000,
+        "low": 4000,
+        "panel": "front_lhs_door",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 6000,
+        "low": 4000,
+        "panel": "front_rhs_door",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 4500,
+        "low": 3000,
+        "panel": "lhs_fender",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 6000,
+        "low": 4000,
+        "panel": "lhs_quarter_panel",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 2500,
+        "low": 1500,
+        "panel": "lhs_mirror",
+        "repairType": "replacement"
+      },
+      {
+        "high": 2500,
+        "low": 1500,
+        "panel": "rhs_mirror",
+        "repairType": "replacement"
+      },
+      {
+        "high": 6000,
+        "low": 4000,
+        "panel": "lhs_headlight",
+        "repairType": "replacement"
+      },
+      {
+        "high": 4500,
+        "low": 3000,
+        "panel": "lhs_tail_light",
+        "repairType": "replacement"
+      }
+    ],
+    "rows": [
+      "Front bumper\n\nVisible scratches and paint damage on lower front bumper\n\nDent & paint\n₹4,250\nrange ₹3,500–₹5,000 est.",
+      "Rear bumper\n\nVisible cracks and scratches on rear bumper below boot\n\nDent & paint\n₹4,250\nrange ₹3,500–₹5,000 est.",
+      "Bonnet\n\nVisible scratches and dents on bonnet near left side\n\nDent & paint\n₹5,750\nrange ₹4,500–₹7,000 est.",
+      "Front LHS door\n\nVisible dent and paint damage near door hinge and mirror mount\n\nDent & paint\n₹5,000\nrange ₹4,000–₹6,000 est.",
+      "Front RHS door\n\nVisible dent and paint damage near door handle and lower edge\n\nDent & paint\n₹5,000\nrange ₹4,000–₹6,000 est.",
+      "LHS fender\n\nVisible scratches and dents on left fender near headlight\n\nDent & paint\n₹3,750\nrange ₹3,000–₹4,500 est.",
+      "LHS quarter panel\n\nVisible dent and paint damage on left rear quarter panel near wheel arch\n\nDent & paint\n₹5,000\nrange ₹4,000–₹6,000 est.",
+      "LHS mirror\n\nLeft side mirror housing is visibly damaged and cracked\n\nReplace\n₹2,000\nrange ₹1,500–₹2,500 est.",
+      "RHS mirror\n\nRight mirror shows visible damage and deformation\n\nReplace\n₹2,000\nrange ₹1,500–₹2,500 est.",
+      "LHS headlight\n\nLeft headlight has visible scratches and paint damage around it\n\nReplace\n₹5,000\nrange ₹4,000–₹6,000 est.",
+      "LHS tail light\n\nLeft tail light shows visible cracks and damage\n\nReplace\n₹3,750\nrange ₹3,000–₹4,500 est."
+    ],
+    "total": [
+      "Total ₹45,750\nRange ₹36,500–₹55,000 est."
+    ],
+    "message": ""
+  },
+  {
+    "label": "Same 5 photos in reverse order",
+    "photoHash": "971a5460f260f4dcd057e2eb19c6c6b365df68d8e323679c2ab3384a615cdfc3",
+    "isCarPhoto": true,
+    "parts": [
+      {
+        "needsAnotherPhoto": false,
+        "panel": "front_bumper",
+        "reason": "Visible scratches and paint damage on lower front bumper",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "rear_bumper",
+        "reason": "Visible cracks and scratches on rear bumper below boot",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "bonnet",
+        "reason": "Visible scratches and dents on bonnet near left side",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "front_lhs_door",
+        "reason": "Visible dent and paint damage near door hinge and mirror mount",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "front_rhs_door",
+        "reason": "Visible dent and paint damage near door handle and lower edge",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_fender",
+        "reason": "Visible scratches and dents on left fender near headlight",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_quarter_panel",
+        "reason": "Visible dent and paint damage on left rear quarter panel near wheel arch",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_mirror",
+        "reason": "Left side mirror housing is visibly damaged and cracked",
+        "repairType": "replacement"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "rhs_mirror",
+        "reason": "Right mirror shows visible damage and deformation",
+        "repairType": "replacement"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_headlight",
+        "reason": "Left headlight has visible scratches and paint damage around it",
+        "repairType": "replacement"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_tail_light",
+        "reason": "Left tail light shows visible cracks and damage",
+        "repairType": "replacement"
+      }
+    ],
+    "prices": [
+      {
+        "high": 5000,
+        "low": 3500,
+        "panel": "front_bumper",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 5000,
+        "low": 3500,
+        "panel": "rear_bumper",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 7000,
+        "low": 4500,
+        "panel": "bonnet",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 6000,
+        "low": 4000,
+        "panel": "front_lhs_door",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 6000,
+        "low": 4000,
+        "panel": "front_rhs_door",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 4500,
+        "low": 3000,
+        "panel": "lhs_fender",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 6000,
+        "low": 4000,
+        "panel": "lhs_quarter_panel",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 2500,
+        "low": 1500,
+        "panel": "lhs_mirror",
+        "repairType": "replacement"
+      },
+      {
+        "high": 2500,
+        "low": 1500,
+        "panel": "rhs_mirror",
+        "repairType": "replacement"
+      },
+      {
+        "high": 6000,
+        "low": 4000,
+        "panel": "lhs_headlight",
+        "repairType": "replacement"
+      },
+      {
+        "high": 4500,
+        "low": 3000,
+        "panel": "lhs_tail_light",
+        "repairType": "replacement"
+      }
+    ],
+    "rows": [
+      "Front bumper\n\nVisible scratches and paint damage on lower front bumper\n\nDent & paint\n₹4,250\nrange ₹3,500–₹5,000 est.",
+      "Rear bumper\n\nVisible cracks and scratches on rear bumper below boot\n\nDent & paint\n₹4,250\nrange ₹3,500–₹5,000 est.",
+      "Bonnet\n\nVisible scratches and dents on bonnet near left side\n\nDent & paint\n₹5,750\nrange ₹4,500–₹7,000 est.",
+      "Front LHS door\n\nVisible dent and paint damage near door hinge and mirror mount\n\nDent & paint\n₹5,000\nrange ₹4,000–₹6,000 est.",
+      "Front RHS door\n\nVisible dent and paint damage near door handle and lower edge\n\nDent & paint\n₹5,000\nrange ₹4,000–₹6,000 est.",
+      "LHS fender\n\nVisible scratches and dents on left fender near headlight\n\nDent & paint\n₹3,750\nrange ₹3,000–₹4,500 est.",
+      "LHS quarter panel\n\nVisible dent and paint damage on left rear quarter panel near wheel arch\n\nDent & paint\n₹5,000\nrange ₹4,000–₹6,000 est.",
+      "LHS mirror\n\nLeft side mirror housing is visibly damaged and cracked\n\nReplace\n₹2,000\nrange ₹1,500–₹2,500 est.",
+      "RHS mirror\n\nRight mirror shows visible damage and deformation\n\nReplace\n₹2,000\nrange ₹1,500–₹2,500 est.",
+      "LHS headlight\n\nLeft headlight has visible scratches and paint damage around it\n\nReplace\n₹5,000\nrange ₹4,000–₹6,000 est.",
+      "LHS tail light\n\nLeft tail light shows visible cracks and damage\n\nReplace\n₹3,750\nrange ₹3,000–₹4,500 est."
+    ],
+    "total": [
+      "Total ₹45,750\nRange ₹36,500–₹55,000 est."
+    ],
+    "message": ""
+  },
+  {
+    "label": "1 Polo photo",
+    "photoHash": "a5179efda888b3bc92d7ad818de0a91191894b10d77f0379b731f0bea34a002a",
+    "isCarPhoto": true,
+    "parts": [
+      {
+        "needsAnotherPhoto": false,
+        "panel": "front_bumper",
+        "reason": "Visible scratches and scuffs on the lower left side of the front bumper",
+        "repairType": "denting_painting"
+      }
+    ],
+    "prices": [
+      {
+        "high": 5500,
+        "low": 3500,
+        "panel": "front_bumper",
+        "repairType": "denting_painting"
+      }
+    ],
+    "rows": [
+      "Front bumper\n\nVisible scratches and scuffs on the lower left side of the front bumper\n\nDent & paint\n₹4,500\nrange ₹3,500–₹5,500 est."
+    ],
+    "total": [
+      "Total ₹4,500\nRange ₹3,500–₹5,500 est."
+    ],
+    "message": ""
+  },
+  {
+    "label": "1 non-car photo",
+    "photoHash": "fc3c3f7a49485645974a4d5fd2ce871a7fceaeace8dd59217d3f898447f7ec83",
+    "isCarPhoto": false,
+    "parts": [],
+    "prices": [],
+    "rows": [],
+    "total": [],
+    "message": "This doesn't look like a photo of a car. Please upload a clear photo of the damage."
+  },
+  {
+    "label": "5 Polo photos — quote verification",
+    "photoHash": "971a5460f260f4dcd057e2eb19c6c6b365df68d8e323679c2ab3384a615cdfc3",
+    "isCarPhoto": true,
+    "parts": [
+      {
+        "needsAnotherPhoto": false,
+        "panel": "front_bumper",
+        "reason": "Visible scratches and paint damage on lower front bumper",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "rear_bumper",
+        "reason": "Visible cracks and scratches on rear bumper below boot",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "bonnet",
+        "reason": "Visible scratches and dents on bonnet near left side",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "front_lhs_door",
+        "reason": "Visible dent and paint damage near door hinge and mirror mount",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "front_rhs_door",
+        "reason": "Visible dent and paint damage near door handle and lower edge",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_fender",
+        "reason": "Visible scratches and dents on left fender near headlight",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_quarter_panel",
+        "reason": "Visible dent and paint damage on left rear quarter panel near wheel arch",
+        "repairType": "denting_painting"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_mirror",
+        "reason": "Left side mirror housing is visibly damaged and cracked",
+        "repairType": "replacement"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "rhs_mirror",
+        "reason": "Right mirror shows visible damage and deformation",
+        "repairType": "replacement"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_headlight",
+        "reason": "Left headlight has visible scratches and paint damage around it",
+        "repairType": "replacement"
+      },
+      {
+        "needsAnotherPhoto": false,
+        "panel": "lhs_tail_light",
+        "reason": "Left tail light shows visible cracks and damage",
+        "repairType": "replacement"
+      }
+    ],
+    "prices": [
+      {
+        "high": 5000,
+        "low": 3500,
+        "panel": "front_bumper",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 5000,
+        "low": 3500,
+        "panel": "rear_bumper",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 7000,
+        "low": 4500,
+        "panel": "bonnet",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 6000,
+        "low": 4000,
+        "panel": "front_lhs_door",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 6000,
+        "low": 4000,
+        "panel": "front_rhs_door",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 4500,
+        "low": 3000,
+        "panel": "lhs_fender",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 6000,
+        "low": 4000,
+        "panel": "lhs_quarter_panel",
+        "repairType": "denting_painting"
+      },
+      {
+        "high": 2500,
+        "low": 1500,
+        "panel": "lhs_mirror",
+        "repairType": "replacement"
+      },
+      {
+        "high": 2500,
+        "low": 1500,
+        "panel": "rhs_mirror",
+        "repairType": "replacement"
+      },
+      {
+        "high": 6000,
+        "low": 4000,
+        "panel": "lhs_headlight",
+        "repairType": "replacement"
+      },
+      {
+        "high": 4500,
+        "low": 3000,
+        "panel": "lhs_tail_light",
+        "repairType": "replacement"
+      }
+    ],
+    "rows": [
+      "Front bumper\n\nVisible scratches and paint damage on lower front bumper\n\nDent & paint\n₹4,250\nrange ₹3,500–₹5,000 est.",
+      "Rear bumper\n\nVisible cracks and scratches on rear bumper below boot\n\nDent & paint\n₹4,250\nrange ₹3,500–₹5,000 est.",
+      "Bonnet\n\nVisible scratches and dents on bonnet near left side\n\nDent & paint\n₹5,750\nrange ₹4,500–₹7,000 est.",
+      "Front LHS door\n\nVisible dent and paint damage near door hinge and mirror mount\n\nDent & paint\n₹5,000\nrange ₹4,000–₹6,000 est.",
+      "Front RHS door\n\nVisible dent and paint damage near door handle and lower edge\n\nDent & paint\n₹5,000\nrange ₹4,000–₹6,000 est.",
+      "LHS fender\n\nVisible scratches and dents on left fender near headlight\n\nDent & paint\n₹3,750\nrange ₹3,000–₹4,500 est.",
+      "LHS quarter panel\n\nVisible dent and paint damage on left rear quarter panel near wheel arch\n\nDent & paint\n₹5,000\nrange ₹4,000–₹6,000 est.",
+      "LHS mirror\n\nLeft side mirror housing is visibly damaged and cracked\n\nReplace\n₹2,000\nrange ₹1,500–₹2,500 est.",
+      "RHS mirror\n\nRight mirror shows visible damage and deformation\n\nReplace\n₹2,000\nrange ₹1,500–₹2,500 est.",
+      "LHS headlight\n\nLeft headlight has visible scratches and paint damage around it\n\nReplace\n₹5,000\nrange ₹4,000–₹6,000 est.",
+      "LHS tail light\n\nLeft tail light shows visible cracks and damage\n\nReplace\n₹3,750\nrange ₹3,000–₹4,500 est."
+    ],
+    "total": [
+      "Total ₹45,750\nRange ₹36,500–₹55,000 est."
+    ],
+    "message": ""
+  }
+]

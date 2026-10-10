@@ -8,7 +8,21 @@
  * @module
  */
 
+import type * as admin from "../admin.js";
 import type * as bills from "../bills.js";
+import type * as data_carVariants from "../data/carVariants.js";
+import type * as data_cities from "../data/cities.js";
+import type * as garagePresentation from "../garagePresentation.js";
+import type * as garages from "../garages.js";
+import type * as inspections from "../inspections.js";
+import type * as locations from "../locations.js";
+import type * as metrics from "../metrics.js";
+import type * as panels from "../panels.js";
+import type * as partnerGarages from "../partnerGarages.js";
+import type * as priceEstimates from "../priceEstimates.js";
+import type * as quoteMessages from "../quoteMessages.js";
+import type * as quoteRequests from "../quoteRequests.js";
+import type * as vehicleCatalog from "../vehicleCatalog.js";
 
 import type {
   ApiFromModules,
@@ -17,7 +31,21 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  admin: typeof admin;
   bills: typeof bills;
+  "data/carVariants": typeof data_carVariants;
+  "data/cities": typeof data_cities;
+  garagePresentation: typeof garagePresentation;
+  garages: typeof garages;
+  inspections: typeof inspections;
+  locations: typeof locations;
+  metrics: typeof metrics;
+  panels: typeof panels;
+  partnerGarages: typeof partnerGarages;
+  priceEstimates: typeof priceEstimates;
+  quoteMessages: typeof quoteMessages;
+  quoteRequests: typeof quoteRequests;
+  vehicleCatalog: typeof vehicleCatalog;
 }>;
 
 /**
@@ -46,4 +74,6 @@ export declare const internal: FilterApi<
   FunctionReference<any, "internal">
 >;
 
-export declare const components: {};
+export declare const components: {
+  staticHosting: import("@convex-dev/static-hosting/_generated/component.js").ComponentApi<"staticHosting">;
+};

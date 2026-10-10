@@ -1,0 +1,60 @@
+{
+  "liveUrl": "https://earnest-rhinoceros-454.convex.site",
+  "viewportWidth": 375,
+  "oneQuestionAtATime": true,
+  "answersRemainVisible": [
+    "Aarav",
+    "My car got damaged",
+    "Someone hit my car while parked",
+    "Volkswagen Polo GT TSI",
+    "Pune",
+    "1 photo uploaded"
+  ],
+  "nameLine": "Aarav, here's what I found.",
+  "garagesHiddenUntilRequested": true,
+  "locationQuestionAfterRequest": true,
+  "stickyBarOnlyAfterResults": true,
+  "noPopupOnGarageLoad": true,
+  "quoteOnlyAsksWhatsapp": true,
+  "rememberedQuoteName": true,
+  "wrongCarMessage": "These photos look like a Volkswagen Polo GT, but you selected Volkswagen Virtus. Which is it?",
+  "wrongCarBeforeEstimate": true,
+  "chosenSeenCar": "Volkswagen Polo GT",
+  "repeatInspectionAndChosenPricesIdentical": true,
+  "cachedOriginalInspection": {
+    "photoHash": "a5179efda888b3bc92d7ad818de0a91191894b10d77f0379b731f0bea34a002a",
+    "panels": [
+      {
+        "needsAnotherPhoto": false,
+        "panel": "front_bumper",
+        "reason": "Visible scratches and scuff marks on lower left side of front bumper",
+        "repairType": "denting_painting"
+      }
+    ],
+    "estimates": [
+      {
+        "high": 6000,
+        "low": 3500,
+        "panel": "front_bumper",
+        "repairType": "denting_painting"
+      }
+    ]
+  },
+  "screenshots": [
+    "chat-a-name-375",
+    "chat-b-help-375",
+    "chat-c-story-375",
+    "chat-d-car-375",
+    "chat-e-city-375",
+    "chat-f-upload-375",
+    "chat-estimate-375",
+    "chat-before-garages-375",
+    "chat-location-ask-375",
+    "chat-wrong-car-375"
+  ],
+  "persistedSeenModel": "Volkswagen Polo GT",
+  "persistedUserChoice": "Volkswagen Polo GT",
+  "seenModelConfidence": "high",
+  "oldSavedInspectionReusedWithoutChange": true,
+  "typedCarChoiceAlsoWorks": true
+}

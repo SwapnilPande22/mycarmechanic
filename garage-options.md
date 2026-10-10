@@ -1,0 +1,35 @@
+## Nearby garage options
+
+The key tradeoff is between speed and showing results inside your app. A map link is quickest and lets the owner see current ratings and reviews in the map provider’s app. Showing reviews inside your app means using a provider’s API and following its display and storage rules.
+
+| Option | What it offers | Cost and API key | What you can show or store |
+|---|---|---|---|
+| [Google Maps search link](https://developers.google.com/maps/documentation/urls/get-started) | Opens a search such as “car dent repair near me” in Google Maps, where the owner can see garages, ratings, reviews and directions. The reviews stay in Maps. | No Places API key or per-search API charge. | Keep it as a link-out; don’t copy Google’s ratings or reviews into your app. You can ask the owner for location permission, or let them enter a locality or PIN code. |
+| [Google Places API](https://developers.google.com/maps/documentation/places/web-service/nearby-search) | Nearby place search and, with the right fields, ratings and reviews. This is the strongest fit for displaying results inside your app. | Google Cloud account, billing and a restricted API key required. In India, the current price table lists free monthly usage caps; paid rates depend on which fields you request. Requests for ratings or reviews may use higher-priced “Atmosphere” SKUs, so check the field-level pricing before launch. [India pricing](https://developers.google.com/maps/billing-and-pricing/pricing-india) | You can display Places content with Google’s required attribution and review-author details. Don’t cache or retain the content; Google permits storing a `place_id`. If displaying Places results on a map, use a Google map. [Places policies](https://developers.google.com/maps/documentation/places/web-service/policies) |
+| [Ola Maps](https://maps.olakrutrim.com/docs/places-apis/nearbysearch-advanced) | Nearby places and place details. Its public docs describe ratings, but I couldn’t confirm that review text is available for garages. | API key/account required. Ola publishes per-request prices and a monthly free allowance; for example, its pricing page currently lists ₹0.698 per Advanced Nearby Search request and ₹0.339 per Advanced Place Details request after the free allowance. [Pricing](https://maps.olakrutrim.com/pricing/details) | Its terms require attribution. I couldn’t confirm public permission to retain garage ratings or details, or confirm review coverage; ask Ola before storing them or relying on reviews. [Terms](https://maps.olakrutrim.com/legal-docs/terms-conditions.pdf) |
+| [Mappls / MapmyIndia](https://about.mappls.com/api/search) | India-focused nearby POI search. Public docs I found don’t confirm ratings or review text for garages. | Account and key required. Public pricing wasn’t clear; ask Mappls for commercial pricing and review coverage. | Terms require Mappls attribution and restrict caching and certain reuse. Confirm coverage, review fields and storage rights with Mappls before building around it. [Terms](https://about.mappls.com/api/terms-%26-conditions) |
+| [Foursquare Places](https://foursquare.com/products/places-api/) | Place data that can include ratings, reviews, photos and tips. Test coverage for Indian garages before choosing it. | API access and key required. Its current pricing page lists 500 free Pro calls, then paid per-thousand-call pricing; some fields cost more. [Pricing](https://foursquare.com/pricing/) | Data is licensed for use in your app under its terms; bulk access and some reuse are restricted. Check the current license for retention rights before saving ratings or reviews. [API license](https://foursquare.com/legal/terms/apilicenseagreement/) |
+| [OpenStreetMap](https://www.openstreetmap.org/copyright/en) | Garage locations where mapped; no built-in ratings or reviews, and coverage can vary. | The map data is free and needs no API key. Public search services have usage limits; production use may need a hosted provider or your own service. | Commercial reuse is possible under ODbL with attribution; publishing a derivative database can trigger share-alike requirements. It won’t supply reviews. [Nominatim usage policy](https://operations.osmfoundation.org/policies/nominatim/) |
+| Garage directories and service apps, such as [Justdial](https://www.justdial.com/) or [GoMechanic](https://play.google.com/store/apps/details?id=gomechanic.retail) | Indian listings, ratings or a managed service network, depending on the provider. | I couldn’t confirm a public API or public API pricing for general nearby-garage searches. A partnership or approved business integration may be available; cost and key requirements need to be agreed with the provider. | Don’t scrape or republish listings and reviews. Ask about a partnership, referral link or approved data feed. A link to the provider’s own listing/app is the simpler route. |
+
+A possible partnership route is to onboard garages directly and link to their own review pages. Google’s Business Profile API can provide reviews for locations an authorized owner manages; it isn’t a general search API for nearby competing garages. [Business Profile API](https://developers.google.com/my-business/reference/rest)
+
+## Passing the estimate to a garage
+
+Add a **“Ask a garage to quote”** action to the result screen. With the owner’s consent, send a structured estimate containing the car model, the affected parts, suggested work, estimated prices and any items marked “Garage will quote.” Let the owner choose a garage and confirm before sending.
+
+The garage could receive a private estimate link or a prefilled WhatsApp message. For a link, use a random, hard-to-guess ID and expire it; include photos only if the owner chooses to share them. The garage can then return a price for each line, parts quality, taxes and quote validity for the owner to compare with the estimate.
+
+## Simplest version for two days
+
+Start with a **“Find nearby repair garages”** button that asks for location permission and opens a Google Maps search for car denting and painting near the owner. They’ll see Maps’ current ratings, reviews and contact details there. This avoids an API key and review-storage rules, but the results and reviews remain in Google Maps rather than appearing as cards inside your app.
+
+You’ll need to set up:
+
+- The search wording and the button’s map link.
+- A browser location permission flow, with a locality or PIN-code option if the owner declines.
+- A clear handoff: the owner picks a garage in Maps, then returns to your app or contacts the garage there.
+
+If **in-app review cards** are essential for the first version, Google Places is the most direct option. Set up a Google Cloud project, enable Places API and billing, create a restricted key, choose the fields you need, and provide the required attribution and privacy information. Keep only permitted identifiers such as `place_id`; don’t retain the returned review content.
+
+I’ll wait for your pick before building anything.

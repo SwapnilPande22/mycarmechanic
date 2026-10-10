@@ -2,5 +2,39 @@ import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
 export default defineSchema({
+  inspections: defineTable({ cacheKey:v.string(), photoHash:v.string(), variant:v.optional(v.string()), seenModel:v.optional(v.string()), userChoice:v.optional(v.string()), result:v.any(), createdAt:v.number() }).index("byCacheKey", ["cacheKey"]).index("byPhotoHash", ["photoHash"]),
   billChecks: defineTable({ createdAt: v.number() }).index("byCreatedAt", ["createdAt"]),
+  partnerGarages: defineTable({
+    garageName: v.string(),
+    area: v.string(),
+    phone: v.string(),
+    mapsUrl: v.string(),
+    prices: v.array(v.object({
+      size: v.union(v.literal("small"), v.literal("medium"), v.literal("large")),
+      part: v.union(v.literal("bumper"), v.literal("door"), v.literal("fender"), v.literal("bonnet"), v.literal("boot")),
+      dentingPainting: v.optional(v.number()),
+      replacement: v.optional(v.number()),
+    })),
+    approved: v.boolean(),
+    createdAt: v.number(),
+  }).index("byApproved", ["approved"]),
+  quoteRequests: defineTable({
+    name: v.string(),
+    whatsappNumber: v.string(),
+    carModel: v.string(),
+    make: v.optional(v.string()),
+    model: v.optional(v.string()),
+    variant: v.optional(v.string()),
+    vehicleSize: v.union(v.literal("small"), v.literal("medium"), v.literal("large")),
+    area: v.string(),
+    city: v.optional(v.string()),
+    parts: v.array(v.object({ panel: v.string(), partName: v.string(), workNeeded: v.string(), low: v.optional(v.number()), high: v.optional(v.number()) })),
+    totalLow: v.optional(v.number()),
+    totalHigh: v.optional(v.number()),
+    garages: v.array(v.string()),
+    photos: v.array(v.id("_storage")),
+    quotes: v.array(v.object({ garageName: v.string(), price: v.number(), note: v.string(), createdAt: v.number() })),
+    status: v.union(v.literal("draft"), v.literal("submitted"), v.literal("open"), v.literal("sent"), v.literal("new"), v.literal("sent to garages")),
+    createdAt: v.number(),
+  }).index("byCreatedAt", ["createdAt"]),
 });

@@ -1,0 +1,39 @@
+{
+  "poloSuggestions": [
+    "Volkswagen Polo GT TSI",
+    "Volkswagen Polo Highline 1.0 TSI",
+    "Volkswagen Polo Highline Plus 1.0 TSI",
+    "Volkswagen Polo Comfortline 1.0 TSI",
+    "Volkswagen Polo Comfortline 1.0 MPI",
+    "Volkswagen Polo Trendline 1.0 MPI",
+    "Volkswagen Polo Highline 1.5 TDI",
+    "Volkswagen Polo GT TDI"
+  ],
+  "citySuggestions": [
+    "Puducherry",
+    "Pune",
+    "Puri"
+  ],
+  "locationTest": "Browser geolocation set to Pune; real production coordinate lookup",
+  "locationFilled": "Pune",
+  "savedInspection": {
+    "selectedModel": "Volkswagen Polo GT TSI",
+    "variant": "GT TSI",
+    "resultVariant": "GT TSI"
+  },
+  "identicalPhotoReuse": true,
+  "legacyWithoutVariantWorks": true,
+  "freeTextVariantAccepted": true,
+  "permissionDeniedMessage": "Couldn't get your location. Please type your city.",
+  "whatsappMessage": "Hi, I need a repair quote for my car.\nCar: Volkswagen Polo GT TSI\nLocation: Kharadi, Pune\nArea: Kharadi\nDamage:\n1. Front bumper – Dent & paint\nPhotos: https://earnest-rhinoceros-454.convex.site/quotes/jd7es4thpyyhx28fkcjr92mqc98fzwb7\nPlease reply with your total price and when you can take the car.",
+  "garageLink": "https://earnest-rhinoceros-454.convex.site/quotes/jd7es4thpyyhx28fkcjr92mqc98fzwb7",
+  "protectedCodeChecks": {
+    "inspectionLogicUnchanged": true,
+    "pricingLogicUnchanged": true,
+    "photoHashReuseUnchanged": true,
+    "garageFinderUnchanged": true,
+    "reviewsUnchanged": true,
+    "adminLoginUnchanged": true,
+    "quotePhoneHandlingUnchanged": true
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "viewportWidth": 375,
+  "loadingSkeletons": 3,
+  "noPopupOnLocationFetch": true,
+  "noPopupOnGarageLoad": true,
+  "noPopupAfterOldTimer": true,
+  "popupOnlyAfterThirdCard": true,
+  "automaticOncePerVisit": true,
+  "stickyBarWorks": true,
+  "detailsTriggerWorks": true,
+  "realSearchResults": true,
+  "googlePhotos": 4,
+  "filtersVerified": [
+    "Nearest",
+    "Top rated (4+)",
+    "Open now",
+    "Most reviewed"
+  ],
+  "noHorizontalOverflow": true,
+  "screenshotPhotoBlur": "Only shared proof images blur photos to avoid printing signboard phone numbers; production photos remain clear",
+  "screenshots": [
+    "garage-loading-375.png",
+    "garage-list-375.png",
+    "garage-filter-375.png",
+    "garage-popup-375.png"
+  ],
+  "protectedCodeUnchanged": true,
+  "inspectionCallUnchanged": true
+}
