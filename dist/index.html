@@ -258,6 +258,11 @@
       .customer-flow .bill-row,.customer-flow .panel-name,.customer-flow .work-needed,.customer-flow .row-price { font-size:13px; }
       .customer-flow .primary-price { font-size:20px; }
       .customer-flow .bill-head { font-size:13px; }
+      .customer-flow .cheapest-estimate .bill-head,.customer-flow .cheapest-estimate .bill-row { display:block; }
+      .customer-flow .fix-line { display:flex; justify-content:space-between; align-items:baseline; gap:14px; margin-top:14px; font-size:16px; }
+      .customer-flow .fix-line strong { font-size:16px; }
+      .customer-flow .replacement-option { margin:12px 0 0; padding-top:12px; border-top:1px solid var(--line); font-size:13px; line-height:1.6; }
+      .customer-flow .replacement-total { display:block; padding:14px 18px; border-top:1px solid var(--line); font-size:13px; line-height:1.6; }
       .customer-flow .summary-card { font-size:16px; }
       .customer-flow .result-meta,.customer-flow .bill-total-detail,.customer-flow .photo-file-name,.customer-flow .photo-replace,.customer-flow .model-option,.customer-flow .model-empty { font-size:13px; }
       .customer-flow .model-option { min-height:48px; }
@@ -423,6 +428,7 @@
       let panels = [];
       let modelAssessment = null;
       let rangeEstimates = [];
+      let inspectionChecks = [];
       let originalInspection = null;
       let recheckedInspections = [];
       let recheckBusy = false;
@@ -484,10 +490,11 @@
       const finishJourney = () => { history.closest('.card').hidden=true;status.textContent="";updateQuoteBar(false);result.innerHTML='<section class="card flow-ending"><h2>Hope we were helpful.</h2><p>Thank you for trusting us to help you.</p><button class="cta" id="start-again" type="button">Inspect another concern</button></section>';document.getElementById('start-again').addEventListener('click',()=>location.reload());window.scrollTo({top:0,behavior:"smooth"}); };
       const money = (value) => value == null ? "Garage will quote" : `₹${Number(value).toLocaleString("en-IN")}`;
       const carSizeFor = (model) => model?.vehicleClass === "hatchback" ? "small" : model?.vehicleClass === "suv" ? "large" : "medium";
-      const effectiveRepairType = (panel) => panel.panel.includes("mirror") || panel.panel.includes("headlight") || panel.panel.includes("tail_light") || panel.panel.includes("fog_light") || panel.panel === "windshield"
+      const effectiveRepairType = (panel) => panel.cheapestFix ? panel.repairType : panel.panel.includes("mirror") || panel.panel.includes("headlight") || panel.panel.includes("tail_light") || panel.panel.includes("fog_light") || panel.panel === "windshield"
         ? "replacement"
         : panel.repairType;
       const workLabel = (repairType) => repairType === "replacement" ? "Replace" : repairType === "repair" ? "Repair" : "Dent & paint";
+      const fixLabel = (fix) => ({refit:"Refit / screw back",reclip:"Re-clip / refit",screw_back:"Screw back / refit",dent_pull:"Dent pull",touch_up:"Touch-up paint",repair:"Repair",repair_paint:"Repair & local paint",replacement:"Replace",check:"Check at garage"})[fix] || "Check at garage";
       const reportTiming = async (step, durationMs) => {
         try { await convex.action("metrics:logStep", { step, durationMs:Math.round(durationMs) }); } catch {}
       };
@@ -607,7 +614,7 @@
           fileList.appendChild(row);
         });
       };
-      const invalidateInspection = () => { inspectionGeneration += 1; originalInspection = null; recheckedInspections = []; lastConcern = ""; panels = []; rangeEstimates = []; inspectedFiles = []; modelAssessment = null; result.innerHTML = ""; document.body.classList.remove("has-garage-quotes", "quote-open"); garageScrollIntent = false; };
+      const invalidateInspection = () => { inspectionGeneration += 1; originalInspection = null; recheckedInspections = []; lastConcern = ""; panels = []; inspectionChecks = []; rangeEstimates = []; inspectedFiles = []; modelAssessment = null; result.innerHTML = ""; document.body.classList.remove("has-garage-quotes", "quote-open"); garageScrollIntent = false; };
       let cityMatches = [];
       let activeCitySuggestion = -1;
       let cityLocationSequence = 0;
@@ -1149,6 +1156,23 @@
         }
       });
       const estimateCard = (inspection, label) => {
+        if (inspection.panels.some(panel=>panel.cheapestFix) || inspection.checks?.length) {
+          const byWork=new Map(inspection.estimates.map(item=>[item.panel+":"+item.repairType,item]));
+          const range=(price)=>price ? money(price.low)+"–"+money(price.high) : "Check at garage";
+          let low=0,high=0,replaceLow=0,replaceHigh=0,priced=0,replacements=0;
+          const rows=inspection.panels.map(panel=>{
+            const price=byWork.get(panel.panel+":"+panel.repairType);
+            const replacement=byWork.get(panel.panel+":replacement");
+            if(price){low+=price.low;high+=price.high;priced++;}
+            if(replacement){replaceLow+=replacement.low;replaceHigh+=replacement.high;replacements++;}
+            return `<div class="bill-row" data-estimate-part="${escapeHtml(panel.panel)}"><div class="panel-name">${escapeHtml(panelNames[panel.panel] || panelNames.other)}</div><p class="reason">${escapeHtml(panel.reason)}</p><div class="fix-line"><span>${escapeHtml(fixLabel(panel.cheapestFix))}</span><strong>${range(price)}</strong></div><p class="replacement-option"><strong>Replace only if</strong> ${escapeHtml((panel.replacementCondition || "the part itself is broken beyond safe repair, cracked through or missing").replace(/^(?:replace\s+)?only\s+if\s*/i,""))}.<br>Replacement: ${range(replacement)}${panel.cheapestFix==="replacement" ? "<br>Visible evidence: "+escapeHtml(panel.replacementReason || panel.reason) : ""}</p></div>`;
+          }).join("");
+          const checks=(inspection.checks || []).map(panel=>`<div class="bill-row" data-check-part="${escapeHtml(panel.panel)}"><div class="panel-name">${escapeHtml(panelNames[panel.panel] || panelNames.other)}</div><p class="reason">${escapeHtml(panel.reason)}</p><div class="fix-line"><strong>Check at garage</strong></div><p class="reason">Damage is not confirmed. No price included.</p></div>`).join("");
+          const date=new Date().toLocaleDateString("en-IN",{day:"2-digit",month:"short",year:"numeric"});
+          const total=priced ? `<div class="bill-total"><strong>Total ${range({low,high})}</strong><div class="bill-total-detail">Cheapest fixes, including labour${inspection.checks?.length ? "; garage checks excluded" : ""}</div></div>` : '<div class="bill-total"><strong>Check at garage — no priced repairs</strong></div>';
+          const alternative=replacements ? `<div class="replacement-total"><strong>If parts need replacing</strong><br>${range({low:replaceLow,high:replaceHigh})}${replacements!==inspection.panels.length ? " (priced parts only)" : ""}<br>Alternative total, not added to the cheapest fixes.${inspection.checks?.length ? " Unconfirmed parts are excluded." : ""}</div>` : "";
+          return `<section class="card result-wrap cheapest-estimate"><div class="result-head"><h2>${escapeHtml(label)}</h2><div class="result-meta"><span>${date}</span><span>${escapeHtml(inspection.carModel || "Car model not selected")}</span></div></div><div class="bill-head">Part · What is wrong · Cheapest fix</div>${rows}${checks}${total}${alternative}<p class="estimate-disclaimer">AI estimate. Final work and price after a garage checks the car.</p></section>`;
+        }
         const rangeByItem = new Map(inspection.estimates.map((item) => [item.panel + ":" + item.repairType, item]));
         let totalLow = 0;
         let totalHigh = 0;
@@ -1167,11 +1191,11 @@
         return `<section class="card result-wrap"><div class="result-head"><h2>${escapeHtml(label)}</h2><div class="result-meta"><span>${estimateDate}</span><span>${escapeHtml(inspection.carModel || "Car model not selected")}</span></div></div>${inspection.panels.length ? `<div class="bill-head"><span>Part</span><span>Work needed</span><span style="text-align:right">Price</span></div>${rows}<div class="bill-total"><strong>Total ${money(totalLikely)}</strong><div class="bill-total-detail">Range ${money(totalLow)}–${money(totalHigh)} est.</div></div><p class="estimate-disclaimer">AI estimate. Final price from the garage.</p>` : `<div class="empty">No parts to estimate.</div>`}</section>`;
       };
       const render = () => {
-        if (!originalInspection) originalInspection = {panels:structuredClone(panels),estimates:structuredClone(rangeEstimates),carModel:selectedModel?.name || "Car"};
+        if (!originalInspection) originalInspection = {panels:structuredClone(panels),checks:structuredClone(inspectionChecks),estimates:structuredClone(rangeEstimates),carModel:selectedModel?.name || "Car"};
         const estimate = estimateCard(originalInspection, "Repair Estimate") + recheckedInspections.map(inspection => estimateCard(inspection, "Rechecked estimate")).join("");
         const summary = panels.length
           ? `Your ${escapeHtml(selectedModel?.name || "car")} needs work on ${panels.length} ${panels.length === 1 ? "part" : "parts"}: ${panels.map((panel) => escapeHtml(panelNames[panel.panel] || panelNames.other)).join(", ")}. See the estimate below.`
-          : `Your ${escapeHtml(selectedModel?.name || "car")} has no visibly damaged parts in these photos. Rough estimate unavailable.`;
+          : inspectionChecks.length ? `Damage is not confirmed for your ${escapeHtml(selectedModel?.name || "car")}. Check the listed areas at a garage; no price is included for uncertain findings.` : `Your ${escapeHtml(selectedModel?.name || "car")} has no visibly damaged parts in these photos. Rough estimate unavailable.`;
         const garages = '<section class="card garage-section" id="garage-discovery" hidden aria-labelledby="garage-heading"><div class="garage-title"><span class="google-attribution" translate="no">Google Maps</span></div><div class="garage-controls"><h2>Where should we look?</h2><button class="secondary garage-button" id="garage-location-button" type="button">Use my location</button><label for="garage-area">Search by area</label><div class="garage-area-row"><div class="garage-area-search"><input id="garage-area" type="text" autocomplete="address-level3" aria-autocomplete="list" aria-controls="garage-suggestions" aria-expanded="false" placeholder="For example, Kothrud" /><div class="garage-suggestions" id="garage-suggestions" role="listbox" hidden></div></div><button class="secondary garage-button" id="garage-search-button" type="button">Fetch garages</button></div></div><div class="garage-status" id="garage-status" aria-live="polite"></div><div class="garage-results-head" hidden><h3 id="garage-heading">Garages near you</h3><p id="garage-count"></p><div class="garage-filters" role="group" aria-label="Filter garages"><button class="garage-filter" type="button" data-garage-filter="nearest" aria-pressed="true">Nearest</button><button class="garage-filter" type="button" data-garage-filter="rated" aria-pressed="false">Top rated (4+)</button><button class="garage-filter" type="button" data-garage-filter="open" aria-pressed="false">Open now</button><button class="garage-filter" type="button" data-garage-filter="reviewed" aria-pressed="false">Most reviewed</button></div></div><div class="garage-list" id="garage-list" aria-busy="false"><div class="empty">Use your location or search an area to see nearby garages.</div></div><section class="quote-consent" id="quote-invitation" hidden><h2>Would you like quotes from nearby garages?</h2><p>With your permission, we’ll save your request for our team to share with garages. Your AI estimate stays with you.</p><button class="cta" id="quote-yes" type="button">Yes, request garage quotes</button><button class="secondary" id="quote-no" type="button">No, thank you</button></section></section>';
         const quotePrompt = '<div class="quote-overlay" id="quote-prompt" hidden><section class="quote-dialog" role="dialog" aria-modal="true" aria-labelledby="quote-prompt-title"><div data-quote-fields><h2 id="quote-prompt-title">Get quotes from nearby garages</h2><form data-quote-form novalidate><input name="name" type="hidden" /><label>WhatsApp number<input name="whatsappNumber" type="tel" inputmode="numeric" autocomplete="tel-national" required maxlength="10" /></label><button class="cta" type="submit">Submit</button></form><a href="#" data-quote-dismiss style="display:block;margin:12px auto 0;border:0;background:none;color:var(--muted);font-size:12px;text-decoration:underline;cursor:pointer">Not now</a></div><div class="quote-received" data-quote-followup hidden><div class="quote-tick" aria-hidden="true">✓</div><h2 id="quote-received-title">Request received</h2><p>Your request is saved for our team to send to nearby garages. Allow us some time; our experts will get back to you with competitive rates. Thank you for trusting us to help you.<span data-request-number hidden></span></p><button class="cta" data-quote-done type="button">Done</button></div><p data-quote-status role="status"></p></section></div>';
         const quoteBar = '<div class="garage-quote-bar" id="garage-quote-bar" role="region" aria-label="Request garage quotes" hidden><button id="garage-quote-button" type="button">Get quotes from these garages</button></div>';
@@ -1207,8 +1231,8 @@
             if(generation!==inspectionGeneration)return;
             if(!analysis.isCarPhoto)throw new Error("The same photos could not be assessed as car photos. Your original estimate is unchanged.");
             if(analysis.confidentMismatch)throw new Error("The car model could not be confirmed during the recheck. Your original estimate is unchanged.");
-            panels=analysis.panels;rangeEstimates=analysis.estimates;
-            recheckedInspections.push({panels:structuredClone(panels),estimates:structuredClone(rangeEstimates),carModel:car.name});
+            panels=analysis.panels;rangeEstimates=analysis.estimates;inspectionChecks=analysis.checks || [];
+            recheckedInspections.push({panels:structuredClone(panels),checks:structuredClone(inspectionChecks),estimates:structuredClone(rangeEstimates),carModel:car.name});
             render();
             document.getElementById("recheck-status").textContent="I have reassessed your concern. Compare the rechecked estimate with the original above. Visible damage may still be confirmed.";
             result.querySelectorAll('.result-wrap')[recheckedInspections.length].scrollIntoView({block:"start",behavior:"smooth"});
@@ -1286,6 +1310,7 @@
           inspectedFiles = runFiles;
           inspectionCity = city;
           panels = analysis.panels;
+          inspectionChecks = analysis.checks || [];
           rangeEstimates = analysis.estimates;
           modelAssessment = { detectedModel:analysis.detectedModel, confidentMismatch:analysis.confidentMismatch };
           status.textContent = "";
@@ -1302,7 +1327,7 @@
               try {
                 const resolved=await convex.action("panels:chooseCar",{photoHash:analysis.photoHash,originalModel:chosenModel.name,originalSize:carSizeFor(chosenModel),chosenModel:choice.dataset.carChoice === "typed" ? chosenModel.name : analysis.detectedModel,carSize:carSizeFor(chosen),city});
                 if(runGeneration!==inspectionGeneration) return;
-                selectedModel=chosen;modelInput.value=chosen.name;panels=resolved.panels;rangeEstimates=resolved.estimates;modelAssessment=null;addChatBubble(chosen.name,true);render();result.scrollIntoView({block:"start",behavior:"smooth"});
+                selectedModel=chosen;modelInput.value=chosen.name;panels=resolved.panels;inspectionChecks=resolved.checks || [];rangeEstimates=resolved.estimates;modelAssessment=null;addChatBubble(chosen.name,true);render();result.scrollIntoView({block:"start",behavior:"smooth"});
               } catch(error) {choiceStatus.textContent=error.message || "Please try your choice again.";result.querySelectorAll("[data-car-choice]").forEach(button=>button.disabled=false);}
             }));
           } else render();

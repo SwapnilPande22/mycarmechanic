@@ -1,0 +1,28 @@
+{
+  "live": true,
+  "viewportWidth": 375,
+  "protectedCodeUnchanged": true,
+  "bumperFix": "reclip",
+  "bumperRange": {
+    "low": 500,
+    "high": 800
+  },
+  "damagedHeadlights": [],
+  "confirmedParts": [
+    {
+      "part": "front_bumper",
+      "fix": "reclip"
+    },
+    {
+      "part": "lhs_fender",
+      "fix": "dent_pull"
+    }
+  ],
+  "uncertainParts": [],
+  "savedRecordsUnchanged": true,
+  "historicalInspectionStillReadable": true,
+  "oldCacheInvalidatedWithoutDeletion": true,
+  "photoHashReuseVerified": true,
+  "adminRequestsAndPhotosStillOpen": true,
+  "noHorizontalOverflow": true
+}

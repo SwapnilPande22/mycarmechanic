@@ -23,6 +23,7 @@ import type * as partnerGarages from "../partnerGarages.js";
 import type * as priceEstimates from "../priceEstimates.js";
 import type * as quoteMessages from "../quoteMessages.js";
 import type * as quoteRequests from "../quoteRequests.js";
+import type * as repairPlan from "../repairPlan.js";
 import type * as vehicleCatalog from "../vehicleCatalog.js";
 
 import type {
@@ -47,6 +48,7 @@ declare const fullApi: ApiFromModules<{
   priceEstimates: typeof priceEstimates;
   quoteMessages: typeof quoteMessages;
   quoteRequests: typeof quoteRequests;
+  repairPlan: typeof repairPlan;
   vehicleCatalog: typeof vehicleCatalog;
 }>;
 

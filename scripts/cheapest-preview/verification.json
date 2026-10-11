@@ -1,0 +1,21 @@
+{
+  "live": false,
+  "viewportWidth": 375,
+  "protectedCodeUnchanged": true,
+  "bumperFix": "screw_back",
+  "bumperRange": {
+    "low": 300,
+    "high": 1000
+  },
+  "damagedHeadlights": [],
+  "confirmedParts": [
+    {
+      "part": "front_bumper",
+      "fix": "screw_back"
+    }
+  ],
+  "uncertainParts": [
+    "lhs_headlight"
+  ],
+  "noHorizontalOverflow": true
+}
