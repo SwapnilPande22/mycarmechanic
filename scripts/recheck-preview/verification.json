@@ -1,0 +1,17 @@
+{
+  "live": false,
+  "viewportWidth": 375,
+  "protectedCodeUnchanged": true,
+  "tapFillsAndAdvances": true,
+  "unlistedCarStillWorks": true,
+  "correctScreenOrder": true,
+  "recheckUsesSamePhotos": true,
+  "concernSpecificCache": true,
+  "originalCacheUnchanged": true,
+  "freshVisionRun": true,
+  "originalVisibleAndUnchanged": true,
+  "repeatConcernUsesOnlyRecheckCache": true,
+  "emptyConcernPreservesEstimates": true,
+  "savedRecordsAndAdminVerified": true,
+  "noHorizontalOverflow": true
+}
