@@ -10,6 +10,7 @@
 
 import type * as admin from "../admin.js";
 import type * as bills from "../bills.js";
+import type * as conversation from "../conversation.js";
 import type * as data_carVariants from "../data/carVariants.js";
 import type * as data_cities from "../data/cities.js";
 import type * as garagePresentation from "../garagePresentation.js";
@@ -33,6 +34,7 @@ import type {
 declare const fullApi: ApiFromModules<{
   admin: typeof admin;
   bills: typeof bills;
+  conversation: typeof conversation;
   "data/carVariants": typeof data_carVariants;
   "data/cities": typeof data_cities;
   garagePresentation: typeof garagePresentation;
