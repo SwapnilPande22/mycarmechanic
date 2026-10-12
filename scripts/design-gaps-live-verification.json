@@ -1,0 +1,357 @@
+{
+  "live": true,
+  "liveUrl": "https://earnest-rhinoceros-454.convex.site",
+  "width": 390,
+  "requestId": "jd7fwg5wkk4t1r1pjwf8bg811d8g4m40",
+  "protectedLogicUnchanged": true,
+  "pricesUnchanged": [
+    "₹500",
+    "₹800",
+    "₹4,500",
+    "₹6,000",
+    "₹1,200",
+    "₹1,800",
+    "₹3,500",
+    "₹4,500",
+    "₹1,700",
+    "₹2,600",
+    "₹8,000",
+    "₹10,500"
+  ],
+  "postHogEventsUnchanged": [
+    "$pageview",
+    "page_view",
+    "landing_opened",
+    "chat_name_given",
+    "chat_help_given",
+    "chat_story_given",
+    "chat_car_given",
+    "chat_city_given",
+    "photos_uploaded",
+    "estimate_shown",
+    "chat_concern_given",
+    "recheck_requested",
+    "garage_or_quote_tapped",
+    "chat_garages_given",
+    "chat_area_given",
+    "garages_shown",
+    "garage_or_quote_tapped",
+    "garage_tapped",
+    "garage_or_quote_tapped",
+    "chat_quote_given",
+    "quote_form_opened",
+    "chat_phone_given",
+    "quote_submitted"
+  ],
+  "garageGeometry": {
+    "photo": {
+      "x": 44,
+      "y": 354.6875,
+      "right": 144,
+      "bottom": 502.6875
+    },
+    "name": {
+      "x": 154,
+      "y": 354.6875
+    },
+    "rating": {
+      "x": 50,
+      "y": 360.6875,
+      "right": 99.078125,
+      "bottom": 383.6875
+    },
+    "areaY": 410.6875,
+    "distanceY": 410.6875
+  },
+  "partnersPreserved": 4,
+  "emailAccepted": true,
+  "screens": [
+    {
+      "file": "scripts/design-gaps-live/01-name.png",
+      "title": "First visit / name",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/02-name-error.png",
+      "title": "Name validation",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/03-help.png",
+      "title": "How can I help?",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/04-story.png",
+      "title": "Customer story",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/05-car.png",
+      "title": "Car / variant",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/06-car-options.png",
+      "title": "Car autocomplete",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/07-city.png",
+      "title": "City",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/08-city-error.png",
+      "title": "City validation",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/09-photos-empty.png",
+      "title": "Photo upload / empty",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/10-photo-quality-error.png",
+      "title": "Invalid photo format",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/11-photos-selected.png",
+      "title": "Selected photos",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/12-inspection-loading.png",
+      "title": "Uploading / inspection loading",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/13-estimate.png",
+      "title": "Repair estimate",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/14-concern-error.png",
+      "title": "Concern validation",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/15-recheck-loading.png",
+      "title": "Recheck loading",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/16-rechecked-estimate.png",
+      "title": "Original and rechecked estimates",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/17-garage-location.png",
+      "title": "Garage location",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/18-garage-loading.png",
+      "title": "Garage search loading",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/19-garages.png",
+      "title": "Kharadi garages / four partners",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/20-garage-reviews.png",
+      "title": "Garage reviews",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/21-quote-consent.png",
+      "title": "Quote permission",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/22-quote-form.png",
+      "title": "Quote form",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/23-phone-error.png",
+      "title": "Phone validation",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/24-quote-saving.png",
+      "title": "Saving request",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/25-request-received.png",
+      "title": "Request received",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/26-ending.png",
+      "title": "Thank you / journey ending",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/27-returning.png",
+      "title": "Returning visitor",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/28-admin-login.png",
+      "title": "Admin sign-in",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/29-admin-login-error.png",
+      "title": "Admin login error",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/30-admin-partners.png",
+      "title": "Admin partner settings",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/31-admin-request.png",
+      "title": "Admin request",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/32-partner-onboarding.png",
+      "title": "Partner onboarding",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/33-garage-photo-page.png",
+      "title": "Shared garage photos",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/34-missing-request.png",
+      "title": "Missing shared request",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/35-non-car-error.png",
+      "title": "Non-car photo guidance (controlled response)",
+      "width": 390,
+      "live": true,
+      "controlled": true
+    },
+    {
+      "file": "scripts/design-gaps-live/36-model-mismatch.png",
+      "title": "Wrong-model clarification (controlled response)",
+      "width": 390,
+      "live": true,
+      "controlled": true
+    },
+    {
+      "file": "scripts/design-gaps-live/37-empty-estimate.png",
+      "title": "No confirmed damage (controlled response)",
+      "width": 390,
+      "live": true,
+      "controlled": true
+    },
+    {
+      "file": "scripts/design-gaps-live/38-inspection-error.png",
+      "title": "Inspection retry error (controlled response)",
+      "width": 390,
+      "live": true,
+      "controlled": true
+    },
+    {
+      "file": "scripts/design-gaps-live/39-no-garages.png",
+      "title": "No garages found (controlled response)",
+      "width": 390,
+      "live": true,
+      "controlled": true
+    },
+    {
+      "file": "scripts/design-gaps-live/40-hindi.png",
+      "title": "Hindi first screen",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    },
+    {
+      "file": "scripts/design-gaps-live/41-marathi.png",
+      "title": "Marathi first screen",
+      "width": 390,
+      "live": true,
+      "controlled": false
+    }
+  ]
+}
