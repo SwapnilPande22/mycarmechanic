@@ -1,0 +1,93 @@
+{
+  "liveUrl": "https://earnest-rhinoceros-454.convex.site",
+  "adminPartnerSettingPersists": true,
+  "searches": {
+    "Kharadi, Pune": {
+      "partners": [
+        {
+          "name": "KGN MOTORS",
+          "placeId": "ChIJi8ABP9_DwjsRE2TU1IGcRNg",
+          "distanceKm": 1.1
+        },
+        {
+          "name": "Morya Motors And Car Sarvice",
+          "placeId": "ChIJob4gVOzDwjsRRbFBvr3-apg",
+          "distanceKm": 1.5
+        },
+        {
+          "name": "Sai Car Care",
+          "placeId": "ChIJn0ncPO_DwjsRhU1fk3Um088",
+          "distanceKm": 1.6
+        },
+        {
+          "name": "Auto Excellence Car Services",
+          "placeId": "ChIJh1TbScTDwjsRSbnrAgRyxZ0",
+          "distanceKm": 2.5
+        }
+      ],
+      "nonPartners": [
+        {
+          "name": "AJ Auto Garage",
+          "placeId": "ChIJn0S_2_LDwjsRuE7bnkowaHU",
+          "distanceKm": 0
+        },
+        {
+          "name": "Tushar Borse..",
+          "placeId": "ChIJzR_eqqvDwjsRTjf6bl1djLs",
+          "distanceKm": 0.3
+        },
+        {
+          "name": "Javed Ahmed Shaikh",
+          "placeId": "ChIJ-6tVZrnDwjsRdeoI2U9KLuE",
+          "distanceKm": 0.3
+        },
+        {
+          "name": "Mittal Hyundai Service",
+          "placeId": "ChIJ19Stz-3DwjsRK4v3WYSA6hM",
+          "distanceKm": 2
+        },
+        {
+          "name": "Tata Motors Cars Bodyshop - Rudra Motors",
+          "placeId": "ChIJG-t5BJfDwjsRnFtdzFDP3sI",
+          "distanceKm": 2.2
+        }
+      ],
+      "normalShortlistUnchanged": true,
+      "partnerLabels": 4,
+      "screenshot": "scripts/partners-kharadi-live.png"
+    },
+    "Hinjewadi, Pune": {
+      "partners": [],
+      "nonPartners": [
+        {
+          "name": "Byke Buddies",
+          "placeId": "ChIJWz45SOy7wjsRMympjtKVuXs",
+          "distanceKm": 0.4
+        },
+        {
+          "name": "AIO AUTO WORK",
+          "placeId": "ChIJcSN7NQC7wjsRyvK1U_xnA7Y",
+          "distanceKm": 0.5
+        },
+        {
+          "name": "Vilas",
+          "placeId": "ChIJQyV2YDq7wjsRPECQxYj9Uc4",
+          "distanceKm": 0.7
+        },
+        {
+          "name": "Poilice waiting for fine point",
+          "placeId": "ChIJW_WZLwC7wjsRqKheK0lSGe0",
+          "distanceKm": 0.7
+        },
+        {
+          "name": "Nilesh Enterprises",
+          "placeId": "ChIJpaEcAxu7wjsRBl6K6r7tOnM",
+          "distanceKm": 0.7
+        }
+      ],
+      "normalShortlistUnchanged": true,
+      "partnerLabels": 0,
+      "screenshot": "scripts/partners-hinjewadi-live.png"
+    }
+  }
+}

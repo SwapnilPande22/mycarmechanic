@@ -28,7 +28,7 @@ const root=path.resolve(__dirname,'..'),origin='https://earnest-rhinoceros-454.c
    assert.equal(await page.locator('.quote-partner-label').count(),partners.length);
    const names=await page.locator('.garage-card-body h3').allInnerTexts();assert.deepEqual(names,response.garages.map(g=>g.name));
    for(const [index,partner]of partners.entries())assert.equal(await page.locator('.garage-item').nth(index).locator('.quote-partner-label').innerText(),'Replies to MyCarMechanic quotes');
-   await page.waitForTimeout(2000);await page.locator('#garage-discovery').screenshot({path:path.join(root,'scripts',file)});
+   await page.waitForTimeout(2000);await page.locator('#garage-discovery').screenshot({path:path.join(root,'scripts',file),style:'#garage-quote-bar{visibility:hidden!important}'});
    proof.searches[area]={partners:partners.map(({name,placeId,distanceKm})=>({name,placeId,distanceKm})),nonPartners:normal,normalShortlistUnchanged:true,partnerLabels:partners.length,screenshot:'scripts/'+file};
   }
   assert.equal(errors.length,0,errors.join('\n'));fs.writeFileSync(path.join(root,'scripts/partners-live-verification.json'),JSON.stringify(proof,null,2));console.log(JSON.stringify(proof,null,2));
