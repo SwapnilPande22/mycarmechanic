@@ -1,0 +1,31 @@
+{
+  "liveUrl": "https://earnest-rhinoceros-454.convex.site",
+  "requestId": "jd72jpkdnc83739x9zb1709f1s8g5mka",
+  "rememberedMarathi": true,
+  "fullMarathiFlow": true,
+  "explanationsTranslated": true,
+  "partNamesHaveEnglishBrackets": true,
+  "pricesExactlyUnchanged": [
+    "₹500",
+    "₹800",
+    "₹4,500",
+    "₹6,000",
+    "₹1,200",
+    "₹1,800",
+    "₹3,500",
+    "₹4,500",
+    "₹1,700",
+    "₹2,600",
+    "₹8,000",
+    "₹10,500"
+  ],
+  "noConcernAdvances": true,
+  "noReinspection": true,
+  "hindiGarageMessage": "कार: Volkswagen Polo 2018\r\nक्षेत्र: कोथरूड, पुणे\r\nफ्रंट बंपर (front bumper): फ्रंट बंपर बाईं ओर (कार के दाहिने) व्हील आर्च पर स्पष्ट रूप से विस्थापित है, जिसमें एक स्टेप्ड/खुला सीम और गैप है; बंपर शेल ठीक लग रहा है।\r\nबाएं साइड फेंडर (LHS fender): बाएं फेंडर पर व्हील आर्च के ऊपर स्पष्ट डेंट/क्रीज है।\r\nचिंता: मेरी कार को नुकसान हुआ है, राजमार्ग पर मेरी कार का फ्रंट बंपर (front bumper) ढीला हो गया है। कृपया इसके क्लिप की जांच करें।\r\nफोटो: https://earnest-rhinoceros-454.convex.site/quotes/jd72jpkdnc83739x9zb1709f1s8g5mka\r\nकृपया अपनी कीमत और कार का निरीक्षण करने का सबसे जल्दी समय बताएं।",
+  "garageLines": 7,
+  "noIdentityOrPrices": true,
+  "screenshots": [
+    "scripts/marathi-estimate-live.png",
+    "scripts/hindi-admin-request-live.png"
+  ]
+}
