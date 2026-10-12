@@ -1,0 +1,43 @@
+const {chromium}=require('C:/Users/purna/tools/pw-runtime/node_modules/playwright-core');
+const fs=require('fs'),path=require('path'),assert=require('assert/strict'),{execFileSync}=require('child_process');
+const root=path.resolve(__dirname,'..'),origin='https://earnest-rhinoceros-454.convex.site';
+(async()=>{
+ const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+ try{
+  const context=await browser.newContext({viewport:{width:390,height:900},permissions:['clipboard-read','clipboard-write']});
+  const page=await context.newPage();let created,errors=[],rechecks=0;
+  page.on('pageerror',error=>errors.push(error.message));
+  page.on('response',async response=>{try{if(response.url().endsWith('/api/action')){const p=response.request().postDataJSON();if(p.path==='quoteRequests:create')created=(await response.json()).value;if(p.path==='panels:analyzeDamage'&&p.args[0].recheckConcern)rechecks++;}}catch{}});
+  await page.addInitScript(()=>{new MutationObserver(()=>{const el=document.querySelector('.cheapest-estimate');if(el&&!window.__originalEstimatePrices&&el.textContent.includes('Cheapest fixes, including labour'))window.__originalEstimatePrices=el.textContent.match(/₹[\d,]+/g)||[];}).observe(document,{childList:true,subtree:true,characterData:true});});
+  const settle=()=>page.waitForFunction(()=>!document.querySelector('.typing-dots')&&window.i18n.settled()&&![...document.querySelectorAll('[data-chat-next]')].some(x=>x.disabled),{},{timeout:120000});
+  await page.goto(origin);await settle();await page.locator('#language-choice').selectOption('mr');await settle();
+  assert.equal(await page.locator('#language-choice').inputValue(),'mr');assert.equal(await page.locator('html').getAttribute('lang'),'mr');
+  await page.reload();await settle();assert.equal(await page.locator('#language-choice').inputValue(),'mr');
+  await page.locator('#chat-name').fill('मराठी भाषा चाचणी (संपर्क करू नका)');await page.locator('[data-chat-next=name]').click();await settle();
+  await page.locator('#chat-help').fill('माझ्या कारचे नुकसान झाले आहे');await page.locator('[data-chat-next=help]').click();await settle();
+  assert(/[\u0900-\u097f]/.test(await page.locator('#chat-history .ai-text').innerText()));
+  await page.locator('#chat-story').fill('महामार्गावर माझ्या कारचा पुढचा बंपर सैल झाला. कृपया त्याचे क्लिप तपासा.');await page.locator('[data-chat-next=story]').click();await settle();
+  await page.locator('#car-model').fill('Polo');await page.getByRole('option',{name:'Volkswagen Polo GT TSI',exact:true}).click();await settle();
+  await page.locator('#customer-city').fill('Pune');await page.locator('[data-chat-next=city]').click();await settle();
+  await page.locator('#damage-photos').setInputFiles(['IMG-20260202-WA0010.jpg','IMG-20260202-WA0012.jpg','IMG-20260202-WA0014.jpg'].map(file=>path.join(root,'test-photos',file)));
+  await page.waitForFunction(()=>!document.querySelector('.photo-converting'));await page.locator('#analyze').click();await page.locator('#estimate-concern').waitFor({timeout:180000});await settle();
+  assert.equal(await page.locator('[data-translation-failed]').count(),0);
+  const prices=await page.locator('.cheapest-estimate').first().evaluate(el=>el.textContent.match(/₹[\d,]+/g)||[]);
+  assert.deepEqual(prices,await page.evaluate(()=>window.__originalEstimatePrices),'Prices must match the unmodified English render exactly.');
+  assert(prices.length>0);for(const reason of await page.locator('.cheapest-estimate .reason').allInnerTexts())assert(/[\u0900-\u097f]/.test(reason),reason);
+  assert((await page.locator('.panel-name').first().innerText()).includes('(front bumper)'));
+  await page.emulateMedia({reducedMotion:'reduce'});await page.locator('.cheapest-estimate').first().screenshot({path:path.join(root,'scripts/marathi-estimate-live.png')});
+  await page.locator('#estimate-concern').fill('अंदाज बरोबर आहे');await page.locator('#estimate-concern').press('Enter');await settle();assert(await page.locator('.recheck-card').isHidden());assert.equal(rechecks,0);
+  await page.locator('#show-nearby-garages').click();await settle();await page.locator('#garage-area').fill('Kothrud');await page.locator('#garage-area').press('Escape');await page.locator('#garage-search-button').click();await page.locator('.garage-item').first().waitFor({timeout:120000});await settle();
+  await page.locator('.garage-review-button').first().click();await page.locator('#quote-yes').waitFor({state:'visible',timeout:30000});await settle();await page.locator('#quote-yes').click();await settle();
+  await page.locator('[name=year]').fill('2018');await page.locator('[name=whatsappNumber]').fill('9000000000');await page.locator('[data-quote-form] button[type=submit]').click();await page.locator('[data-quote-followup]').waitFor({state:'visible',timeout:90000});await settle();assert(created&&!created.paused);await page.locator('[data-quote-done]').click();await settle();
+  const password=execFileSync(process.execPath,['node_modules/convex/bin/main.js','env','get','ADMIN_PASSWORD','--prod'],{cwd:root,encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
+  const admin=await context.newPage();await admin.setViewportSize({width:1000,height:1000});await admin.goto(origin+'/admin?request='+created.id);await admin.locator('#admin-password').fill(password);await admin.locator('#admin-login').click();
+  const card=admin.locator('.admin-request[data-id="'+created.id+'"]');await card.waitFor({timeout:60000});await card.locator('[data-garage-language]').selectOption('hi');await card.locator('[data-copy-garage]').click();await card.locator('[data-request-status]').filter({hasText:'Garage message copied.'}).waitFor({timeout:90000});
+  const message=await admin.evaluate(()=>navigator.clipboard.readText());assert(message.split('\n').length<=8);assert(!/9000000000|₹|\bINR\b|मराठी भाषा चाचणी|अनुमान|estimate/i.test(message));assert(message.includes('/quotes/'+created.id));assert(/[\u0900-\u097f]/.test(message));assert(message.includes('2018'));
+  await card.screenshot({path:path.join(root,'scripts/hindi-admin-request-live.png')});assert.equal(errors.length,0,errors.join('\n'));
+  fs.writeFileSync(path.join(root,'scripts/hindi-garage-copy.txt'),message);
+  const evidence={liveUrl:origin,requestId:created.id,rememberedMarathi:true,fullMarathiFlow:true,explanationsTranslated:true,partNamesHaveEnglishBrackets:true,pricesExactlyUnchanged:prices,noConcernAdvances:true,noReinspection:true,hindiGarageMessage:message,garageLines:message.split('\n').length,noIdentityOrPrices:true,screenshots:['scripts/marathi-estimate-live.png','scripts/hindi-admin-request-live.png']};
+  fs.writeFileSync(path.join(root,'scripts/languages-live-verification.json'),JSON.stringify(evidence,null,2));console.log(JSON.stringify(evidence,null,2));
+ }finally{await browser.close();}
+})().catch(error=>{console.error(error.stack);process.exitCode=1;});

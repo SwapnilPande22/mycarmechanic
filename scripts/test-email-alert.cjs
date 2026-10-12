@@ -12,7 +12,7 @@ for(const script of h.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)) {
   if(script[0].includes('type="module"')) continue;
   new Function(script[1]);
 }
-const pattern=h.match(/if\(concern && (\/.*?\/i)\.test\(concern\)\)/)[1];
+const pattern=h.match(/(\/\^\(\?:\(\?:the[\s\S]*?\/i)\.test\(concern\)/)[1];
 const accepts=new Function('return '+pattern)();
 for(const phrase of ['estimate looks right','looks right','no concern','I have no concerns','all good','okay','no issues']) assert(accepts.test(phrase),phrase);
 for(const phrase of ['the bumper is damaged','price looks wrong','looks right but the door is wrong']) assert(!accepts.test(phrase),phrase);

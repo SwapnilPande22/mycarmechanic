@@ -52,7 +52,7 @@ export const create = action({
       const response = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {Authorization: "Bearer " + key, "Content-Type": "application/json", "Idempotency-Key": "quote-request-" + id},
-        body: JSON.stringify({from: process.env.RESEND_FROM || "MyCarMechanic <onboarding@resend.dev>", to: ["swapnilraymond@gmail.com"], subject: "New MyCarMechanic quote request", text: quoteEmailText(request, urls)}),
+        body: JSON.stringify({from: process.env.RESEND_FROM || "MyCarMechanic <onboarding@resend.dev>", to: ["swapnilraymond@gmail.com"], subject: "New MyCarMechanic quote request", text: quoteEmailText(request, urls, origin.origin + "/admin?request=" + id)}),
         signal: AbortSignal.timeout(15000),
       });
       if (!response.ok) throw new Error("Email provider rejected the request.");

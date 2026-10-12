@@ -1,7 +1,7 @@
 import { action } from "./_generated/server";
 import { internal } from "./_generated/api";
 import { v } from "convex/values";
-import { garageMessage } from "./quoteMessages";
+import { garageMessage, localizedGarageMessage } from "./quoteMessages";
 
 function requirePassword(password: string) {
   const expected = process.env.ADMIN_PASSWORD;
@@ -21,6 +21,16 @@ export const list = action({
       garageMessage: garageMessage(request),
       photoUrls: await Promise.all(request.photos.map((photo) => ctx.storage.getUrl(photo))),
     })));
+  },
+});
+
+export const copyForGarage = action({
+  args:{password:v.string(),id:v.id("quoteRequests"),language:v.union(v.literal("en"),v.literal("hi"),v.literal("mr"))},
+  handler:async(ctx,{password,id,language}):Promise<string>=>{
+    requirePassword(password);
+    const request=await ctx.runQuery(internal.quoteRequests.getForEmail,{id});
+    if(!request)throw new Error("Quote request not found.");
+    return localizedGarageMessage(request,`https://earnest-rhinoceros-454.convex.site/quotes/${id}`,language);
   },
 });
 

@@ -280,7 +280,7 @@
     <div class="page">
       <header><div class="brand"><span class="brand-mark" aria-hidden="true">F</span> MyCarMechanic</div><div class="location">Pune</div></header>
       <main>
-        <section class="hero" aria-labelledby="headline">
+        <section class="hero" aria-labelledby="headline"><label class="language-choice" style="display:block;margin:0 auto 20px;font-size:14px">English / हिंदी / मराठी <select id="language-choice" aria-label="English / हिंदी / मराठी" style="font:inherit;padding:8px;border:1px solid #d1d5db;border-radius:6px;background:white"><option value="en">English</option><option value="hi">हिंदी</option><option value="mr">मराठी</option></select></label>
           <svg class="mechanic-mascot" viewBox="0 0 220 200" role="img" aria-label="Friendly Indian mechanic in a navy boilersuit, holding a wrench beside an open car bonnet" xmlns="http://www.w3.org/2000/svg"><ellipse cx="110" cy="190" rx="100" ry="5" fill="#20242c" opacity=".1"/><g stroke="#20242c" stroke-width="2.5" stroke-linejoin="round"><path d="M118 137h78l13 15v29h-93v-30z" fill="#e5e7eb"/><path d="M123 134l20-55 48 16-11 40" fill="#1E3A8A"/><path d="M140 85l-13 41m17-35 36 12" fill="none" stroke="#fff" opacity=".5"/><path d="M130 147h63v19h-63z" fill="#30343b"/><path d="M145 153h26m-26 7h33" stroke="#9ca3af"/><rect x="120" y="169" width="16" height="9" rx="3" fill="#F59E0B"/><rect x="190" y="169" width="13" height="9" rx="3" fill="#F59E0B"/><path d="M120 183h86" fill="none"/><path d="M33 105q22-17 46 0l14 52-13 9-8-31-2 46H48l-2-46-9 29-15-6z" fill="#1E3A8A"/><path d="M49 174l-2 12H31v-9m37-3 3 12h16v-9" fill="#30343b"/><path d="M59 108v65m-12-56 7 4m10-4 7 4" fill="none" stroke="#fff" stroke-width="1.5"/><rect x="64" y="112" width="18" height="9" rx="2" fill="#fff" stroke="none"/><text x="73" y="119" font-family="sans-serif" font-size="6" text-anchor="middle" fill="#1E3A8A" stroke="none">RAJU</text><path d="M43 126v11h12v-11" fill="#F59E0B" stroke="none"/><path d="M52 95v10q8 7 15 0V95" fill="#D99B70"/><ellipse cx="35" cy="66" rx="7" ry="10" fill="#C9855E"/><ellipse cx="83" cy="66" rx="7" ry="10" fill="#C9855E"/><rect x="36" y="35" width="46" height="63" rx="22" fill="#D99B70"/><path d="M36 49q-6-30 22-30t25 28" fill="#1E3A8A"/><path d="M31 43h56l7 7H31z" fill="#F59E0B"/><path d="M44 59h9m13 0h9" stroke="#34251F" stroke-linecap="round"/><circle cx="49" cy="66" r="2.5" fill="#34251F" stroke="none"/><circle cx="70" cy="66" r="2.5" fill="#34251F" stroke="none"/><path d="M60 65l-3 10h5" fill="none" stroke="#A96344" stroke-width="1.5"/><path d="M47 80q13-9 26 0l-13 2z" fill="#34251F" stroke="none"/><path d="M51 85q9 11 18 0z" fill="#fff" stroke="#A96344" stroke-width="1.5"/><path d="M75 73l5 3m-7 0 6 3" stroke="#30343b" stroke-width="2" opacity=".65"/><path d="M27 157l-2 9" stroke="#D99B70" stroke-width="10" stroke-linecap="round"/><path d="M86 154l14-10" stroke="#D99B70" stroke-width="10" stroke-linecap="round"/><path d="M98 157l8-39" stroke="#9ca3af" stroke-width="7" stroke-linecap="round"/><path d="M106 122q-11-4-8-17l5 7 7 1 6-6q3 13-10 15" fill="#d1d5db"/><ellipse cx="99" cy="146" rx="7" ry="5" fill="#D99B70"/></g></svg><h1 id="headline">Fair price, before the garage quotes</h1><p class="intro">A little clarity before your garage visit.</p>
         </section>
         <section class="card" aria-label="Damage estimate form">
@@ -343,10 +343,12 @@
         }, true);
       })();
     </script>
+    <script src="/ui-translations.js"></script><script src="/localization.js"></script>
     <script src="/heic2any.min.js" defer></script>
     <script type="module">
       import { ConvexHttpClient } from "https://esm.sh/convex@1.46.0/browser";
       const convex = new ConvexHttpClient("https://earnest-rhinoceros-454.convex.cloud");
+      window.i18n.connect(convex);
       if (location.pathname.replace(/\/$/, "") === "/garage") {
         const app = document.querySelector("main");
         const sizeNames = ["small", "medium", "large"];
@@ -394,8 +396,10 @@
               const location = [item.area, item.city].filter(Boolean).filter((value,index,values) => values.findIndex(other => other.toLowerCase() === value.toLowerCase()) === index).join(", ");
               const parts = item.parts.map(part => '<li>' + esc(part.partName) + ' – ' + esc(part.workNeeded) + '</li>').join("");
               const photos = item.photoUrls.map((url,index) => url ? '<a href="' + esc(url) + '" target="_blank" rel="noopener"><img src="' + esc(url) + '" alt="Customer damage photo ' + (index+1) + '" loading="lazy" /></a>' : '').join("");
-              return '<section class="card admin-request" data-id="' + esc(item._id) + '"><div class="admin-request-heading"><h3>' + esc(item.name) + '</h3>' + (item.status === "new" ? '<span class="admin-new-badge">New</span>' : '<span>' + esc(item.status) + '</span>') + '</div>' + (item.emailStatus === 'failed' ? '<p class="admin-email-status">Email failed</p>' : '') + '<p class="admin-customer-number">' + esc(item.whatsappNumber) + '</p><p><strong>' + esc(item.carModel) + '</strong><br>' + esc(location) + '</p><p class="admin-received">Received ' + esc(new Date(item.createdAt).toLocaleString("en-IN")) + '</p><ol class="admin-damage">' + parts + '</ol><div class="admin-photos">' + photos + '</div><div class="admin-actions"><button class="secondary" data-customer type="button">WhatsApp customer</button><button class="secondary" data-copy-garage type="button">Copy garage message</button><button class="secondary" data-sent type="button"' + (["sent", "sent to garages"].includes(item.status) ? ' disabled' : '') + '>Mark sent to garages</button></div><p class="status" data-request-status role="status"></p></section>';
+              return '<section class="card admin-request" data-id="' + esc(item._id) + '"><div class="admin-request-heading"><h3>' + esc(item.name) + '</h3>' + (item.status === "new" ? '<span class="admin-new-badge">New</span>' : '<span>' + esc(item.status) + '</span>') + '</div>' + (item.emailStatus === 'failed' ? '<p class="admin-email-status">Email failed</p>' : '') + '<p class="admin-customer-number">' + esc(item.whatsappNumber) + '</p><p><strong>' + esc(item.carModel) + '</strong><br>' + esc(location) + '</p><p class="admin-received">Received ' + esc(new Date(item.createdAt).toLocaleString("en-IN")) + '</p><ol class="admin-damage">' + parts + '</ol><div class="admin-photos">' + photos + '</div><div class="admin-actions"><button class="secondary" data-customer type="button">WhatsApp customer</button><label>Garage message language <select data-garage-language aria-label="Garage message language"><option value="en">English</option><option value="hi">हिंदी</option><option value="mr">मराठी</option></select></label><button class="secondary" data-copy-garage type="button">Copy for garage</button><button class="secondary" data-sent type="button"' + (["sent", "sent to garages"].includes(item.status) ? ' disabled' : '') + '>Mark sent to garages</button></div><p class="status" data-request-status role="status"></p></section>';
             }).join("");
+            const requestedId=new URLSearchParams(location.search).get("request");
+            if(requestedId){const target=[...document.querySelectorAll(".admin-request")].find(card=>card.dataset.id===requestedId);if(target){target.style.outline="2px solid #1E3A8A";target.scrollIntoView({block:"start"});}}
             document.querySelectorAll(".admin-request").forEach(card => {
               const id = card.dataset.id;
               const item = byId.get(id);
@@ -407,7 +411,7 @@
                 window.open("https://wa.me/" + international, "_blank", "noopener");
               });
               card.querySelector("[data-copy-garage]").addEventListener("click", async () => {
-                try { await navigator.clipboard.writeText(item.garageMessage); cardStatus.textContent = "Garage message copied."; }
+                try { const message=await convex.action("admin:copyForGarage",{password:adminPassword,id,language:card.querySelector("[data-garage-language]").value}); await navigator.clipboard.writeText(message); cardStatus.textContent = "Garage message copied."; }
                 catch { cardStatus.textContent = "Could not copy the message. Please try again."; }
               });
               card.querySelector("[data-sent]").addEventListener("click", async event => {
@@ -495,7 +499,7 @@
       const repairNames = { denting_painting:"Denting & painting", replacement:"Replacement", unclear:"Needs review" };
       const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (char) => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" })[char]);
       let customerName = "", chatStep = "name", customerHelp = "", customerStory = "", conversationBusy = false;
-      let customerLanguage = navigator.language || "en", lastCustomerReply = "", previousMechanicQuestion = "";
+      let customerLanguage = window.i18n.language, lastCustomerReply = "", previousMechanicQuestion = "";
       const history = document.getElementById("chat-history");
       const mascotMarkup = document.querySelector('.mechanic-mascot').outerHTML.replace('role="img"','aria-hidden="true"').replace(/ aria-label="[^"]*"/,'');
       const translations = new Map(), originalText = new WeakMap(), originalPlaceholder = new WeakMap();
@@ -516,15 +520,7 @@
         phone:["WhatsApp number","Submit","Not now","Get quotes from nearby garages"],
         thanks:["Request received","Done"],end:["Hope we were helpful.","Inspect another concern"]
       };
-      const translateControls = () => {
-        const walker=document.createTreeWalker(document.querySelector('main'),NodeFilter.SHOW_TEXT);
-        let node;while((node=walker.nextNode())){
-          if(node.parentElement.closest('script,svg,.ai-text,.typing-dots'))continue;
-          const original=originalText.get(node) || node.textContent;
-          if(translations.has(original.trim())){originalText.set(node,original);const value=original.replace(original.trim(),translations.get(original.trim()));if(node.textContent!==value)node.textContent=value;}
-        }
-        document.querySelectorAll('main [placeholder]').forEach(el=>{const original=originalPlaceholder.get(el)||el.placeholder;originalPlaceholder.set(el,original);if(translations.has(original)&&el.placeholder!==translations.get(original))el.placeholder=translations.get(original);});
-      };
+      const translateControls = () => window.i18n.refresh();
       const decorateMessage = (target,text,typing=false) => {
         const retained=[...target.querySelectorAll('[data-request-number]')];
         target.classList.add('app-bubble');target.replaceChildren();
@@ -545,22 +541,22 @@
           const text=el.placeholder || el.childNodes[0]?.textContent?.trim();
           if(text && text.length<180 && !strings.includes(text) && !el.querySelector('[data-request-number]'))strings.push(text);
         });
-        const labels=Object.fromEntries(strings.slice(0,80).map((text,i)=>['label'+i,text]));
+        const labels={};
         let timer;
         try{
           const request=convex.action('conversation:nextQuestion',{step,name:customerName,help:customerHelp,story:customerStory,car:modelInput.value.trim(),city:cityInput.value.trim(),language:customerLanguage,lastAnswer:lastCustomerReply,previousQuestion:previousMechanicQuestion,fallback,labels});
           const [response]=await Promise.all([Promise.race([request,new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('timeout')),34000);})]),new Promise(resolve=>setTimeout(resolve,500))]);
           if(response.fallback)console.warn(JSON.stringify({event:'conversation_fallback',step,reason:response.reason || 'server_fallback'}));
-          customerLanguage=response.language || customerLanguage;
+          customerLanguage=window.i18n.language;
           for(const [key,text]of Object.entries(response.labels||{}))if(labels[key])translations.set(labels[key],text);
           document.documentElement.lang=customerLanguage;
           translateControls();
-          const question=response.question || fallback;decorateMessage(target,question);previousMechanicQuestion=question;
+          const question=response.fallback ? window.i18n.fallback(step,fallback) : (response.question || window.i18n.fallback(step,fallback));decorateMessage(target,question);previousMechanicQuestion=question;
           return question;
-        }catch{console.warn(JSON.stringify({event:'conversation_fallback',step,reason:'client_network_or_timeout'}));decorateMessage(target,fallback);return fallback;}
+        }catch{console.warn(JSON.stringify({event:'conversation_fallback',step,reason:'client_network_or_timeout'}));decorateMessage(target,window.i18n.fallback(step,fallback));return window.i18n.fallback(step,fallback);}
         finally{clearTimeout(timer);}
       };
-      const setQuestion = text => {const bubble=makeBubble();if(chatStep==='loading')void askMechanic('loading',text,bubble);else if(chatStep==='photos')void askMechanic('retry',text,bubble);else{decorateMessage(bubble,'',true);setTimeout(()=>{if(bubble.isConnected)decorateMessage(bubble,text);},500);}};
+      const setQuestion = text => {const bubble=makeBubble();if(chatStep==='loading')void askMechanic('loading',text,bubble);else if(chatStep==='photos')void askMechanic('retry',text,bubble);else{decorateMessage(bubble,'',true);setTimeout(()=>{if(bubble.isConnected)decorateMessage(bubble,window.i18n.t(text));},500);}};
       const addChatBubble=(text,user=false)=>{if(!user)setQuestion(text);};
       const advanceChat=async(step,skip=false)=>{
         if(step!==chatStep || conversationBusy)return;
@@ -1321,7 +1317,7 @@
         document.getElementById("recheck-estimate").addEventListener("click",async()=>{
           const concern=document.getElementById("estimate-concern").value.trim();
           const recheckStatus=document.getElementById("recheck-status");
-          if(concern && /^(?:(?:the\s+)?estimate\s+)?(?:looks?\s+(?:right|good|fine|correct)|(?:is\s+)?(?:right|correct|fine|good|ok(?:ay)?)|no\s+(?:concerns?|issues?|problem|worries)|all\s+(?:good|fine)|nothing\s+(?:wrong|to add)|(?:i\s+)?(?:have\s+)?no\s+concerns?)(?:[.!\s]|\s+(?:to me|thanks|thank you))*$/i.test(concern)) {
+          if(concern && (/^(?:सगळे ठीक|सर्व ठीक|काही चिंता नाही|चिंता नाही|अंदाज योग्य आहे|अंदाज बरोबर आहे|सब ठीक है|कोई चिंता नहीं|अनुमान सही है)[.!।\s]*$/.test(concern) || /^(?:(?:the\s+)?estimate\s+)?(?:looks?\s+(?:right|good|fine|correct)|(?:is\s+)?(?:right|correct|fine|good|ok(?:ay)?)|no\s+(?:concerns?|issues?|problem|worries)|all\s+(?:good|fine)|nothing\s+(?:wrong|to add)|(?:i\s+)?(?:have\s+)?no\s+concerns?)(?:[.!\s]|\s+(?:to me|thanks|thank you))*$/i.test(concern))) {
             lastConcern=concern;
             document.querySelector('.recheck-card').hidden=true;
             const invite=document.querySelector('.garage-invite');

@@ -14,13 +14,14 @@ export function garageSafe(value: string | undefined, phone: string): string {
     .replace(/^.*\b(?:estimate|price|cost|quote|total|range)\b.*\d.*$/gim, "[pricing withheld]");
 }
 
-export function quoteEmailText(request: EmailRequest, photoUrls: string[]): string {
+export function quoteEmailText(request: EmailRequest, photoUrls: string[], adminUrl?: string): string {
   const safe = (value?: string) => garageSafe(value, request.whatsappNumber);
   return [
     "For owner only",
     `Customer name: ${request.name}`,
     `Phone number: ${request.whatsappNumber}`,
     `Request time: ${new Date(request.createdAt).toISOString()}`,
+    ...(adminUrl ? [`Admin request: ${adminUrl}`] : []),
     "", "Copy for garage",
     `Car make: ${safe(request.make)}`,
     `Car model: ${safe(request.model || request.carModel)}`,
