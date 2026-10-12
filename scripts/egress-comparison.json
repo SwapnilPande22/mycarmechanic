@@ -1,0 +1,12 @@
+{
+  "measurement": "Chrome CDP encodedDataLength for HTTP(S) downloads in fresh browser contexts; includes headers, excludes upload bytes and server-to-provider transfers.",
+  "before": 1457528,
+  "after": 333894,
+  "reductionPercent": 77.09176084438857,
+  "convexReductionPercent": 84.35778180685219,
+  "beforePhotoBytes": 4768195,
+  "afterPhotoBytes": 1093969,
+  "originalPhotoBrowserDownloads": 0,
+  "unchangedEventSequence": true,
+  "optionalRecheck": "Returned retry guidance; flow continued using the original successful estimate and saved a quote request."
+}

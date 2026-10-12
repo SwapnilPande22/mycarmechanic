@@ -2,6 +2,7 @@
   "adminImages": 74,
   "sharedImages": 3,
   "originalPhotoDownloads": 0,
+  "repeatAdminThumbnailBytes": 0,
   "thumbnailLongSideMax": 320,
   "cachedPreviewBytes": 1340283
 }

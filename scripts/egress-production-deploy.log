@@ -7,10 +7,10 @@
 ▌ └─ https://earnest-rhinoceros-454.convex.cloud
 - Deploying to https://earnest-rhinoceros-454.convex.cloud...
 
+Convex AI files are not installed. Run npx convex ai-files install to get started or npx convex ai-files disable to hide this message.
 Your projects are above the Free plan limits.
 Decrease your usage or upgrade to avoid service interruption.
 Visit https://dashboard.convex.dev/t/swapnilpan to learn more.
-Convex AI files are not installed. Run npx convex ai-files install to get started or npx convex ai-files disable to hide this message.
 √ No indexes are deleted by this push
 Uploading functions to Convex...
 Generating TypeScript bindings...
@@ -18,8 +18,6 @@ Running TypeScript...
 Pushing code to your Convex deployment...
 Schema validation complete.
 Finalizing push...
-✔ Added table indexes:
-  [+] photoThumbnails.byPhoto   photo, _creationTime
 ✔ Deployed Convex functions to https://earnest-rhinoceros-454.convex.cloud
 🔨 Building for production...
    Build command: npm run build
@@ -34,15 +32,15 @@ Built dist/index.html with content-versioned assets (one-year immutable cache).
 
 🚀 Deploying to production environment
 🔒 Using secure internal functions (requires Convex CLI auth)
-Uploading 6 files with deployment ID: 91ad2b30-f2e4-41c1-a947-47ee9f59b474
+Uploading 6 files with deployment ID: 1efa43da-ea1f-4e2b-8494-8f859ef28855
 Component: staticHosting
 
   Generating 6 upload URLs...
-  [1/6] /design-0d46241a56a81.css (storage)
+  [1/6] /heic2any.LICENSE-017e4c847dac6.md (storage)
   [2/6] /localization-0e2f21cfd80a1.js (storage)
-  [3/6] /heic2any.LICENSE-017e4c847dac6.md (storage)
-  [4/6] /ui-translations-0c83f61ca0f61.js (storage)
-  [5/6] /index.html (storage/html)
+  [3/6] /index.html (storage/html)
+  [4/6] /design-0d46241a56a81.css (storage)
+  [5/6] /ui-translations-0c83f61ca0f61.js (storage)
   [6/6] /heic2any.min-00963cfa50e9e.js (storage)
   Staging manifest chunk 1/1...
   Publishing deployment...
