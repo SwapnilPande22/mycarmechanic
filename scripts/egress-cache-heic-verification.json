@@ -1,0 +1,13 @@
+{
+  "headers": {
+    "design.css": "public, max-age=31536000",
+    "localization.js": "public, max-age=31536000",
+    "ui-translations.js": "public, max-age=31536000",
+    "heic2any.min.js": "public, max-age=31536000",
+    "heic2any.LICENSE.md": "public, max-age=31536000, immutable"
+  },
+  "repeatStaticNetworkBytes": 0,
+  "heicRequestsBeforeSelection": 0,
+  "heicRequestsAfterTwoSelections": 1,
+  "heicConversionPassed": true
+}

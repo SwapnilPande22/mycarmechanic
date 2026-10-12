@@ -13,14 +13,15 @@ function requirePassword(password: string) {
 }
 
 export const list = action({
-  args: { password: v.string() },
-  handler: async (ctx, { password }) => {
+  args: { password: v.string(), cachedThumbnailPhotos:v.optional(v.array(v.id("_storage"))) },
+  handler: async (ctx, { password, cachedThumbnailPhotos }) => {
     requirePassword(password);
     const requests = await ctx.runQuery(internal.quoteRequests.listForAdmin, {});
+    const knownThumbnails=new Set(cachedThumbnailPhotos || []);
     return await Promise.all(requests.map(async (request) => ({
       ...request,
       garageMessage: garageMessage(request),
-      thumbnailUrls: await Promise.all(request.photos.map(async(photo)=>(await ctx.runQuery(internal.photoThumbnails.get,{photo}))?.thumbnail || null)),
+      thumbnailUrls: await Promise.all(request.photos.map(async(photo)=>knownThumbnails.has(photo)?null:(await ctx.runQuery(internal.photoThumbnails.get,{photo}))?.thumbnail || null)),
       photoUrls: await Promise.all(request.photos.map((photo) => ctx.storage.getUrl(photo))),
     })));
   },

@@ -406,10 +406,12 @@
           try{const rows=await convex.action('admin:findPartners',{password:adminPassword,input:document.getElementById('partner-search').value});document.getElementById('partner-search-results').innerHTML=rows.map(partnerRow).join('');partnerStatus.textContent=rows.length ? 'Check a garage to mark it as a partner.' : 'No matching car repair garages found.';bindPartnerRows();}
           catch(error){partnerStatus.textContent=friendlyError(error, 'Could not search garages.');}finally{button.disabled=false;}
         });
+        const adminThumbnailCache=new Map();
         const listRequests = async () => {
           status.textContent = "Loading quote requests...";
           try {
-            const requests = await convex.action("admin:list", { password:adminPassword });
+            const requests = await convex.action("admin:list", { password:adminPassword,cachedThumbnailPhotos:[...adminThumbnailCache.keys()] });
+            requests.forEach(item=>{item.thumbnailUrls=item.photos.map((photo,index)=>{const preview=item.thumbnailUrls?.[index];if(preview)adminThumbnailCache.set(photo,preview);return adminThumbnailCache.get(photo)||null;});});
             document.getElementById("partner-settings").hidden=false;void loadPartnerSettings();
             document.getElementById("admin-new-count").textContent = requests.filter(item => item.status === "new").length + " new requests";
             status.textContent = requests.length ? requests.length + " quote request(s)." : "No quote requests yet.";
