@@ -6,8 +6,9 @@ const root=path.resolve(__dirname,'..'),origin='https://earnest-rhinoceros-454.c
  try {
   const page=await browser.newPage({viewport:{width:1100,height:900}});
   const settle=()=>page.waitForFunction(()=>!document.querySelector('.typing-dots')&&![...document.querySelectorAll('[data-chat-next]')].some(x=>x.disabled),{},{timeout:65000});
-  let created, rechecks=0;
+  let created=process.argv[2]?{id:process.argv[2],paused:false}:undefined, rechecks=0;
   page.on('response',async res=>{try{if(res.url().endsWith('/api/action')){const p=res.request().postDataJSON();if(p.path==='quoteRequests:create'){const reply=await res.json();created=reply.value;console.log('Quote response: '+JSON.stringify(reply));}if(p.path==='panels:analyzeDamage'&&p.args[0].recheckConcern)rechecks++;}}catch{}});
+  if(!created){
   await page.goto(origin);await settle();await page.emulateMedia({reducedMotion:'reduce'});
 
   await page.locator('#chat-name').fill('Lead wording live test (do not contact)');await page.locator('[data-chat-next=name]').click();await settle();
@@ -22,6 +23,7 @@ const root=path.resolve(__dirname,'..'),origin='https://earnest-rhinoceros-454.c
   await page.locator('#show-nearby-garages').click();await page.locator('#garage-area').fill('Kharadi, Pune');await page.locator('#garage-area').press('Escape');await page.locator('#garage-area').press('Escape');await page.locator('#garage-search-button').click();await page.locator('.garage-item').first().waitFor({timeout:120000});
   await page.locator('.garage-review-button').first().click();await page.locator('#quote-yes').waitFor({state:'visible',timeout:30000});await page.locator('#quote-yes').click();
   await page.locator('[name=year]').fill('2018');await page.locator('[name=whatsappNumber]').fill('9000000000');await page.locator('[data-quote-form] button[type=submit]').click();await page.waitForTimeout(5000);console.log('Quote form status: '+await page.locator('[data-quote-status]').innerText());console.log('Form validity: '+await page.locator('[data-quote-form]').evaluate(el=>el.checkValidity()));await page.locator('[data-quote-followup]').waitFor({state:'visible',timeout:30000});assert(created&&!created.paused);
+  }
   const password=execFileSync(process.execPath,['node_modules/convex/bin/main.js','env','get','ADMIN_PASSWORD','--prod'],{cwd:root,encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
   const admin=await browser.newPage();await admin.goto(origin+'/admin');await admin.locator('#admin-password').fill(password);await admin.locator('#admin-login').click();
   const card=admin.locator('.admin-request[data-id="'+created.id+'"]');await card.waitFor({timeout:60000});
@@ -29,6 +31,10 @@ const root=path.resolve(__dirname,'..'),origin='https://earnest-rhinoceros-454.c
   if(stored.emailStatus==='failed')assert.equal(await card.locator('.admin-email-status').innerText(),'Email failed');
   assert.equal(stored.emailStatus,'sent');
   const message=await admin.evaluate(async({password,id})=>{const {ConvexHttpClient}=await import('https://esm.sh/convex@1.46.0/browser');return new ConvexHttpClient('https://earnest-rhinoceros-454.convex.cloud').action('admin:copyForGarage',{password,id,language:'en'});},{password,id:created.id});
+  await admin.context().grantPermissions(['clipboard-read','clipboard-write']);
+  await card.locator('[data-copy-garage]').click();
+  await card.locator('[data-request-status]').filter({hasText:/copied/i}).waitFor({timeout:30000});
+  assert.equal((await admin.evaluate(()=>navigator.clipboard.readText())).replace(/\r\n/g,'\n'),message);
   const {quoteEmailText}=require('./load-lead-messages.cjs');
   const email=quoteEmailText(stored,stored.photoUrls,origin+'/admin?request='+created.id);
   assert.equal(email.split('Copy for garage\n')[1],message);

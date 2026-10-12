@@ -1,0 +1,4 @@
+✖ Failed to run function "quoteRequests:emailDeliveryProof":
+Error: [Request ID: fe6dfc37329655ef] Server Error
+Uncaught Error: Could not retrieve email evidence. Confirm the Resend key allows reading sent emails.
+    at handler (../convex/quoteRequests.ts:159:33)
