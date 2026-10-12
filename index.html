@@ -273,6 +273,7 @@
       .customer-flow .quote-consent p { font-size:16px; line-height:1.6; }
       .customer-flow button:focus-visible,.customer-flow input:focus { outline:3px solid #1E3A8A40; }
       @media(max-width:480px) { .customer-flow .form { padding:20px; } .customer-flow .bill-head,.customer-flow .bill-row { grid-template-columns:minmax(0,1.2fr) minmax(65px,.8fr) minmax(90px,1fr); } .customer-flow header { height:68px; } }
+    .customer-flow .mechanic-mascot{width:145px;height:163px;display:block;margin:0 auto 14px;animation:mechanic-idle 5s ease-in-out infinite}.customer-flow .app-bubble{background:transparent;display:flex;align-items:flex-start;gap:12px}.customer-flow .app-bubble .mechanic-mascot{width:40px;height:45px;flex-shrink:0;margin:0}.customer-flow .ai-text{min-width:0;line-height:1.55}.typing-dots{display:flex;gap:5px;align-items:center;min-height:40px}.typing-dots i{width:6px;height:6px;border-radius:50%;background:#666b75;animation:mechanic-dot 1s ease-in-out infinite}.typing-dots i:nth-child(2){animation-delay:.15s}.typing-dots i:nth-child(3){animation-delay:.3s}@keyframes mechanic-idle{50%{transform:translateY(-3px) rotate(1deg)}}@keyframes mechanic-dot{50%{opacity:.25;transform:translateY(-2px)}}@media(prefers-reduced-motion:reduce){.customer-flow .mechanic-mascot,.typing-dots i{animation:none!important}}
     </style>
   </head>
   <body>
@@ -280,7 +281,7 @@
       <header><div class="brand"><span class="brand-mark" aria-hidden="true">F</span> MyCarMechanic</div><div class="location">Pune</div></header>
       <main>
         <section class="hero" aria-labelledby="headline">
-          <svg class="mechanic-sketch" viewBox="0 0 128 128" fill="none" role="img" aria-label="A welcoming garage mechanic" xmlns="http://www.w3.org/2000/svg"><g stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M28 114v-13c0-16 13-27 36-27s36 11 36 27v13M44 78l8 17h24l8-17M48 93v21m32-21v21M53 104h22M46 41v17c0 12 8 22 18 22s18-10 18-22V41M42 41h44v-8c0-12-10-20-22-20s-22 8-22 20v8ZM43 32h42M51 49h4m18 0h4M59 64c3 3 7 3 10 0M64 53v5h3M96 67l8-8-1-10 7 7 7-7-1 10-8 8v30M12 108h13m77 0h14"/><path d="M29 118h70" stroke-dasharray="3 6"/></g></svg><h1 id="headline">Fair price, before the garage quotes</h1><p class="intro">A little clarity before your garage visit.</p>
+          <svg class="mechanic-mascot" viewBox="0 0 160 180" role="img" aria-label="Our friendly mechanic" xmlns="http://www.w3.org/2000/svg"><ellipse cx="80" cy="170" rx="48" ry="5" fill="#20242c" opacity=".08"/><path d="M35 161v-35q0-31 45-31t45 31v35" fill="#fff" stroke="#20242c" stroke-width="3"/><path d="M51 106v22h58v-22l13 8v47H38v-47z" fill="#1E3A8A"/><rect x="65" y="134" width="30" height="19" rx="4" fill="#F59E0B"/><path d="M60 128v-26m40 26v-26" stroke="#F59E0B" stroke-width="5"/><circle cx="53" cy="61" r="10" fill="#C9855E"/><circle cx="107" cy="61" r="10" fill="#C9855E"/><rect x="55" y="33" width="50" height="69" rx="25" fill="#D99B70"/><path d="M54 43q-3-32 26-32t28 32" fill="#1E3A8A"/><path d="M49 40h63q5 0 5 6H47z" fill="#F59E0B"/><path d="M66 57h7m14 0h7" stroke="#34251F" stroke-width="3" stroke-linecap="round"/><circle cx="69" cy="65" r="2.5" fill="#34251F"/><circle cx="91" cy="65" r="2.5" fill="#34251F"/><path d="M80 66l-3 9h6" fill="none" stroke="#A96344" stroke-width="2" stroke-linecap="round"/><path d="M66 82q14-10 28 0q-14 3-28 0" fill="#34251F"/><path d="M71 86q9 12 18 0" fill="#fff" stroke="#A96344" stroke-width="2"/><path d="M126 150l9-39" stroke="#8A96A6" stroke-width="9" stroke-linecap="round"/><path d="M133 115q-13-7-5-20l4 9 9 2 6-8q3 16-14 17" fill="#BCC5D0" stroke="#677486" stroke-width="2"/><ellipse cx="125" cy="140" rx="11" ry="9" fill="#D99B70"/><path d="M42 127q-13 6-12 23" fill="none" stroke="#D99B70" stroke-width="13" stroke-linecap="round"/></svg><h1 id="headline">Fair price, before the garage quotes</h1><p class="intro">A little clarity before your garage visit.</p>
         </section>
         <section class="card" aria-label="Damage estimate form">
           <div class="form">
@@ -289,7 +290,7 @@
               <input id="car-model" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="model-suggestions" autocomplete="off" placeholder="For example, Volkswagen Polo GT TSI" />
               <div class="model-suggestions" id="model-suggestions" role="listbox" hidden></div>
             </div>
-            <button class="cta" data-chat-next="car" type="button">Continue</button></div><div data-chat-step="photos" hidden><p id="selected-car-summary" class="intro" style="text-align:left;margin:0 0 16px"></p><details class="estimate-city"><summary>Estimate city: Pune — change if needed</summary><p>Repair prices depend on your city. This is for your estimate; we’ll ask where to find garages only if you want them.</p><div data-chat-step="city"><label for="customer-city">Your city</label><div class="city-input-row"><div class="model-search"><input id="customer-city" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="city-suggestions" autocomplete="off" value="Pune" required maxlength="100" /><div id="city-suggestions" class="model-suggestions" role="listbox" hidden></div></div><button id="city-location-button" class="secondary" type="button" style="margin-bottom:8px">Use my location</button></div><p id="city-location-status" class="status" role="status"></p></div></details><p class="upload-formats">JPG, PNG or HEIC, up to 8 MB each</p>
+            <button class="cta" data-chat-next="car" type="button">Continue</button></div><div data-chat-step="city" hidden><label for="customer-city">Your city</label><div class="city-input-row"><div class="model-search"><input id="customer-city" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="city-suggestions" autocomplete="off" value="Pune" required maxlength="100" /><div id="city-suggestions" class="model-suggestions" role="listbox" hidden></div></div><button id="city-location-button" class="secondary" type="button" style="margin-bottom:8px">Use my location</button></div><p id="city-location-status" class="status" role="status"></p><button class="cta" data-chat-next="city" type="button">Continue</button></div><div data-chat-step="photos" hidden><p id="selected-car-summary" class="intro" style="text-align:left;margin:0 0 16px"></p><p class="upload-formats">JPG, PNG or HEIC, up to 8 MB each</p>
             <label class="upload-box" for="damage-photos"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 9h6l2-3h6l2 3h6v17H5V9Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="16" cy="17" r="5" stroke="currentColor" stroke-width="2"/></svg><strong>Upload car photos</strong><span>Show us the spot you're worried about. A close-up and a wider view are helpful.</span></label>
             <input class="upload-input" id="damage-photos" type="file" accept=".jpg,.jpeg,.png,.heic,.heif,image/jpeg,image/png,image/heic,image/heif" multiple />
             <div class="file-list" id="file-list">No photos selected</div>
@@ -410,9 +411,6 @@
       const citySuggestions = document.getElementById("city-suggestions");
       const cityLocationButton = document.getElementById("city-location-button");
       const cityLocationStatus = document.getElementById("city-location-status");
-      document.querySelector(".estimate-city").addEventListener("toggle", () => {
-        document.querySelector(".estimate-city summary").textContent = "Estimate city: " + (cityInput.value.trim() || "choose your city") + " — change if needed";
-      });
       const catalogReady = convex.query("vehicleCatalog:options", {}).then((catalog) => {
         carModels = catalog.models;
         carVariants = catalog.variants;
@@ -456,37 +454,110 @@
       const panelNames = { front_bumper:"Front bumper", rear_bumper:"Rear bumper", bonnet:"Bonnet", boot:"Boot / tailgate", front_lhs_door:"Front LHS door", front_rhs_door:"Front RHS door", rear_lhs_door:"Rear LHS door", rear_rhs_door:"Rear RHS door", lhs_fender:"LHS fender", rhs_fender:"RHS fender", lhs_quarter_panel:"LHS quarter panel", rhs_quarter_panel:"RHS quarter panel", lhs_mirror:"LHS mirror", rhs_mirror:"RHS mirror", lhs_headlight:"LHS headlight", rhs_headlight:"RHS headlight", lhs_tail_light:"LHS tail light", rhs_tail_light:"RHS tail light", lhs_fog_light:"LHS fog light", rhs_fog_light:"RHS fog light", windshield:"Windshield / glass", other:"Other / unclear panel" };
       const repairNames = { denting_painting:"Denting & painting", replacement:"Replacement", unclear:"Needs review" };
       const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (char) => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" })[char]);
-      let customerName = "";
-      let chatStep = "name";
-      let customerHelp = "";
-      let customerStory = "";
-      let conversationBusy = false;
+      let customerName = "", chatStep = "name", customerHelp = "", customerStory = "", conversationBusy = false;
+      let customerLanguage = navigator.language || "en", lastCustomerReply = "", previousMechanicQuestion = "";
       const history = document.getElementById("chat-history");
-      const setQuestion = text => { history.replaceChildren(); const bubble=document.createElement("div"); bubble.className="chat-bubble app-bubble"; bubble.textContent=text; history.append(bubble); };
-      const addChatBubble = (text, user=false) => { if(!user) setQuestion(text); };
-      const showStep = step => { document.querySelectorAll('[data-chat-step]').forEach(el=>{ if(el.dataset.chatStep!=="city") el.hidden=el.dataset.chatStep!==step; }); history.closest('.card').hidden=false; history.hidden=false; chatStep=step; window.scrollTo({top:0,behavior:"smooth"}); };
-      const askMechanic = async (step, fallback) => {
-        try { const response=await convex.action("conversation:nextQuestion",{step,help:customerHelp,story:customerStory}); return response.question || fallback; }
-        catch { return fallback; }
+      const mascotMarkup = document.querySelector('.mechanic-mascot').outerHTML.replace('role="img"','aria-hidden="true"').replace(/ aria-label="[^"]*"/,'');
+      const translations = new Map(), originalText = new WeakMap(), originalPlaceholder = new WeakMap();
+      document.querySelector('main').addEventListener('click',event=>{
+        const control=event.target.closest('button,[data-quote-dismiss]');if(!control || control.hasAttribute('data-chat-next') || control.hasAttribute('data-help'))return;
+        const replies={'analyze':'I have uploaded photos of my car.','show-nearby-garages':'I would like help finding nearby garages.','garage-search-button':'Please find garages in the area I entered.','quote-yes':'Yes, I would like garage quotes.','garage-quote-button':'I would like quotes from these garages.','recheck-estimate':'Please check the same photos again.'};
+        lastCustomerReply=replies[control.id] || control.textContent.trim().slice(0,180);
+      },true);
+      const commonLabels = ["Continue","Skip","Use my location","Inspect"];
+      const stageLabels = {
+        name:["Fair price, before the garage quotes","A little clarity before your garage visit."],
+        photos:["JPG, PNG or HEIC, up to 8 MB each","Upload car photos","Show us the spot you're worried about. A close-up and a wider view are helpful.","No photos selected","Clear photos and choose different views","Choose another photo"],
+        estimate:["Something doesn't look right?","Let me check again","Tell us if a part or price seems wrong.","Your concern","Rechecked estimate","Replace only if","If parts need replacing","Check at garage","Cheapest fix","Front bumper","Refit / screw back","Screw back / refit","Dent & paint","Replace","Estimated total"],
+        recheck:["Something doesn't look right?","Let me check again","Your concern"],
+        garages:["Fetch garages","No, thanks"],
+        location:["Use my location","Search by area","Fetch garages","Nearest","Top rated (4+)","Open now","Most reviewed","View reviews","Get quotes from these garages","Change area","Garages near you"],
+        quotes:["Yes, get quotes","No, thanks","Get quotes from these garages","Would you like quotes from nearby garages?"],
+        phone:["WhatsApp number","Submit","Not now","Get quotes from nearby garages"],
+        thanks:["Request received","Done"],end:["Hope we were helpful.","Inspect another concern"]
       };
-      try { customerName=localStorage.getItem("mycarmechanic-name") || ""; } catch {}
-      if(customerName) { showStep("help");setQuestion(customerName + ", how can we help you today?"); }
-      const advanceChat = async (step, skip=false) => {
-        if(step!==chatStep || conversationBusy) return;
-        let answer="",next="",question="";
-        if(step==="name") { answer=document.getElementById("chat-name").value.trim(); if(!answer) {status.textContent="Please enter your name.";return;} customerName=answer;try{localStorage.setItem("mycarmechanic-name",answer);}catch{} next="help";question="Hi " + customerName + ", how can I help you today?"; }
-        if(step==="help") {answer=document.getElementById("chat-help").value.trim();if(!answer){status.textContent="Tell me how I can help.";return;}customerHelp=answer;next="story";question="Tell me what happened. A little detail will help us understand your concern.";}
-        if(step==="story") {answer=skip ? "" : document.getElementById("chat-story").value.trim();customerStory=answer;next="car";question="Let’s take a closer look. What is your car’s make, model and variant?";}
-        if(step==="car") {await catalogReady;answer=modelInput.value.trim();if(!answer){status.textContent="Enter your car make, model and variant.";return;}modelSuggestions.hidden=true;next="photos";question="Please share a close-up and a wider photo of the damage so our AI mechanic can inspect it.";}
-        conversationBusy=true;document.querySelectorAll('[data-chat-next]').forEach(el=>el.disabled=true);
-        status.textContent=step==="name" ? "" : "Your AI mechanic is listening…";
-        try { if(step!=="name") question=await askMechanic(next,question);setQuestion(question);showStep(next);if(next==="photos")document.getElementById("selected-car-summary").textContent="Car: " + modelInput.value.trim();status.textContent=""; }
-        finally { conversationBusy=false;document.querySelectorAll('[data-chat-next]').forEach(el=>el.disabled=false); }
+      const translateControls = () => {
+        const walker=document.createTreeWalker(document.querySelector('main'),NodeFilter.SHOW_TEXT);
+        let node;while((node=walker.nextNode())){
+          if(node.parentElement.closest('script,svg,.ai-text,.typing-dots'))continue;
+          const original=originalText.get(node) || node.textContent;
+          if(translations.has(original.trim())){originalText.set(node,original);const value=original.replace(original.trim(),translations.get(original.trim()));if(node.textContent!==value)node.textContent=value;}
+        }
+        document.querySelectorAll('main [placeholder]').forEach(el=>{const original=originalPlaceholder.get(el)||el.placeholder;originalPlaceholder.set(el,original);if(translations.has(original)&&el.placeholder!==translations.get(original))el.placeholder=translations.get(original);});
       };
-      document.querySelectorAll("[data-chat-next]").forEach(button=>button.addEventListener("click",()=>advanceChat(button.dataset.chatNext)));
-      document.querySelectorAll("[data-help]").forEach(button=>button.addEventListener("click",()=>{document.getElementById("chat-help").value=button.dataset.help;advanceChat("help");}));
-      document.querySelector("[data-chat-skip]").addEventListener("click",()=>advanceChat("story",true));
-      ["name","help","story"].forEach(step=>document.getElementById("chat-"+step).addEventListener("keydown",event=>{if(event.key==="Enter"){event.preventDefault();advanceChat(step);}}));
+      const decorateMessage = (target,text,typing=false) => {
+        const retained=[...target.querySelectorAll('[data-request-number]')];
+        target.classList.add('app-bubble');target.replaceChildren();
+        target.insertAdjacentHTML('beforeend',mascotMarkup);
+        const content=document.createElement('span');content.className='ai-text';
+        if(typing){content.className+=' typing-dots';content.setAttribute('role','status');content.setAttribute('aria-label','Mechanic is typing');content.innerHTML='<i></i><i></i><i></i>';}
+        else content.textContent=text;
+        target.append(content,...retained);
+      };
+      const showStep = step => { document.querySelectorAll('[data-chat-step]').forEach(el=>el.hidden=el.dataset.chatStep!==step);history.closest('.card').hidden=false;history.hidden=false;chatStep=step;window.scrollTo({top:0,behavior:'smooth'}); };
+      const makeBubble=()=>{history.replaceChildren();const bubble=document.createElement('div');bubble.className='chat-bubble app-bubble';history.append(bubble);return bubble;};
+      const askMechanic = async (step,fallback,target=makeBubble()) => {
+        decorateMessage(target,'',true);
+        const strings=[...new Set([...commonLabels,...(stageLabels[step]||[])])];
+        // Include current screen labels; input values, contacts and garage results are never sent.
+        document.querySelectorAll('main button, main label, main input[placeholder]').forEach(el=>{
+          if(!el.getClientRects().length || el.closest('.garage-item') || el.matches('input[type=tel]'))return;
+          const text=el.placeholder || el.childNodes[0]?.textContent?.trim();
+          if(text && text.length<180 && !strings.includes(text) && !el.querySelector('[data-request-number]'))strings.push(text);
+        });
+        const labels=Object.fromEntries(strings.slice(0,80).map((text,i)=>['label'+i,text]));
+        let timer;
+        try{
+          const request=convex.action('conversation:nextQuestion',{step,name:customerName,help:customerHelp,story:customerStory,car:modelInput.value.trim(),city:cityInput.value.trim(),language:customerLanguage,lastAnswer:lastCustomerReply,previousQuestion:previousMechanicQuestion,fallback,labels});
+          const [response]=await Promise.all([Promise.race([request,new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('timeout')),34000);})]),new Promise(resolve=>setTimeout(resolve,500))]);
+          if(response.fallback)console.warn(JSON.stringify({event:'conversation_fallback',step,reason:response.reason || 'server_fallback'}));
+          customerLanguage=response.language || customerLanguage;
+          for(const [key,text]of Object.entries(response.labels||{}))if(labels[key])translations.set(labels[key],text);
+          document.documentElement.lang=customerLanguage;
+          translateControls();
+          const question=response.question || fallback;decorateMessage(target,question);previousMechanicQuestion=question;
+          return question;
+        }catch{console.warn(JSON.stringify({event:'conversation_fallback',step,reason:'client_network_or_timeout'}));decorateMessage(target,fallback);return fallback;}
+        finally{clearTimeout(timer);}
+      };
+      const setQuestion = text => {const bubble=makeBubble();if(chatStep==='loading')void askMechanic('loading',text,bubble);else if(chatStep==='photos')void askMechanic('retry',text,bubble);else{decorateMessage(bubble,'',true);setTimeout(()=>{if(bubble.isConnected)decorateMessage(bubble,text);},500);}};
+      const addChatBubble=(text,user=false)=>{if(!user)setQuestion(text);};
+      const advanceChat=async(step,skip=false)=>{
+        if(step!==chatStep || conversationBusy)return;
+        let answer='',next='',question='';
+        if(step==='name'){answer=document.getElementById('chat-name').value.trim();if(!answer){status.textContent='Please enter your name.';return;}customerName=answer;try{localStorage.setItem('mycarmechanic-name',answer);}catch{}next='help';question='Hi '+customerName+', how can I help you today?';}
+        if(step==='help'){answer=document.getElementById('chat-help').value.trim();if(!answer){status.textContent='Tell me how I can help.';return;}customerHelp=answer;next='story';question='Tell me what happened. A little detail will help us understand your concern.';}
+        if(step==='story'){answer=skip?'':document.getElementById('chat-story').value.trim();customerStory=answer;next='car';question='Let’s take a closer look. What is your car’s make, model and variant?';}
+        if(step==='car'){await catalogReady;answer=modelInput.value.trim();if(!answer){status.textContent='Enter your car make, model and variant.';return;}modelSuggestions.hidden=true;next='city';question='Which city should we use for your repair estimate?';}
+        if(step==='city'){answer=cityInput.value.trim();if(!answer){status.textContent='Enter your city.';return;}citySuggestions.hidden=true;next='photos';question='Please share a close-up and a wider photo of the damage so our AI mechanic can inspect it.';}
+        lastCustomerReply=answer || 'Skipped optional detail';conversationBusy=true;document.querySelectorAll('[data-chat-step] input,[data-chat-step] button').forEach(el=>el.disabled=true);status.textContent='';
+        try{showStep(next);await askMechanic(next,question);if(next==='photos')document.getElementById('selected-car-summary').textContent=modelInput.value.trim();}
+        finally{conversationBusy=false;document.querySelectorAll('[data-chat-step] input,[data-chat-step] button').forEach(el=>el.disabled=false);}
+      };
+      document.querySelectorAll('[data-chat-next]').forEach(button=>button.addEventListener('click',()=>advanceChat(button.dataset.chatNext)));
+      document.querySelectorAll('[data-help]').forEach(button=>button.addEventListener('click',()=>{document.getElementById('chat-help').value=button.textContent.trim();advanceChat('help');}));
+      document.querySelector('[data-chat-skip]').addEventListener('click',()=>advanceChat('story',true));
+      ['name','help','story'].forEach(step=>document.getElementById('chat-'+step).addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();advanceChat(step);}}));
+      cityInput.addEventListener('keydown',event=>{if(event.key==='Enter'&&citySuggestions.hidden){event.preventDefault();advanceChat('city');}});
+      const dynamicSteps={'#result > .app-bubble:not(.model-choice)':'estimate','.recheck-card p:first-of-type':'recheck','.garage-invite h2':'garages','.garage-controls h2':'location','#quote-invitation h2':'quotes','#quote-prompt-title':'phone','[data-quote-followup] p':'thanks','.flow-ending p':'end'};
+      let presentationScheduled=false;
+      const updatePresentation=()=>{
+        presentationScheduled=false;translateControls();
+        document.querySelectorAll('.model-choice > p:first-child').forEach(target=>{if(target.dataset.aiStarted)return;target.dataset.aiStarted='true';void askMechanic('clarify',target.textContent,target);});
+        for(const [selector,step]of Object.entries(dynamicSteps))document.querySelectorAll(selector).forEach(target=>{
+          if(target.dataset.aiStarted || !target.getClientRects().length)return;
+          target.dataset.aiStarted='true';const copy=target.cloneNode(true);copy.querySelectorAll('[data-request-number]').forEach(el=>el.remove());const fallback=copy.textContent.trim();void askMechanic(step,fallback,target);
+        });
+      };
+      new MutationObserver(()=>{if(!presentationScheduled){presentationScheduled=true;requestAnimationFrame(updatePresentation);}}).observe(document.querySelector('main'),{childList:true,subtree:true,attributes:true,attributeFilter:['hidden'],characterData:true});
+      queueMicrotask(async()=>{
+        try{customerName=localStorage.getItem('mycarmechanic-name')||'';}catch{}
+        conversationBusy=true;document.querySelectorAll('[data-chat-step] input,[data-chat-step] button').forEach(el=>el.disabled=true);
+        const step=customerName?'help':'name';showStep(step);
+        await askMechanic(step,customerName?customerName+', how can we help you today?':'Welcome to Car mechanic — we take care of your car diagnosis. I’m your AI mechanic. What’s your name?');
+        conversationBusy=false;document.querySelectorAll('[data-chat-step] input,[data-chat-step] button').forEach(el=>el.disabled=false);
+      });
+
       const finishJourney = () => { history.closest('.card').hidden=true;status.textContent="";updateQuoteBar(false);result.innerHTML='<section class="card flow-ending"><h2>Hope we were helpful.</h2><p>Thank you for trusting us to help you.</p><button class="cta" id="start-again" type="button">Inspect another concern</button></section>';document.getElementById('start-again').addEventListener('click',()=>location.reload());window.scrollTo({top:0,behavior:"smooth"}); };
       const money = (value) => value == null ? "Garage will quote" : `₹${Number(value).toLocaleString("en-IN")}`;
       const carSizeFor = (model) => model?.vehicleClass === "hatchback" ? "small" : model?.vehicleClass === "suv" ? "large" : "medium";

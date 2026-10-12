@@ -1,0 +1,14 @@
+{
+  "live": true,
+  "phoneWidth": 375,
+  "acknowledgement": "That sounds stressful, Swapnil, let's take a look. What is the make, model, and variant of your car?",
+  "englishFallbackLogs": 0,
+  "fallbackEvents": [],
+  "hindiQuestionAndButton": true,
+  "failedAiFlowContinuesAndLogs": true,
+  "reducedMotion": true,
+  "noHorizontalOverflow": true,
+  "noPageErrors": true,
+  "quoteFormReached": true,
+  "labelledTestRequestSaved": true
+}

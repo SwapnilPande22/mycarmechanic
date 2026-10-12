@@ -22,6 +22,8 @@ Sizes: 3 or 4 sizes, e.g. 32 headline, 20 headings, 16 body
 
 Colours:  #1E3A8A
 
+The colourful mechanic mascot is the one exception to "only garages bring colour".
+
 ## 4. Screens
 Flow: The flow has to be built on conversational AI
 1)	Customer land on the website / app
