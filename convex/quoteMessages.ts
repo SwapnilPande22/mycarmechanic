@@ -10,7 +10,7 @@ function clean(value:string|undefined,request:Request):string {
 }
 export function garageMessage(request:Request,photoLink="Photos available in the request") {
   const car=[request.make,request.model || request.carModel,request.year || "Year not provided"].filter(Boolean).join(" ");
-  const location=[request.area,request.city].filter(Boolean).filter((value,index,values)=>values.indexOf(value)===index).join(", ");
+  const location=[request.area,request.city].filter(Boolean).flatMap(value=>value!.split(",")).map(value=>value.trim()).filter(Boolean).filter((value,index,values)=>values.findIndex(other=>other.toLowerCase()===value.toLowerCase())===index).join(", ");
   const parts=request.parts.map((part,index)=>`${index+1}. ${clean(part.partName,request)}: ${clean(part.workNeeded,request)}`);
   // Keep every part when unusually long requests need a compact final damage line.
   const damage=parts.length>5 ? [...parts.slice(0,4),parts.slice(4).join("; ")] : parts;

@@ -15,6 +15,7 @@ import type * as data_carVariants from "../data/carVariants.js";
 import type * as data_cities from "../data/cities.js";
 import type * as garagePartners from "../garagePartners.js";
 import type * as garagePresentation from "../garagePresentation.js";
+import type * as garageSafety from "../garageSafety.js";
 import type * as garages from "../garages.js";
 import type * as inspections from "../inspections.js";
 import type * as locations from "../locations.js";
@@ -43,6 +44,7 @@ declare const fullApi: ApiFromModules<{
   "data/cities": typeof data_cities;
   garagePartners: typeof garagePartners;
   garagePresentation: typeof garagePresentation;
+  garageSafety: typeof garageSafety;
   garages: typeof garages;
   inspections: typeof inspections;
   locations: typeof locations;
