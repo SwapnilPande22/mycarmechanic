@@ -311,27 +311,26 @@
         const host = "https://us.i.posthog.com";
         const path = location.pathname.replace(/\/$/, "") || "/";
         const route = path === "/" ? "/" : path === "/admin" ? "/admin" : path === "/garage" ? "/garage" : path.startsWith("/quotes/") ? "/quotes/:requestId" : "/other";
-        let visitorId = crypto.randomUUID(), sessionId = crypto.randomUUID();
+        let journeyId = crypto.randomUUID();
         try {
-          const stored = localStorage.getItem("mycarmechanic-analytics-visitor");
-          if (stored && /^[0-9a-f-]{36}$/i.test(stored)) visitorId = stored;
-          localStorage.setItem("mycarmechanic-analytics-visitor", visitorId);
-          const session = sessionStorage.getItem("mycarmechanic-analytics-session");
-          if (session && /^[0-9a-f-]{36}$/i.test(session)) sessionId = session;
-          sessionStorage.setItem("mycarmechanic-analytics-session", sessionId);
+          const stored = sessionStorage.getItem("mycarmechanic-analytics-session");
+          if (stored && /^[0-9a-f-]{36}$/i.test(stored)) journeyId = stored;
+          sessionStorage.setItem("mycarmechanic-analytics-session", journeyId);
         } catch { /* Analytics also works without browser storage. */ }
-        const steps = { "$pageview":"page", page_view:"page", landing_opened:"name", photos_uploaded:"photos", estimate_shown:"estimate", garage_or_quote_tapped:"garages" };
-        window.trackAnalytics = (event, action) => {
-          if (!Object.hasOwn(steps, event)) return;
-          const properties = { distinct_id:visitorId, $session_id:sessionId, $process_person_profile:false, $geoip_disable:true, $host:location.host, $pathname:route, $current_url:location.origin + route, flow_step:steps[event] };
-          if (event === "garage_or_quote_tapped" && ["garage","quote"].includes(action)) {
-            properties.action = action;
-            properties.flow_step = action === "quote" ? "quotes" : "garages";
-          }
-          // Never read inputs, filenames, photos, referrers, query strings, request IDs or page text.
-          try {
-            void fetch(host + "/i/v0/e/", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({token:projectToken,event,properties,timestamp:new Date().toISOString()}), credentials:"omit", referrerPolicy:"no-referrer", keepalive:true }).then(response=>{if(!response.ok)console.warn("Analytics event delivery failed.");}).catch(()=>console.warn("Analytics event delivery failed."));
-          } catch { /* Analytics must never interrupt the car flow. */ }
+        const events = new Set(["$pageview","page_view","landing_opened","chat_name_given","chat_help_given","chat_story_given","chat_story_skipped","chat_car_given","chat_city_given","chat_car_confirmed","photos_uploaded","estimate_shown","chat_concern_given","recheck_requested","chat_garages_given","chat_area_given","garages_shown","garage_tapped","chat_quote_given","quote_form_opened","chat_phone_given","quote_submitted","garage_or_quote_tapped"]);
+        let deliveryQueue = Promise.resolve(), lastTimestamp = 0;
+        window.trackAnalytics = event => {
+          if (!events.has(event)) return;
+          // Only event name/time, project routing token and a random tab-scoped funnel ID.
+          // Never read answers, names, numbers, photos, filenames, URLs or page text.
+          lastTimestamp = Math.max(Date.now(), lastTimestamp + 1);
+          const body = JSON.stringify({token:projectToken,event,distinct_id:journeyId,timestamp:new Date(lastTimestamp).toISOString()});
+          deliveryQueue = deliveryQueue.then(async () => {
+            try {
+              const response = await fetch(host + "/i/v0/e/", {method:"POST",headers:{"Content-Type":"application/json"},body,credentials:"omit",referrerPolicy:"no-referrer",keepalive:true});
+              if (!response.ok) console.warn("Analytics event delivery failed.");
+            } catch { /* Analytics must never interrupt the car flow. */ }
+          });
         };
         window.trackAnalytics("$pageview");
         window.trackAnalytics("page_view");
@@ -340,8 +339,8 @@
         document.addEventListener("click", event => {
           const control = event.target.closest("button");
           if (!control || control.disabled) return;
-          if (control.id === "show-nearby-garages" || control.matches(".garage-review-button")) window.trackAnalytics("garage_or_quote_tapped", "garage");
-          if (["garage-quote-button","quote-yes"].includes(control.id)) window.trackAnalytics("garage_or_quote_tapped", "quote");
+          if (control.id === "show-nearby-garages" || control.matches(".garage-review-button")) window.trackAnalytics("garage_or_quote_tapped");
+          if (["garage-quote-button","quote-yes"].includes(control.id)) window.trackAnalytics("garage_or_quote_tapped");
         }, true);
       })();
     </script>
@@ -588,6 +587,7 @@
         if(step==='story'){answer=skip?'':document.getElementById('chat-story').value.trim();customerStory=answer;next='car';question='Let’s take a closer look. What is your car’s make, model and variant?';}
         if(step==='car'){await catalogReady;answer=modelInput.value.trim();if(!answer){status.textContent='Enter your car make, model and variant.';return;}modelSuggestions.hidden=true;next='city';question='Which city should we use for your repair estimate?';}
         if(step==='city'){answer=cityInput.value.trim();if(!answer){status.textContent='Enter your city.';return;}citySuggestions.hidden=true;next='photos';question='Please share a close-up and a wider photo of the damage so our AI mechanic can inspect it.';}
+        window.trackAnalytics(step === "story" && !answer ? "chat_story_skipped" : "chat_" + step + "_given");
         lastCustomerReply=answer || 'Skipped optional detail';conversationBusy=true;document.querySelectorAll('[data-chat-step] input,[data-chat-step] button').forEach(el=>el.disabled=true);status.textContent='';
         try{showStep(next);await askMechanic(next,question);if(next==='photos')document.getElementById('selected-car-summary').textContent=modelInput.value.trim();}
         finally{conversationBusy=false;document.querySelectorAll('[data-chat-step] input,[data-chat-step] button').forEach(el=>el.disabled=false);}
@@ -956,6 +956,7 @@
           });
         });
         list.querySelectorAll("[data-garage-index]").forEach((button) => button.addEventListener("click", async () => {
+          window.trackAnalytics("garage_tapped");
           const garage = garages[Number(button.dataset.garageIndex)];
           const detail = button.closest(".garage-item").querySelector(".garage-inline-detail");
           if (!detail.hidden) { detail.hidden = true; button.setAttribute("aria-expanded", "false"); return; }
@@ -1001,6 +1002,7 @@
         if (automatic && (quotePromptShown || garageLocationPending || garageSearchState !== "success")) return;
         const popup = document.getElementById("quote-prompt");
         if (!popup) return;
+        if (popup.hidden && !popup.querySelector("[data-quote-fields]").hidden) window.trackAnalytics("quote_form_opened");
         quotePromptShown = true;
         try { sessionStorage.setItem("mycarmechanic-quote-seen", "yes"); } catch {}
         popup.hidden = false;
@@ -1010,6 +1012,7 @@
         popup.scrollIntoView({block:"start",behavior:"smooth"});
         (popup.querySelector("[data-quote-fields]").hidden ? popup.querySelector("[data-quote-done]") : popup.querySelector("input:not([type=hidden])"))?.focus({ preventScroll:true });
       };
+      const answeredQuoteForms = new WeakSet();
       const setupQuotePrompt = () => {
         const popup = document.getElementById("quote-prompt");
         if (!popup) return;
@@ -1028,6 +1031,7 @@
           if (!form.reportValidity()) return;
           const send = form.querySelector("[type=submit]");
           if (send.disabled) return;
+          if (!answeredQuoteForms.has(form)) { answeredQuoteForms.add(form); window.trackAnalytics("chat_phone_given"); }
           send.disabled = true;
           message.textContent = "Saving your quote request...";
           try {
@@ -1052,6 +1056,7 @@
               garages:currentGarageResults.map(garage => garage.name).slice(0,20),photos:photoIds,siteOrigin:location.origin,
             });
             if (created.paused) { message.textContent = "Quote requests are paused, please try later"; return; }
+            window.trackAnalytics("quote_submitted");
             message.textContent = "";
             message.hidden = true;
             fields.hidden = true;
@@ -1065,6 +1070,7 @@
       };
       const requestGarageSearch = async (location) => {
         if (garageSearching) return;
+        window.trackAnalytics("chat_area_given");
         
         const previousPrompt = document.getElementById("quote-prompt");
         if (previousPrompt) previousPrompt.hidden = true;
@@ -1106,6 +1112,7 @@
           garageSearchState = "success";
           status.textContent = currentGarageRadiusKm == null ? "Search complete." : "Showing garages within " + currentGarageRadiusKm + " km.";
           renderGarages(currentGarageResults);
+          if (currentGarageResults.length) window.trackAnalytics("garages_shown");
           await reportTiming("garage_search", performance.now() - searchStarted);
         } catch {
           currentGarageResults = [];
@@ -1127,8 +1134,8 @@
         const searchButton = document.getElementById("garage-search-button");
         const suggestions = document.getElementById("garage-suggestions");
         document.getElementById("garage-quote-button").addEventListener("click", () => {revealQuoteInvitation();document.getElementById("quote-invitation").scrollIntoView({block:"center",behavior:"smooth"});});
-        document.getElementById("quote-yes").addEventListener("click",()=>showQuotePrompt());
-        document.getElementById("quote-no").addEventListener("click",finishJourney);
+        document.getElementById("quote-yes").addEventListener("click",()=>{window.trackAnalytics("chat_quote_given");showQuotePrompt();});
+        document.getElementById("quote-no").addEventListener("click",()=>{window.trackAnalytics("chat_quote_given");finishJourney();});
         document.querySelectorAll("[data-garage-filter]").forEach((chip) => chip.addEventListener("click", () => { garageFilter = chip.dataset.garageFilter; renderGarages(); }));
         if (garageSearchState === "idle") document.getElementById("garage-status").textContent = "Use your location or search an area to see nearby garages.";
         if (garageSearchState === "loading") document.getElementById("garage-status").textContent = "Searching nearby garages...";
@@ -1333,14 +1340,15 @@
         const quotePrompt = '<div class="quote-overlay" id="quote-prompt" hidden><section class="quote-dialog" role="dialog" aria-modal="true" aria-labelledby="quote-prompt-title"><div data-quote-fields><h2 id="quote-prompt-title">Get quotes from nearby garages</h2><form data-quote-form novalidate><input name="name" type="hidden" /><label>Car year (optional)<input name="year" type="text" inputmode="numeric" maxlength="4" pattern="(?:19|20)[0-9]{2}" placeholder="e.g. 2018" /></label><label>WhatsApp number<input name="whatsappNumber" type="tel" inputmode="numeric" autocomplete="tel-national" required maxlength="10" /></label><button class="cta" type="submit">Submit</button></form><a href="#" data-quote-dismiss style="display:block;margin:12px auto 0;border:0;background:none;color:var(--muted);font-size:12px;text-decoration:underline;cursor:pointer">Not now</a></div><div class="quote-received" data-quote-followup hidden><div class="quote-tick" aria-hidden="true">✓</div><h2 id="quote-received-title">Request received</h2><p>Your request is saved for our team to send to nearby garages. Allow us some time; our experts will get back to you with competitive rates. Thank you for trusting us to help you.<span data-request-number hidden></span></p><button class="cta" data-quote-done type="button">Done</button></div><p data-quote-status role="status"></p></section></div>';
         const quoteBar = '<div class="garage-quote-bar" id="garage-quote-bar" role="region" aria-label="Request garage quotes" hidden><button id="garage-quote-button" type="button">Get quotes from these garages</button></div>';
         result.innerHTML = '<div class="chat-bubble app-bubble">' + escapeHtml(customerName) + ", here's what I found.</div>" + '<div class="summary-card">' + summary + '</div>' + estimate + '<section class="card recheck-card"><h2>Something doesn’t look right?</h2><p>Tell us if a part or price seems wrong.</p><label for="estimate-concern">Your concern</label><input id="estimate-concern" type="text" maxlength="1000" placeholder="I don’t think this part is damaged" /><button class="secondary" id="recheck-estimate" type="button">Let me check again</button><p id="recheck-status" role="status" aria-live="polite"></p></section><section class="card garage-invite"><h2>Want quotes from garages near you?</h2><button class="cta" id="show-nearby-garages" type="button">Fetch garages</button><button class="secondary" id="decline-garages" type="button">No, thank you</button></section>' + garages + quotePrompt + quoteBar;
-        document.getElementById("show-nearby-garages").addEventListener("click",()=>{document.getElementById("garage-discovery").hidden=false;result.querySelectorAll(":scope > *").forEach(el=>{if(el.id!=="garage-discovery")el.hidden=true;});updateQuoteBar(false);document.getElementById("garage-discovery").scrollIntoView({block:"start",behavior:"smooth"});});
-        document.getElementById("decline-garages").addEventListener("click",finishJourney);
+        document.getElementById("show-nearby-garages").addEventListener("click",()=>{window.trackAnalytics("chat_garages_given");document.getElementById("garage-discovery").hidden=false;result.querySelectorAll(":scope > *").forEach(el=>{if(el.id!=="garage-discovery")el.hidden=true;});updateQuoteBar(false);document.getElementById("garage-discovery").scrollIntoView({block:"start",behavior:"smooth"});});
+        document.getElementById("decline-garages").addEventListener("click",()=>{window.trackAnalytics("chat_garages_given");finishJourney();});
         document.getElementById("estimate-concern").value=lastConcern;
         document.getElementById("estimate-concern").addEventListener("keydown",event=>{if(event.key==="Enter"){event.preventDefault();document.getElementById("recheck-estimate").click();}});
         document.getElementById("recheck-estimate").addEventListener("click",async()=>{
           const concern=document.getElementById("estimate-concern").value.trim();
           const recheckStatus=document.getElementById("recheck-status");
           if(concern && (/^(?:सगळे ठीक|सर्व ठीक|काही चिंता नाही|चिंता नाही|अंदाज योग्य आहे|अंदाज बरोबर आहे|सब ठीक है|कोई चिंता नहीं|अनुमान सही है)[.!।\s]*$/.test(concern) || /^(?:(?:the\s+)?estimate\s+)?(?:looks?\s+(?:right|good|fine|correct)|(?:is\s+)?(?:right|correct|fine|good|ok(?:ay)?)|no\s+(?:concerns?|issues?|problem|worries)|all\s+(?:good|fine)|nothing\s+(?:wrong|to add)|(?:i\s+)?(?:have\s+)?no\s+concerns?)(?:[.!\s]|\s+(?:to me|thanks|thank you))*$/i.test(concern))) {
+            window.trackAnalytics("chat_concern_given");
             lastConcern=concern;
             document.querySelector('.recheck-card').hidden=true;
             const invite=document.querySelector('.garage-invite');
@@ -1354,6 +1362,8 @@
           const sourceFiles=inspectedFiles.slice();
           const car=selectedModel;
           const recheckButton=document.getElementById("recheck-estimate");
+          window.trackAnalytics("chat_concern_given");
+          window.trackAnalytics("recheck_requested");
           recheckBusy=true;recheckButton.disabled=true;lastConcern=concern;
           recheckStatus.textContent="Let me check your concern against the same photos. Your original estimate will stay here.";
           try {
@@ -1470,6 +1480,7 @@
               try {
                 const resolved=await convex.action("panels:chooseCar",{photoHash:analysis.photoHash,originalModel:chosenModel.name,originalSize:carSizeFor(chosenModel),chosenModel:choice.dataset.carChoice === "typed" ? chosenModel.name : analysis.detectedModel,carSize:carSizeFor(chosen),city});
                 if(runGeneration!==inspectionGeneration) return;
+                window.trackAnalytics("chat_car_confirmed");
                 selectedModel=chosen;modelInput.value=chosen.name;panels=resolved.panels;inspectionChecks=resolved.checks || [];rangeEstimates=resolved.estimates;modelAssessment=null;addChatBubble(chosen.name,true);render();result.scrollIntoView({block:"start",behavior:"smooth"});
               } catch(error) {choiceStatus.textContent=error.message || "Please try your choice again.";result.querySelectorAll("[data-car-choice]").forEach(button=>button.disabled=false);}
             }));
