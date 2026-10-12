@@ -2,6 +2,7 @@ import { action } from "./_generated/server";
 import { internal } from "./_generated/api";
 import { v } from "convex/values";
 import { garageMessage, localizedGarageMessage } from "./quoteMessages";
+import { findPartnerPlaces } from "./garagePartners";
 
 function requirePassword(password: string) {
   const expected = process.env.ADMIN_PASSWORD;
@@ -23,6 +24,20 @@ export const list = action({
     })));
   },
 });
+
+export const partnerSettings=action({args:{password:v.string()},handler:async(ctx,{password})=>{requirePassword(password);return ctx.runQuery(internal.garagePartners.list,{});}});
+export const findPartners=action({args:{password:v.string(),input:v.string()},handler:async(_ctx,{password,input})=>{requirePassword(password);if(input.trim().length<2)throw new Error("Enter a garage name and area.");return findPartnerPlaces(input);}});
+export const setPartner=action({args:{password:v.string(),placeId:v.string(),enabled:v.boolean()},handler:async(ctx,{password,placeId,enabled})=>{
+  requirePassword(password);
+  const rows=await ctx.runQuery(internal.garagePartners.list,{});
+  if(rows.some(row=>row.placeId===placeId)){await ctx.runMutation(internal.garagePartners.toggle,{placeId,enabled});return;}
+  if(!enabled)return;
+  const key=process.env.GOOGLE_PLACES_KEY;if(!key)throw new Error("Garage search is unavailable.");
+  const response=await fetch(`https://places.googleapis.com/v1/places/${encodeURIComponent(placeId)}`,{headers:{"X-Goog-Api-Key":key,"X-Goog-FieldMask":"id,displayName,formattedAddress,googleMapsUri,location,rating,userRatingCount,types"},signal:AbortSignal.timeout(15000)});
+  if(!response.ok)throw new Error("Could not confirm this garage.");const p=await response.json();
+  if(!p.types?.includes("car_repair")||!p.id||!p.location||!p.displayName?.text)throw new Error("Choose a car repair garage.");
+  await ctx.runMutation(internal.garagePartners.save,{placeId:p.id,name:p.displayName.text,address:p.formattedAddress || "",mapUrl:p.googleMapsUri || `https://www.google.com/maps/search/?api=1&query_place_id=${p.id}&query=${encodeURIComponent(p.displayName.text)}`,location:p.location,...(typeof p.rating==="number"?{rating:p.rating}:{}),reviewCount:p.userRatingCount || 0,enabled});
+}});
 
 export const copyForGarage = action({
   args:{password:v.string(),id:v.id("quoteRequests"),language:v.union(v.literal("en"),v.literal("hi"),v.literal("mr"))},

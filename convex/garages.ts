@@ -1,5 +1,6 @@
 import { action } from "./_generated/server";
 import { v } from "convex/values";
+import { nearbyPartners, mergePartners } from "./garagePartners";
 
 const FIELD_MASK = "places.id,places.displayName,places.rating,places.userRatingCount,places.location,places.googleMapsUri,places.attributions,places.types,places.primaryType,places.businessStatus,places.currentOpeningHours.openNow,places.formattedAddress,places.nationalPhoneNumber";
 const PLACES_URL = "https://places.googleapis.com/v1/places:searchNearby";
@@ -98,7 +99,7 @@ export const nearby = action({
     sessionToken: v.optional(v.string()),
     area: v.optional(v.string()),
   },
-  handler: async (_ctx, args) => {
+  handler: async (ctx, args) => {
     const key = process.env.GOOGLE_PLACES_KEY;
     if (!key) return { garages: [] };
 
@@ -215,7 +216,10 @@ export const nearby = action({
         .slice(0, 5)
         .map((place: any) => ({ ...place, distanceKm: Math.round(place.distanceKm * 10) / 10 }));
 
-      return { garages, radiusKm, filterCounts };
+      // Keep the existing non-partner shortlist intact; only prepend nearby partners.
+      let partners:any[]=[];
+      try{partners=await nearbyPartners(ctx,center,key);}catch{ /* A partner lookup must not interrupt normal discovery. */ }
+      return { garages:mergePartners(garages,partners), radiusKm, filterCounts };
     } catch (error) {
       logGooglePlacesError("Google Places garage search failed", error);
       return { garages: [] };

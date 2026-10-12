@@ -1,0 +1,16 @@
+const fs=require('fs'),assert=require('assert/strict'),{execFileSync}=require('child_process');
+const before=file=>execFileSync('git',['show','9060b7c:'+file],{cwd:process.cwd(),encoding:'utf8'});
+for(const file of ['convex/inspections.ts','convex/panels.ts','convex/priceEstimates.ts','convex/repairPlan.ts','convex/quoteRequests.ts','convex/quoteEmail.ts','convex/partnerGarages.ts'])assert.equal(fs.readFileSync(file,'utf8'),before(file),file);
+const old=before('convex/garages.ts'),current=fs.readFileSync('convex/garages.ts','utf8');
+assert.equal(current.slice(current.indexOf('      const applyFilters'),current.indexOf('      // Keep the existing')),old.slice(old.indexOf('      const applyFilters'),old.indexOf('      return { garages, radiusKm, filterCounts };')));
+const source=require('node:module').stripTypeScriptTypes(fs.readFileSync('convex/garagePartners.ts','utf8'));
+const functions=source.slice(source.indexOf('export function distanceKm'),source.indexOf('export async function nearbyPartners')).replace(/export /g,'');
+const {distanceKm,mergePartners}=new Function(functions+';return {distanceKm,mergePartners};')();
+assert.equal(distanceKm({latitude:0,longitude:0},{latitude:0,longitude:0}),0);assert(distanceKm({latitude:0,longitude:0},{latitude:0,longitude:0.089})<10);assert(distanceKm({latitude:0,longitude:0},{latitude:0,longitude:0.091})>10);
+const normal=[{placeId:'a',name:'A'},{placeId:'b',name:'B'}];assert.deepEqual(mergePartners(normal,[]),normal);assert.deepEqual(mergePartners(normal,[{placeId:'b',name:'B',quotePartner:true}]).map(g=>g.placeId),['b','a']);assert.deepEqual(mergePartners(normal,[{placeId:'c',name:'C',quotePartner:true}]).slice(1),normal);
+const h=fs.readFileSync('index.html','utf8'),fn=h.slice(h.indexOf('      const visibleGarages = () => {'),h.indexOf('      const updateGarageHeader'));
+const analytics=text=>text.slice(text.indexOf('// Explicit, anonymous PostHog'),text.indexOf('</script>',text.indexOf('// Explicit, anonymous PostHog')));assert.equal(analytics(h),analytics(before('index.html')));
+const run=new Function('currentGarageResults','garageFilter',fn+';return visibleGarages();');const rows=[{placeId:'p',quotePartner:true,distanceKm:8,rating:3,reviewCount:1,openNow:false},{placeId:'a',distanceKm:1,rating:4.2,reviewCount:10,openNow:true},{placeId:'b',distanceKm:2,rating:4.8,reviewCount:30,openNow:false}];
+for(const filter of ['nearest','rated','open','reviewed']){const list=run(rows,filter);assert.equal(list[0].placeId,'p');const originalFn=before('index.html').slice(before('index.html').indexOf('      const visibleGarages = () => {'),before('index.html').indexOf('      const updateGarageHeader'));const original=new Function('currentGarageResults','garageFilter',originalFn+';return visibleGarages();')(rows.slice(1),filter);assert.deepEqual(list.slice(1),original);assert.deepEqual(run(rows.slice(1),filter),original);}
+for(const script of h.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)){if(script[0].includes('type="module"'))new Function(script[1].replace(/^\s*import .*;$/gm,''));else new Function(script[1]);}
+console.log('PASS: ten-kilometre boundary, deduplication, partners pinned in all filters, non-partner shortlist and ordering unchanged, protected backend unchanged, scripts parse.');

@@ -245,7 +245,8 @@ window.UI_TRANSLATIONS = {
     "LHS fog light": "बाईं फॉग लाइट (lhs fog light)",
     "RHS fog light": "दाईं फॉग लाइट (rhs fog light)",
     "Windshield / glass": "विंडशील्ड / काँच (windshield / glass)",
-    "Other / unclear panel": "अन्य / अस्पष्ट पैनल (other / unclear panel)"
+    "Other / unclear panel": "अन्य / अस्पष्ट पैनल (other / unclear panel)",
+    "Replies to MyCarMechanic quotes": "MyCarMechanic के कोटेशन अनुरोधों का जवाब देता है"
   },
   "mr": {
     "Inspect car damage photos and get an AI repair estimate for your city.": "कार नुकसानाच्या फोटो तपासा आणि आपल्या शहरासाठी AI दुरुस्तीचा अंदाज मिळवा.",
@@ -491,6 +492,7 @@ window.UI_TRANSLATIONS = {
     "LHS fog light": "डावीकडचा फॉग लाइट (lhs fog light)",
     "RHS fog light": "उजवीकडचा फॉग लाइट (rhs fog light)",
     "Windshield / glass": "विंडशील्ड / काच (windshield / glass)",
-    "Other / unclear panel": "इतर / अस्पष्ट पॅनल (other / unclear panel)"
+    "Other / unclear panel": "इतर / अस्पष्ट पॅनल (other / unclear panel)",
+    "Replies to MyCarMechanic quotes": "MyCarMechanic च्या कोटेशन विनंत्यांना उत्तर देते"
   }
 };

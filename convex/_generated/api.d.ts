@@ -13,6 +13,7 @@ import type * as bills from "../bills.js";
 import type * as conversation from "../conversation.js";
 import type * as data_carVariants from "../data/carVariants.js";
 import type * as data_cities from "../data/cities.js";
+import type * as garagePartners from "../garagePartners.js";
 import type * as garagePresentation from "../garagePresentation.js";
 import type * as garages from "../garages.js";
 import type * as inspections from "../inspections.js";
@@ -40,6 +41,7 @@ declare const fullApi: ApiFromModules<{
   conversation: typeof conversation;
   "data/carVariants": typeof data_carVariants;
   "data/cities": typeof data_cities;
+  garagePartners: typeof garagePartners;
   garagePresentation: typeof garagePresentation;
   garages: typeof garages;
   inspections: typeof inspections;
