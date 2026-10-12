@@ -1,0 +1,115 @@
+{
+  "live": true,
+  "phoneWidth": 375,
+  "events": [
+    {
+      "event": "$pageview",
+      "step": "page",
+      "route": "/"
+    },
+    {
+      "event": "landing_opened",
+      "step": "name",
+      "route": "/"
+    },
+    {
+      "event": "photos_uploaded",
+      "step": "photos",
+      "route": "/"
+    },
+    {
+      "event": "estimate_shown",
+      "step": "estimate",
+      "route": "/"
+    },
+    {
+      "event": "garage_or_quote_tapped",
+      "step": "garages",
+      "action": "garage",
+      "route": "/"
+    },
+    {
+      "event": "garage_or_quote_tapped",
+      "step": "garages",
+      "action": "garage",
+      "route": "/"
+    },
+    {
+      "event": "garage_or_quote_tapped",
+      "step": "quotes",
+      "action": "quote",
+      "route": "/"
+    },
+    {
+      "event": "$pageview",
+      "step": "page",
+      "route": "/admin"
+    },
+    {
+      "event": "$pageview",
+      "step": "page",
+      "route": "/garage"
+    },
+    {
+      "event": "$pageview",
+      "step": "page",
+      "route": "/quotes/:requestId"
+    }
+  ],
+  "deliveries": [
+    {
+      "status": 200,
+      "quotaLimited": false,
+      "accepted": true
+    },
+    {
+      "status": 200,
+      "quotaLimited": false,
+      "accepted": true
+    },
+    {
+      "status": 200,
+      "quotaLimited": false,
+      "accepted": true
+    },
+    {
+      "status": 200,
+      "quotaLimited": false,
+      "accepted": true
+    },
+    {
+      "status": 200,
+      "quotaLimited": false,
+      "accepted": true
+    },
+    {
+      "status": 200,
+      "quotaLimited": false,
+      "accepted": true
+    },
+    {
+      "status": 200,
+      "quotaLimited": false,
+      "accepted": true
+    },
+    {
+      "status": 200,
+      "quotaLimited": false,
+      "accepted": true
+    },
+    {
+      "status": 200,
+      "quotaLimited": false,
+      "accepted": true
+    },
+    {
+      "status": 200,
+      "quotaLimited": false,
+      "accepted": true
+    }
+  ],
+  "allRoutesHavePageviews": true,
+  "noPersonalFields": true,
+  "noSessionRecordingSdk": true,
+  "quoteFormReachedWithoutSavingRequest": true
+}

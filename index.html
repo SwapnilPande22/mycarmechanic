@@ -303,6 +303,46 @@
       </main>
       <footer>Photo estimates are a starting point. Confirm the final work and price with your garage.</footer>
     </div>
+    <script>
+      // Explicit, anonymous PostHog events only. No SDK, autocapture, DOM capture or recordings.
+      (() => {
+        const projectToken = "phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR";
+        const host = "https://eu.i.posthog.com";
+        const path = location.pathname.replace(/\/$/, "") || "/";
+        const route = path === "/" ? "/" : path === "/admin" ? "/admin" : path === "/garage" ? "/garage" : path.startsWith("/quotes/") ? "/quotes/:requestId" : "/other";
+        let visitorId = crypto.randomUUID(), sessionId = crypto.randomUUID();
+        try {
+          const stored = localStorage.getItem("mycarmechanic-analytics-visitor");
+          if (stored && /^[0-9a-f-]{36}$/i.test(stored)) visitorId = stored;
+          localStorage.setItem("mycarmechanic-analytics-visitor", visitorId);
+          const session = sessionStorage.getItem("mycarmechanic-analytics-session");
+          if (session && /^[0-9a-f-]{36}$/i.test(session)) sessionId = session;
+          sessionStorage.setItem("mycarmechanic-analytics-session", sessionId);
+        } catch { /* Analytics also works without browser storage. */ }
+        const steps = { "$pageview":"page", landing_opened:"name", photos_uploaded:"photos", estimate_shown:"estimate", garage_or_quote_tapped:"garages" };
+        window.trackAnalytics = (event, action) => {
+          if (!Object.hasOwn(steps, event)) return;
+          const properties = { distinct_id:visitorId, $session_id:sessionId, $process_person_profile:false, $geoip_disable:true, $host:location.host, $pathname:route, $current_url:location.origin + route, flow_step:steps[event] };
+          if (event === "garage_or_quote_tapped" && ["garage","quote"].includes(action)) {
+            properties.action = action;
+            properties.flow_step = action === "quote" ? "quotes" : "garages";
+          }
+          // Never read inputs, filenames, photos, referrers, query strings, request IDs or page text.
+          try {
+            void fetch(host + "/i/v0/e/", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({token:projectToken,event,properties,timestamp:new Date().toISOString()}), credentials:"omit", referrerPolicy:"no-referrer", keepalive:true }).then(response=>{if(!response.ok)console.warn("Analytics event delivery failed.");}).catch(()=>console.warn("Analytics event delivery failed."));
+          } catch { /* Analytics must never interrupt the car flow. */ }
+        };
+        window.trackAnalytics("$pageview");
+        if (route !== "/") return;
+        window.trackAnalytics("landing_opened");
+        document.addEventListener("click", event => {
+          const control = event.target.closest("button");
+          if (!control || control.disabled) return;
+          if (control.id === "show-nearby-garages" || control.matches(".garage-review-button")) window.trackAnalytics("garage_or_quote_tapped", "garage");
+          if (["garage-quote-button","quote-yes"].includes(control.id)) window.trackAnalytics("garage_or_quote_tapped", "quote");
+        }, true);
+      })();
+    </script>
     <script src="/heic2any.min.js" defer></script>
     <script type="module">
       import { ConvexHttpClient } from "https://esm.sh/convex@1.46.0/browser";
@@ -1261,6 +1301,7 @@
         const estimateDate = new Date().toLocaleDateString("en-IN", { day:"2-digit", month:"short", year:"numeric" });
         return `<section class="card result-wrap"><div class="result-head"><h2>${escapeHtml(label)}</h2><div class="result-meta"><span>${estimateDate}</span><span>${escapeHtml(inspection.carModel || "Car model not selected")}</span></div></div>${inspection.panels.length ? `<div class="bill-head"><span>Part</span><span>Work needed</span><span style="text-align:right">Price</span></div>${rows}<div class="bill-total"><strong>Total ${money(totalLikely)}</strong><div class="bill-total-detail">Range ${money(totalLow)}–${money(totalHigh)} est.</div></div><p class="estimate-disclaimer">AI estimate. Final price from the garage.</p>` : `<div class="empty">No parts to estimate.</div>`}</section>`;
       };
+      const trackedEstimates = new WeakSet();
       const render = () => {
         if (!originalInspection) originalInspection = {panels:structuredClone(panels),checks:structuredClone(inspectionChecks),estimates:structuredClone(rangeEstimates),carModel:selectedModel?.name || "Car"};
         const estimate = estimateCard(originalInspection, "Repair Estimate") + recheckedInspections.map(inspection => estimateCard(inspection, "Rechecked estimate")).join("");
@@ -1313,6 +1354,7 @@
         history.closest('.card').hidden=true;result.hidden=false;
         setupGarageSection();
         setupQuotePrompt();
+        if (!trackedEstimates.has(originalInspection)) { trackedEstimates.add(originalInspection); window.trackAnalytics("estimate_shown"); }
       };
       button.addEventListener("click", async () => {
         await catalogReady;
@@ -1372,6 +1414,7 @@
             }
           }
           await reportTiming("photo_upload", performance.now() - uploadStarted);
+          window.trackAnalytics("photos_uploaded");
           status.textContent = "Your AI mechanic is inspecting the photos…";
           const inspectionStarted = performance.now();
           const analysis = await convex.action("panels:analyzeDamage", { storageIds:ids, mimeTypes:runFiles.map((entry) => entry.file.type), sizes:runFiles.map((entry) => entry.file.size), dimensions:runFiles.map((entry) => ({ width:entry.width, height:entry.height })), selectedModel:chosenModel.name, ...(chosenModel.variant ? { variant:chosenModel.variant } : {}), city, carSize:carSizeFor(chosenModel) });
