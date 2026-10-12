@@ -1,0 +1,482 @@
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 172
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"$pageview","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:15.228Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 172
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"page_view","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:15.229Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 177
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"landing_opened","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:15.230Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 178
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"chat_name_given","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:19.004Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 178
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"chat_help_given","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:20.391Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 179
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"chat_story_given","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:21.570Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 177
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"chat_car_given","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:22.821Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 178
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"chat_city_given","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:24.053Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 178
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"photos_uploaded","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:32.988Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 177
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"estimate_shown","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:33.595Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 181
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"chat_concern_given","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:34.885Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 180
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"recheck_requested","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:34.886Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 185
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"garage_or_quote_tapped","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:41.493Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 181
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"chat_garages_given","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:41.494Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 178
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"chat_area_given","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:42.701Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 176
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"garages_shown","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:43.692Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 185
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"garage_or_quote_tapped","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:45.403Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 176
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"garage_tapped","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:45.405Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 185
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"garage_or_quote_tapped","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:45.661Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 179
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"chat_quote_given","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:45.662Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 180
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"quote_form_opened","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:45.663Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 179
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"chat_phone_given","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:47.070Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
+
+POST https://us.i.posthog.com/i/v0/e/
+accept: */*
+accept-encoding: gzip, deflate, br, zstd
+accept-language: en-US,en;q=0.9
+content-length: 178
+content-type: application/json
+origin: https://earnest-rhinoceros-454.convex.site
+priority: u=1, i
+sec-ch-ua: "Chromium";v="154", "Google Chrome";v="154", "Not A(Brand";v="99"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "Windows"
+sec-fetch-dest: empty
+sec-fetch-mode: cors
+sec-fetch-site: cross-site
+user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36
+
+{"token":"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR","event":"quote_submitted","distinct_id":"80295f55-bd81-4723-bc61-5024ff30c832","timestamp":"2026-10-12T19:11:53.179Z"}
+
+HTTP status: 200
+Response body: {"status":"Ok"}
