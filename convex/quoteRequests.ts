@@ -1,4 +1,4 @@
-import { action, internalMutation, internalQuery, query } from "./_generated/server";
+import { action, internalAction, internalMutation, internalQuery, query } from "./_generated/server";
 import { internal } from "./_generated/api";
 import { v } from "convex/values";
 import { quoteEmailText } from "./quoteEmail";
@@ -143,4 +143,22 @@ export const getForEmail = internalQuery({args:{id:v.id("quoteRequests")},handle
 export const setEmailStatus = internalMutation({
   args:{id:v.id("quoteRequests"),emailStatus:v.union(v.literal("sent"),v.literal("failed")),emailId:v.optional(v.string())},
   handler:async(ctx,{id,...fields})=>ctx.db.patch(id,fields),
+});
+
+// CLI-only delivery evidence. The Resend credential remains inside Convex.
+export const emailDeliveryProof = internalAction({
+  args: { id: v.id("quoteRequests") },
+  handler: async (ctx, {id}): Promise<{id:string; text:string; lastEvent:string}> => {
+    const request = await ctx.runQuery(internal.quoteRequests.getForEmail, {id});
+    if (!request?.emailId || request.emailStatus !== "sent") throw new Error("No sent email exists for this request.");
+    const key = process.env.RESEND_API_KEY;
+    if (!key) throw new Error("Email is not configured.");
+    const response = await fetch("https://api.resend.com/emails/" + encodeURIComponent(request.emailId), {
+      headers: {Authorization: "Bearer " + key}, signal: AbortSignal.timeout(15000),
+    });
+    if (!response.ok) throw new Error("Could not retrieve email evidence. Confirm the Resend key allows reading sent emails.");
+    const email = await response.json();
+    if (typeof email.text !== "string") throw new Error("The provider returned no plain text email body.");
+    return {id: request.emailId, text:email.text, lastEvent:typeof email.last_event === "string" ? email.last_event : "unknown"};
+  },
 });
