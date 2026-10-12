@@ -1,0 +1,33 @@
+For owner only
+Customer name: Email alert live test (do not contact)
+Phone number: 9000000000
+Request time: 2026-10-12T17:47:30.850Z
+
+Copy for garage
+Car make: Volkswagen
+Car model: Polo
+Car year: 2018
+City: Pune
+Area: Kothrud
+
+Damaged parts:
+1. Front bumper
+Customer described: My car got damaged
+My front bumper came loose on the highway. Please check the clips.
+Photos show: Front bumper is visibly displaced at the left (car's right) wheel arch, with a stepped/open seam and gap; bumper shell appears intact.
+Work to assess: Repair
+2. LHS fender
+Customer described: My car got damaged
+My front bumper came loose on the highway. Please check the clips.
+Photos show: Visible dent/crease above the wheel arch on the left fender.
+Work to assess: Repair
+
+Customer's concern (their words):
+My car got damaged
+My front bumper came loose on the highway. Please check the clips.
+estimate looks right
+
+Photos:
+1. https://earnest-rhinoceros-454.convex.cloud/api/storage/78fa5df7-c3b2-46ad-93ad-ba2f47f9933e
+2. https://earnest-rhinoceros-454.convex.cloud/api/storage/27cabc9c-b6b0-4946-b2b4-cb5fc296b1fb
+3. https://earnest-rhinoceros-454.convex.cloud/api/storage/8cea28aa-1c1f-4eda-94f3-7ab795b02446

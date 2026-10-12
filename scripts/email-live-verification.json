@@ -1,11 +1,11 @@
 {
   "liveUrl": "https://earnest-rhinoceros-454.convex.site",
-  "requestId": "jd73frb4afprg1pmttscx55bwn8g5k5v",
+  "requestId": "jd76qjysydqdvac3cey9e996c58g43r8",
   "noConcernAdvances": true,
   "noReinspection": true,
   "savedToAdmin": true,
-  "emailStatus": "failed",
-  "emailId": null,
+  "emailStatus": "sent",
+  "emailId": "01a1313a-0eec-7c00-a5e1-a76eaf07a28d",
   "year": "2018",
   "mascotScreenshot": "scripts/mechanic-mascot-live.png"
 }
