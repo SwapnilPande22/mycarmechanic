@@ -1,8 +1,9 @@
 import { action, internalMutation, internalQuery, query } from "./_generated/server";
 import { internal } from "./_generated/api";
 import { v } from "convex/values";
+import { quoteEmailText } from "./quoteEmail";
 
-const part = v.object({ panel: v.string(), partName: v.string(), workNeeded: v.string(), low: v.optional(v.number()), high: v.optional(v.number()) });
+const part = v.object({ panel: v.string(), partName: v.string(), workNeeded: v.string(), customerDescription: v.optional(v.string()), photoObservation: v.optional(v.string()), low: v.optional(v.number()), high: v.optional(v.number()) });
 
 export const isAvailable = action({
   args: {},
@@ -11,7 +12,7 @@ export const isAvailable = action({
 
 export const create = action({
   args: {
-    name: v.string(), whatsappNumber: v.string(), carModel: v.string(), make: v.optional(v.string()), model: v.optional(v.string()), variant: v.optional(v.string()), vehicleSize: v.union(v.literal("small"), v.literal("medium"), v.literal("large")),
+    name: v.string(), whatsappNumber: v.string(), carModel: v.string(), year: v.optional(v.string()), customerConcern: v.optional(v.string()), make: v.optional(v.string()), model: v.optional(v.string()), variant: v.optional(v.string()), vehicleSize: v.union(v.literal("small"), v.literal("medium"), v.literal("large")),
     area: v.string(), city: v.optional(v.string()), parts: v.array(part), totalLow: v.optional(v.number()), totalHigh: v.optional(v.number()), garages: v.array(v.string()), photos: v.array(v.id("_storage")), siteOrigin: v.string(),
   },
   handler: async (ctx, args) => {
@@ -37,16 +38,38 @@ export const create = action({
     
     const id = await ctx.runMutation(internal.quoteRequests.insert, {
       name, whatsappNumber, carModel: args.carModel.slice(0, 100),
-      ...(args.make ? {make:args.make.trim().slice(0,100)} : {}), ...(args.model ? {model:args.model.trim().slice(0,100)} : {}), ...(args.variant ? {variant:args.variant.trim().slice(0,100)} : {}), vehicleSize: args.vehicleSize, area: args.area.slice(0, 160), ...(args.city ? { city:args.city.trim().slice(0, 100) } : {}), parts: args.parts.map(({panel,partName,workNeeded}) => ({panel,partName,workNeeded})),
+      ...(args.year ? {year:args.year.slice(0,4)} : {}), ...(args.customerConcern ? {customerConcern:args.customerConcern.slice(0,2000)} : {}),
+      ...(args.make ? {make:args.make.trim().slice(0,100)} : {}), ...(args.model ? {model:args.model.trim().slice(0,100)} : {}), ...(args.variant ? {variant:args.variant.trim().slice(0,100)} : {}), vehicleSize: args.vehicleSize, area: args.area.slice(0, 160), ...(args.city ? { city:args.city.trim().slice(0, 100) } : {}), parts: args.parts.map(({panel,partName,workNeeded,customerDescription,photoObservation}) => ({panel,partName,workNeeded,...(customerDescription ? {customerDescription:customerDescription.slice(0,2000)} : {}),...(photoObservation ? {photoObservation:photoObservation.slice(0,2000)} : {})})),
       garages: args.garages.map((garage) => garage.slice(0, 140)), photos: args.photos,
     });
+    // The request is durable before any external email call begins.
+    try {
+      const key = process.env.RESEND_API_KEY;
+      if (!key) throw new Error("Email is not configured.");
+      const request = await ctx.runQuery(internal.quoteRequests.getForEmail, {id});
+      if (!request) throw new Error("Request not found.");
+      const urls = (await Promise.all(request.photos.map(photo => ctx.storage.getUrl(photo)))).filter((url): url is string => Boolean(url));
+      const response = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {Authorization: "Bearer " + key, "Content-Type": "application/json", "Idempotency-Key": "quote-request-" + id},
+        body: JSON.stringify({from: process.env.RESEND_FROM || "MyCarMechanic <onboarding@resend.dev>", to: ["swapnilraymond@gmail.com"], subject: "New MyCarMechanic quote request", text: quoteEmailText(request, urls)}),
+        signal: AbortSignal.timeout(15000),
+      });
+      if (!response.ok) throw new Error("Email provider rejected the request.");
+      const result = await response.json();
+      if (typeof result.id !== "string") throw new Error("Email provider returned no message ID.");
+      await ctx.runMutation(internal.quoteRequests.setEmailStatus, {id, emailStatus:"sent", emailId:result.id});
+    } catch {
+      // Never expose provider responses, credentials or customer details in logs.
+      await ctx.runMutation(internal.quoteRequests.setEmailStatus, {id, emailStatus:"failed"});
+    }
     return { paused: false as const, id };
   },
 });
 
 export const insert = internalMutation({
   args: {
-    name: v.string(), whatsappNumber: v.string(), carModel: v.string(), make: v.optional(v.string()), model: v.optional(v.string()), variant: v.optional(v.string()), vehicleSize: v.union(v.literal("small"), v.literal("medium"), v.literal("large")),
+    name: v.string(), whatsappNumber: v.string(), carModel: v.string(), year: v.optional(v.string()), customerConcern: v.optional(v.string()), make: v.optional(v.string()), model: v.optional(v.string()), variant: v.optional(v.string()), vehicleSize: v.union(v.literal("small"), v.literal("medium"), v.literal("large")),
     area: v.string(), city: v.optional(v.string()), parts: v.array(part), totalLow: v.optional(v.number()), totalHigh: v.optional(v.number()), garages: v.array(v.string()), photos: v.array(v.id("_storage")),
   },
   handler: async (ctx, args) => ctx.db.insert("quoteRequests", { ...args, quotes: [], status: "new", createdAt: Date.now() }),
@@ -114,4 +137,10 @@ export const publicQuote = query({
       photos: await Promise.all(request.photos.map((id) => ctx.storage.getUrl(id))),
     };
   },
+});
+
+export const getForEmail = internalQuery({args:{id:v.id("quoteRequests")},handler:async(ctx,{id})=>ctx.db.get(id)});
+export const setEmailStatus = internalMutation({
+  args:{id:v.id("quoteRequests"),emailStatus:v.union(v.literal("sent"),v.literal("failed")),emailId:v.optional(v.string())},
+  handler:async(ctx,{id,...fields})=>ctx.db.patch(id,fields),
 });

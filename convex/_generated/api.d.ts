@@ -21,6 +21,7 @@ import type * as metrics from "../metrics.js";
 import type * as panels from "../panels.js";
 import type * as partnerGarages from "../partnerGarages.js";
 import type * as priceEstimates from "../priceEstimates.js";
+import type * as quoteEmail from "../quoteEmail.js";
 import type * as quoteMessages from "../quoteMessages.js";
 import type * as quoteRequests from "../quoteRequests.js";
 import type * as repairPlan from "../repairPlan.js";
@@ -46,6 +47,7 @@ declare const fullApi: ApiFromModules<{
   panels: typeof panels;
   partnerGarages: typeof partnerGarages;
   priceEstimates: typeof priceEstimates;
+  quoteEmail: typeof quoteEmail;
   quoteMessages: typeof quoteMessages;
   quoteRequests: typeof quoteRequests;
   repairPlan: typeof repairPlan;
