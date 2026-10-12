@@ -307,7 +307,7 @@
       // Explicit, anonymous PostHog events only. No SDK, autocapture, DOM capture or recordings.
       (() => {
         const projectToken = "phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR";
-        const host = "https://eu.i.posthog.com";
+        const host = "https://us.i.posthog.com";
         const path = location.pathname.replace(/\/$/, "") || "/";
         const route = path === "/" ? "/" : path === "/admin" ? "/admin" : path === "/garage" ? "/garage" : path.startsWith("/quotes/") ? "/quotes/:requestId" : "/other";
         let visitorId = crypto.randomUUID(), sessionId = crypto.randomUUID();
@@ -319,7 +319,7 @@
           if (session && /^[0-9a-f-]{36}$/i.test(session)) sessionId = session;
           sessionStorage.setItem("mycarmechanic-analytics-session", sessionId);
         } catch { /* Analytics also works without browser storage. */ }
-        const steps = { "$pageview":"page", landing_opened:"name", photos_uploaded:"photos", estimate_shown:"estimate", garage_or_quote_tapped:"garages" };
+        const steps = { "$pageview":"page", page_view:"page", landing_opened:"name", photos_uploaded:"photos", estimate_shown:"estimate", garage_or_quote_tapped:"garages" };
         window.trackAnalytics = (event, action) => {
           if (!Object.hasOwn(steps, event)) return;
           const properties = { distinct_id:visitorId, $session_id:sessionId, $process_person_profile:false, $geoip_disable:true, $host:location.host, $pathname:route, $current_url:location.origin + route, flow_step:steps[event] };
@@ -333,6 +333,7 @@
           } catch { /* Analytics must never interrupt the car flow. */ }
         };
         window.trackAnalytics("$pageview");
+        window.trackAnalytics("page_view");
         if (route !== "/") return;
         window.trackAnalytics("landing_opened");
         document.addEventListener("click", event => {

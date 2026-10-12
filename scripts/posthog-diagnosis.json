@@ -1,0 +1,60 @@
+[
+  {
+    "url": "https://eu.i.posthog.com/i/v0/e/",
+    "method": "POST",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+      "content-type": "application/json",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "body": {
+      "token": "phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR",
+      "event": "$pageview",
+      "properties": {
+        "distinct_id": "d8145c22-4503-4adc-9c09-93b2b69afd5e",
+        "$session_id": "e19a8b7f-e795-44c4-9a87-0fc97d914ec9",
+        "$process_person_profile": false,
+        "$geoip_disable": true,
+        "$host": "earnest-rhinoceros-454.convex.site",
+        "$pathname": "/",
+        "$current_url": "https://earnest-rhinoceros-454.convex.site/",
+        "flow_step": "page"
+      },
+      "timestamp": "2026-10-12T18:39:17.118Z"
+    },
+    "status": 200,
+    "response": "{\"status\":\"Ok\"}"
+  },
+  {
+    "url": "https://eu.i.posthog.com/i/v0/e/",
+    "method": "POST",
+    "headers": {
+      "sec-ch-ua-platform": "\"Windows\"",
+      "referer": "",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+      "content-type": "application/json",
+      "sec-ch-ua-mobile": "?0"
+    },
+    "body": {
+      "token": "phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR",
+      "event": "landing_opened",
+      "properties": {
+        "distinct_id": "d8145c22-4503-4adc-9c09-93b2b69afd5e",
+        "$session_id": "e19a8b7f-e795-44c4-9a87-0fc97d914ec9",
+        "$process_person_profile": false,
+        "$geoip_disable": true,
+        "$host": "earnest-rhinoceros-454.convex.site",
+        "$pathname": "/",
+        "$current_url": "https://earnest-rhinoceros-454.convex.site/",
+        "flow_step": "name"
+      },
+      "timestamp": "2026-10-12T18:39:17.120Z"
+    },
+    "status": 200,
+    "response": "{\"status\":\"Ok\"}"
+  }
+]
