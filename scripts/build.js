@@ -1,33 +1,13 @@
-const fs = require("node:fs");
-const path = require("node:path");
-
-const root = path.resolve(__dirname, "..");
-const output = path.join(root, "dist");
-const source = path.join(root, "index.html");
-const target = path.join(output, "index.html");
-const heicConverter = path.join(root, "node_modules", "heic2any", "dist", "heic2any.min.js");
-const convexUrl = process.env.VITE_CONVEX_URL;
-
-if (!convexUrl) {
-  throw new Error("VITE_CONVEX_URL must be set by the Convex static-hosting deploy command.");
-}
-
-const parsedUrl = new URL(convexUrl);
-if (parsedUrl.protocol !== "https:" || !parsedUrl.hostname.endsWith(".convex.cloud")) {
-  throw new Error("VITE_CONVEX_URL must be an HTTPS Convex deployment URL.");
-}
-
-const html = fs.readFileSync(source, "utf8");
-const productionUrl = "https://earnest-rhinoceros-454.convex.cloud";
-if (!html.includes(productionUrl)) {
-  throw new Error("Could not find the Convex URL in index.html to inject the deployment URL.");
-}
-
-fs.mkdirSync(output, { recursive: true });
-fs.writeFileSync(target, html.replaceAll(productionUrl, convexUrl), "utf8");
-fs.copyFileSync(heicConverter, path.join(output, "heic2any.min.js"));
-fs.copyFileSync(path.join(root, "node_modules", "heic2any", "LICENSE.md"), path.join(output, "heic2any.LICENSE.md"));
-fs.copyFileSync(path.join(root,"design.css"),path.join(output,"design.css"));
-fs.copyFileSync(path.join(root,"localization.js"),path.join(output,"localization.js"));
-fs.writeFileSync(path.join(output,"ui-translations.js"),"window.UI_TRANSLATIONS = "+fs.readFileSync(path.join(root,"ui-translations.json"),"utf8")+";\n");
-console.log(`Built ${path.relative(root, target)} for ${parsedUrl.hostname}`);
+﻿const fs=require('fs'),path=require('path'),crypto=require('crypto');const root=path.resolve(__dirname,'..'),output=path.join(root,'dist');const convexUrl=process.env.VITE_CONVEX_URL;if(!convexUrl||!/^https:\/\/[^/]+\.convex\.cloud$/.test(convexUrl))throw Error('VITE_CONVEX_URL must be an HTTPS Convex deployment URL.');
+fs.mkdirSync(output,{recursive:true});
+// All names below are generated assets within dist; HTML is always revalidated.
+for(const file of fs.readdirSync(output))if(['design.css','localization.js','ui-translations.js','heic2any.min.js','heic2any.LICENSE.md'].includes(file)||/^(?:design|localization|ui-translations|heic2any)[-.].*\.(?:css|js|md)$/.test(file))fs.unlinkSync(path.join(output,file));
+const assets={
+ 'design.css':fs.readFileSync(path.join(root,'design.css')),
+ 'localization.js':fs.readFileSync(path.join(root,'localization.js')),
+ 'ui-translations.js':Buffer.from('window.UI_TRANSLATIONS = '+fs.readFileSync(path.join(root,'ui-translations.json'),'utf8')+';\n'),
+ 'heic2any.min.js':fs.readFileSync(path.join(root,'node_modules/heic2any/dist/heic2any.min.js')),
+ 'heic2any.LICENSE.md':fs.readFileSync(path.join(root,'node_modules/heic2any/LICENSE.md')),
+};let html=fs.readFileSync(path.join(root,'index.html'),'utf8').replaceAll('https://earnest-rhinoceros-454.convex.cloud',convexUrl);const manifest={};
+for(const [name,body]of Object.entries(assets)){const ext=path.extname(name),base=name.slice(0,-ext.length),hash='0'+crypto.createHash('sha256').update(body).digest('hex').slice(0,12),hashed=base+'-'+hash+ext;fs.writeFileSync(path.join(output,hashed),body);html=html.replaceAll('/'+name,'/'+hashed);manifest[name]='/'+hashed;}
+fs.writeFileSync(path.join(output,'index.html'),html);fs.writeFileSync(path.join(root,'scripts/static-asset-manifest.json'),JSON.stringify(manifest,null,2));console.log('Built dist/index.html with content-versioned assets (one-year immutable cache).');

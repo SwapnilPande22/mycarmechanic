@@ -20,6 +20,7 @@ export const list = action({
     return await Promise.all(requests.map(async (request) => ({
       ...request,
       garageMessage: garageMessage(request),
+      thumbnailUrls: await Promise.all(request.photos.map(async(photo)=>(await ctx.runQuery(internal.photoThumbnails.get,{photo}))?.thumbnail || null)),
       photoUrls: await Promise.all(request.photos.map((photo) => ctx.storage.getUrl(photo))),
     })));
   },

@@ -40,7 +40,7 @@ export const card = action({
     if (typeof photo?.name === "string" && /^places\/[^/]+\/photos\/[^/]+$/.test(photo.name)) {
       try {
         const resource = photo.name.split("/").map(encodeURIComponent).join("/");
-        const media = await fetch(`https://places.googleapis.com/v1/${resource}/media?maxWidthPx=800&maxHeightPx=500&skipHttpRedirect=true`, { headers });
+        const media = await fetch(`https://places.googleapis.com/v1/${resource}/media?maxWidthPx=240&maxHeightPx=300&skipHttpRedirect=true`, { headers });
         if (media.ok) {
           const payload = await media.json();
           const photoUri = new URL(payload.photoUri);

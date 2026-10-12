@@ -346,7 +346,6 @@
       })();
     </script>
     <script src="/ui-translations.js"></script><script src="/localization.js"></script>
-    <script src="/heic2any.min.js" defer></script>
     <script type="module">
       import { ConvexHttpClient } from "https://esm.sh/convex@1.46.0/browser";
       const convex = new ConvexHttpClient("https://earnest-rhinoceros-454.convex.cloud");
@@ -418,7 +417,7 @@
             document.getElementById("admin-requests").innerHTML = requests.map(item => {
               const location = [item.area, item.city].filter(Boolean).filter((value,index,values) => values.findIndex(other => other.toLowerCase() === value.toLowerCase()) === index).join(", ");
               const parts = item.parts.map(part => '<li>' + esc(part.partName) + ' – ' + esc(part.workNeeded) + '</li>').join("");
-              const photos = item.photoUrls.map((url,index) => url ? '<a href="' + esc(url) + '" target="_blank" rel="noopener"><img src="' + esc(url) + '" alt="Customer damage photo ' + (index+1) + '" loading="lazy" /></a>' : '').join("");
+              const photos = item.photoUrls.map((url,index) => url ? '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + (item.thumbnailUrls?.[index] ? '<img src="' + esc(item.thumbnailUrls[index]) + '" alt="Customer damage photo ' + (index+1) + '" loading="lazy" />' : 'Open photo ' + (index+1)) + '</a>' : '').join("");
               return '<section class="card admin-request" data-id="' + esc(item._id) + '"><div class="admin-request-heading"><h3>' + esc(item.name) + '</h3>' + (item.status === "new" ? '<span class="admin-new-badge">New</span>' : '<span>' + esc(item.status) + '</span>') + '</div>' + (item.emailStatus === 'failed' ? '<p class="admin-email-status">Email failed</p>' : '') + '<p class="admin-customer-number">' + esc(item.whatsappNumber) + '</p><p><strong>' + esc(item.carModel) + '</strong><br>' + esc(location) + '</p><p class="admin-received">Received ' + esc(new Date(item.createdAt).toLocaleString("en-IN")) + '</p><ol class="admin-damage">' + parts + '</ol><div class="admin-photos">' + photos + '</div><div class="admin-actions"><button class="secondary" data-customer type="button">WhatsApp customer</button><label>Garage message language <select data-garage-language aria-label="Garage message language"><option value="en">English</option><option value="hi">हिंदी</option><option value="mr">मराठी</option></select></label><button class="secondary" data-copy-garage type="button">Copy for garage</button><button class="secondary" data-sent type="button"' + (["sent", "sent to garages"].includes(item.status) ? ' disabled' : '') + '>Mark sent to garages</button></div><p class="status" data-request-status role="status"></p></section>';
             }).join("");
             const requestedId=new URLSearchParams(location.search).get("request");
@@ -452,13 +451,13 @@
         const esc = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;", "'":"&#39;" })[char]);
         const requestId = location.pathname.split("/").filter(Boolean)[1];
         app.innerHTML = '<section class="hero"><div class="eyebrow">Car repair request</div><h1>Photos and damage.</h1><p class="intro" id="quote-loading">Loading your quote request...</p></section><section class="card public-quote-card" id="public-quotes" hidden></section>';
-        convex.query("quoteRequests:publicQuote", { id:requestId }).then((request) => {
+        Promise.all([convex.query("quoteRequests:publicQuote", { id:requestId }),convex.query("photoThumbnails:forRequest",{requestId}).catch(()=>[])]).then(([request,thumbnailUrls]) => {
           const loading = document.getElementById("quote-loading");
           const card = document.getElementById("public-quotes");
           if (!request) { loading.textContent = "This quote request could not be found."; return; }
           loading.textContent = request.carModel + " · " + request.area;
           card.hidden = false;
-          card.innerHTML = "<h2>Damage</h2><ol>" + request.parts.map((part) => "<li>" + esc(part.partName) + " – " + esc(part.workNeeded) + "</li>").join("") + "</ol><h2>Photos</h2>" + request.photos.filter(Boolean).map((url, index) => '<a href="' + esc(url) + '" target="_blank" rel="noopener"><img src="' + esc(url) + '" alt="Car damage photo ' + (index + 1) + '" style="width:100%;max-width:600px;margin:8px 0;border-radius:8px" /></a>').join("");
+          card.innerHTML = "<h2>Damage</h2><ol>" + request.parts.map((part) => "<li>" + esc(part.partName) + " – " + esc(part.workNeeded) + "</li>").join("") + "</ol><h2>Photos</h2>" + request.photos.filter(Boolean).map((url, index) => '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + (thumbnailUrls[index] ? '<img src="' + esc(thumbnailUrls[index]) + '" alt="Car damage photo ' + (index + 1) + '" loading="lazy" style="width:160px;height:120px;object-fit:cover;margin:8px;border-radius:8px" />' : 'Open photo ' + (index+1)) + '</a>').join("");
         }).catch(() => { document.getElementById("quote-loading").textContent = "This quote request could not be found."; });
       } else {
       const modelInput = document.getElementById("car-model");
@@ -638,6 +637,12 @@
         if (isHeicFile(file) || ["image/jpeg", "image/png"].includes(file.type) || /\.(jpe?g|png)$/i.test(file.name)) return "";
         return "This file isn't a JPG, PNG or HEIC photo. Choose another photo.";
       };
+      let heicLoader;
+      const loadHeicConverter=()=>{
+        if(typeof window.heic2any==='function')return Promise.resolve();
+        if(!heicLoader)heicLoader=new Promise((resolve,reject)=>{const script=document.createElement('script');script.src='/heic2any.min.js';script.onload=()=>typeof window.heic2any==='function'?resolve():reject(new Error('HEIC conversion unavailable'));script.onerror=()=>{script.remove();heicLoader=null;reject(new Error('HEIC conversion unavailable'));};document.head.append(script);});
+        return heicLoader;
+      };
       const preparePhoto = async (entry) => {
         const originalFile = entry.file;
         entry.error = photoError(originalFile);
@@ -648,8 +653,8 @@
         try {
           let file = originalFile;
           if (isHeicFile(file)) {
-            if (typeof window.heic2any !== "function") throw new Error("HEIC conversion unavailable");
-            let jpeg = await window.heic2any({ blob:file, toType:"image/jpeg", quality:0.88 });
+            await loadHeicConverter();
+            let jpeg = await window.heic2any({ blob:file, toType:"image/jpeg", quality:0.8 });
             if (Array.isArray(jpeg)) jpeg = jpeg[0];
             if (!(jpeg instanceof Blob) || !jpeg.size) throw new Error("No JPEG was created");
             const jpgName = file.name.replace(/\.(heic|heif)$/i, ".jpg");
@@ -663,8 +668,8 @@
           let width = bitmap.width;
           let height = bitmap.height;
           const longSide = Math.max(width, height);
-          if (longSide < 1024) {
-            const scale = 1024 / longSide;
+          {
+            const scale = longSide < 1024 ? 1024 / longSide : Math.min(1,1600 / longSide);
             const canvas = document.createElement("canvas");
             canvas.width = Math.round(width * scale);
             canvas.height = Math.round(height * scale);
@@ -673,9 +678,8 @@
             context.fillStyle = "#ffffff";
             context.fillRect(0, 0, canvas.width, canvas.height);
             context.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
-            bitmap.close();
-            bitmap = null;
-            const jpegBlob = await new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.9));
+
+            const jpegBlob = await new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.8));
             if (!jpegBlob) throw new Error("Could not prepare the image");
             const jpgName = file.name.replace(/\.[^.]+$/, ".jpg");
             file = new File([jpegBlob], jpgName, { type:"image/jpeg", lastModified:Date.now() });
@@ -686,6 +690,10 @@
             width = canvas.width;
             height = canvas.height;
           }
+          const previewScale=Math.min(1,320/Math.max(width,height));
+          const preview=document.createElement('canvas');preview.width=Math.round(width*previewScale);preview.height=Math.round(height*previewScale);
+          const previewContext=preview.getContext('2d');previewContext.fillStyle='#fff';previewContext.fillRect(0,0,preview.width,preview.height);previewContext.drawImage(bitmap,0,0,preview.width,preview.height);
+          entry.thumbnail=preview.toDataURL('image/jpeg',0.7);
           entry.file = file;
           entry.width = width;
           entry.height = height;
@@ -1060,6 +1068,8 @@
               garages:currentGarageResults.map(garage => garage.name).slice(0,20),photos:photoIds,siteOrigin:location.origin,
             });
             if (created.paused) { message.textContent = "Quote requests are paused, please try later"; return; }
+            // Presentation-only preview cache; quote saving and receipt never depend on it.
+            void convex.mutation('photoThumbnails:attach',{requestId:created.id,photos:photoIds.map((photo,index)=>({photo,thumbnail:inspectedFiles[index].thumbnail}))}).catch(()=>{});
             window.trackAnalytics("quote_submitted");
             message.textContent = "";
             message.hidden = true;

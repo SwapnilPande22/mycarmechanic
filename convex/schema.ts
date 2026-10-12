@@ -2,6 +2,7 @@ import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
 export default defineSchema({
+  photoThumbnails:defineTable({photo:v.id("_storage"),thumbnail:v.string()}).index("byPhoto",["photo"]),
   garagePartners:defineTable({placeId:v.string(),name:v.string(),address:v.string(),mapUrl:v.string(),location:v.object({latitude:v.number(),longitude:v.number()}),rating:v.optional(v.number()),reviewCount:v.number(),enabled:v.boolean(),updatedAt:v.number()}).index("byPlaceId",["placeId"]),
   inspections: defineTable({ cacheKey:v.string(), photoHash:v.string(), variant:v.optional(v.string()), seenModel:v.optional(v.string()), userChoice:v.optional(v.string()), result:v.any(), createdAt:v.number() }).index("byCacheKey", ["cacheKey"]).index("byPhotoHash", ["photoHash"]),
   billChecks: defineTable({ createdAt: v.number() }).index("byCreatedAt", ["createdAt"]),
