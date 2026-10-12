@@ -18,7 +18,7 @@ const origin='https://earnest-rhinoceros-454.convex.site',preview=process.argv.i
   await page.waitForTimeout(4000);assert.equal(deliveries.filter(event=>event==='page_view').length,1);assert.equal(deliveries.filter(event=>event==='$pageview').length,1);assert.equal(deliveries.filter(event=>event==='landing_opened').length,1);assert.equal(failures.length,0);
   assert(requests.every(request=>request.status===200&&JSON.parse(request.response).status==='Ok'&&!JSON.parse(request.response).quota_limited?.length));
   const proof=requests.find(request=>JSON.parse(request.body).event==='page_view');
-  const raw=['POST '+new URL(proof.url).pathname+' HTTP/1.1','Host: us.i.posthog.com',...Object.entries(proof.headers).filter(([key])=>!key.startsWith(':')&&key!=='host').map(([key,value])=>key+': '+value),'',proof.body,'','HTTP status: '+proof.status,'Response body: '+proof.response].join('\n');
+  const raw=['POST '+proof.url,'Host: us.i.posthog.com',...Object.entries(proof.headers).filter(([key])=>!key.startsWith(':')&&key!=='host').map(([key,value])=>key+': '+value),'',proof.body,'','HTTP status: '+proof.status,'Response body: '+proof.response].join('\n');
   const prefix=preview?'posthog-fix-preview':'posthog-fix-live';fs.writeFileSync('scripts/'+prefix+'.json',JSON.stringify({live:!preview,liveUrl:origin,events:deliveries,allAccepted:true,noPersonalFields:true,proof},null,2));fs.writeFileSync('scripts/'+prefix+'-request.txt',raw);console.log(raw);
  }finally{await browser.close();}
 })().catch(error=>{console.error(error.stack);process.exitCode=1;});

@@ -1,0 +1,38 @@
+{
+  "live": true,
+  "liveUrl": "https://earnest-rhinoceros-454.convex.site",
+  "events": [
+    "landing_opened",
+    "$pageview",
+    "page_view"
+  ],
+  "allAccepted": true,
+  "noPersonalFields": true,
+  "proof": {
+    "method": "POST",
+    "url": "https://us.i.posthog.com/i/v0/e/",
+    "headers": {
+      ":authority": "us.i.posthog.com",
+      ":method": "POST",
+      ":path": "/i/v0/e/",
+      ":scheme": "https",
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "accept-language": "en-US,en;q=0.9",
+      "content-length": "435",
+      "content-type": "application/json",
+      "origin": "https://earnest-rhinoceros-454.convex.site",
+      "priority": "u=1, i",
+      "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Windows\"",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "cross-site",
+      "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36"
+    },
+    "body": "{\"token\":\"phc_skRFPynyYytWpf4nBDLdzs9VDPPYa4vqo6FrpYkXT9NR\",\"event\":\"page_view\",\"properties\":{\"distinct_id\":\"eb983b43-e037-4911-9d57-c9035a71ff7b\",\"$session_id\":\"fb7f50c7-4755-445c-a825-ca4921ca68b4\",\"$process_person_profile\":false,\"$geoip_disable\":true,\"$host\":\"earnest-rhinoceros-454.convex.site\",\"$pathname\":\"/\",\"$current_url\":\"https://earnest-rhinoceros-454.convex.site/\",\"flow_step\":\"page\"},\"timestamp\":\"2026-10-12T18:42:28.429Z\"}",
+    "status": 200,
+    "response": "{\"status\":\"Ok\"}"
+  }
+}

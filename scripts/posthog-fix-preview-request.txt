@@ -1,4 +1,4 @@
-POST /i/v0/e/ HTTP/1.1
+POST https://us.i.posthog.com/i/v0/e/
 Host: us.i.posthog.com
 accept: */*
 content-type: application/json
