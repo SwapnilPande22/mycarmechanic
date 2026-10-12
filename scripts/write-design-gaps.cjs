@@ -46,7 +46,7 @@ const rows={
  62:['Done','Fetch garages opens location controls and performs the existing search.','Already done'],
  63:['Partly done','Submit saves a request for manual forwarding, rather than dispatching it.','Not fixed: automatic dispatch needs decision ND3; Submit retained'],
  64:['Partly done','First greeting is AI-generated and can omit the exact welcome words.','Deterministic approved welcome plus conversational AI question'],
- 65:['Done','Returning device greeting uses the remembered name and asks how to help.','Already done'],
+ 65:['Partly done','Returning device remembers the name, but the AI can omit it from the greeting.','Remembered name is always included alongside the chosen-language AI question'],
  66:['Partly done','Reassurance exists; loading text competes with upload text and repeated hero.','Focused loading screen and readable progress copy'],
  68:['Done','Existing inspection rejects non-car photos and asks for a correct/wider car photo.','Already done; detection untouched'],
  69:['Partly done','Small/invalid/conversion/upload errors have guidance; raw server errors can surface and local red/orange decoration remains.','Friendly retry words and neutral readable error states'],

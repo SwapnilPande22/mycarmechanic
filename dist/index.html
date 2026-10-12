@@ -614,7 +614,8 @@
         try{customerName=localStorage.getItem('mycarmechanic-name')||'';}catch{}
         conversationBusy=true;document.querySelectorAll('[data-chat-step] input,[data-chat-step] button').forEach(el=>el.disabled=true);
         const step=customerName?'help':'name';showStep(step);
-        await askMechanic(step,customerName?customerName+', how can we help you today?':'Welcome to Car mechanic — we take care of your car diagnosis. I’m your AI mechanic. What’s your name?');
+        const initialQuestion=await askMechanic(step,customerName?customerName+', how can we help you today?':'Welcome to Car mechanic — we take care of your car diagnosis. I’m your AI mechanic. What’s your name?');
+        if(customerName&&!initialQuestion.includes(customerName))decorateMessage(history.querySelector('.chat-bubble'),customerName+', '+initialQuestion);
         conversationBusy=false;document.querySelectorAll('[data-chat-step] input,[data-chat-step] button').forEach(el=>el.disabled=false);
       });
 
