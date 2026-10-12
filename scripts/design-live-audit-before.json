@@ -1,0 +1,1285 @@
+{
+  "01-name": {
+    "text": "M\nMyCarMechanic\nPune\nEnglish / हिंदी / मराठी \nEnglish\nहिंदी\nमराठी\nRAJU\nFair price, before the garage quotes\n\nA little clarity before your garage visit.\n\nRAJU\nWelcome! May I know your name, please?\nYour name\nContinue\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(250, 250, 249)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 850.578125
+      }
+    },
+    "headline": {
+      "text": "Fair price, before the garage quotes",
+      "font": "Gambetta, Georgia, serif",
+      "size": "32px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 16,
+        "y": 324,
+        "width": 358,
+        "height": 73.59375
+      }
+    },
+    "subheading": null,
+    "button": {
+      "text": "Continue",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 37,
+        "y": 640.578125,
+        "width": 316,
+        "height": 48
+      }
+    },
+    "brand": {
+      "text": "M",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 16,
+        "y": 19,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": null,
+    "rating": null,
+    "area": null,
+    "facts": null
+  },
+  "02-help": {
+    "text": "M\nMyCarMechanic\nPune\nEnglish / हिंदी / मराठी \nEnglish\nहिंदी\nमराठी\nRAJU\nFair price, before the garage quotes\n\nA little clarity before your garage visit.\n\nRAJU\nHow can I assist you with your car today?\nMy car got damaged\nI got a garage quote\nSomething else\nHow can I help?\nContinue\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(250, 250, 249)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 1005.578125
+      }
+    },
+    "headline": {
+      "text": "Fair price, before the garage quotes",
+      "font": "Gambetta, Georgia, serif",
+      "size": "32px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 16,
+        "y": 324,
+        "width": 358,
+        "height": 73.59375
+      }
+    },
+    "subheading": null,
+    "button": {
+      "text": "Continue",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "brand": {
+      "text": "M",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 16,
+        "y": 19,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": null,
+    "rating": null,
+    "area": null,
+    "facts": null
+  },
+  "03-story": {
+    "text": "M\nMyCarMechanic\nPune\nEnglish / हिंदी / मराठी \nEnglish\nहिंदी\nमराठी\nRAJU\nFair price, before the garage quotes\n\nA little clarity before your garage visit.\n\nRAJU\nSorry to hear about the damage. Can you tell me what happened to your car?\nWhat happened? (optional)\nContinue\nSkip\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(250, 250, 249)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 930.375
+      }
+    },
+    "headline": {
+      "text": "Fair price, before the garage quotes",
+      "font": "Gambetta, Georgia, serif",
+      "size": "32px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 16,
+        "y": 324,
+        "width": 358,
+        "height": 73.59375
+      }
+    },
+    "subheading": null,
+    "button": {
+      "text": "Continue",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "brand": {
+      "text": "M",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 16,
+        "y": 19,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": null,
+    "rating": null,
+    "area": null,
+    "facts": null
+  },
+  "04-car": {
+    "text": "M\nMyCarMechanic\nPune\nEnglish / हिंदी / मराठी \nEnglish\nहिंदी\nमराठी\nRAJU\nFair price, before the garage quotes\n\nA little clarity before your garage visit.\n\nRAJU\nThat sounds stressful, let's take a look. What is the make, model, and variant of your car?\nCar make, model and variant\nContinue\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(250, 250, 249)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 893.375
+      }
+    },
+    "headline": {
+      "text": "Fair price, before the garage quotes",
+      "font": "Gambetta, Georgia, serif",
+      "size": "32px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 16,
+        "y": 324,
+        "width": 358,
+        "height": 73.59375
+      }
+    },
+    "subheading": null,
+    "button": {
+      "text": "Continue",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "brand": {
+      "text": "M",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 16,
+        "y": 19,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": null,
+    "rating": null,
+    "area": null,
+    "facts": null
+  },
+  "05-city": {
+    "text": "M\nMyCarMechanic\nPune\nEnglish / हिंदी / मराठी \nEnglish\nहिंदी\nमराठी\nRAJU\nFair price, before the garage quotes\n\nA little clarity before your garage visit.\n\nRAJU\nThanks for sharing, Design audit. Since labor costs vary, could you please confirm the city where you'd like to get the repairs done?\nYour city\nUse my location\n\nContinue\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(250, 250, 249)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 936.171875
+      }
+    },
+    "headline": {
+      "text": "Fair price, before the garage quotes",
+      "font": "Gambetta, Georgia, serif",
+      "size": "32px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 16,
+        "y": 324,
+        "width": 358,
+        "height": 73.59375
+      }
+    },
+    "subheading": null,
+    "button": {
+      "text": "Continue",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "brand": {
+      "text": "M",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 16,
+        "y": 19,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": null,
+    "rating": null,
+    "area": null,
+    "facts": null
+  },
+  "06-photos-empty": {
+    "text": "M\nMyCarMechanic\nPune\nEnglish / हिंदी / मराठी \nEnglish\nहिंदी\nमराठी\nRAJU\nFair price, before the garage quotes\n\nA little clarity before your garage visit.\n\nRAJU\nPlease upload a close-up photo of the loose bumper and a wider photo of your Volkswagen Polo GT TSI so I can check the visible damage.\n\nVolkswagen Polo GT TSI\n\nJPG, PNG or HEIC, up to 8 MB each\n\nUpload car photos\nShow us the spot you're worried about. A close-up and a wider view are helpful.\nNo photos selected\nInspect\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(250, 250, 249)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 1088.359375
+      }
+    },
+    "headline": {
+      "text": "Fair price, before the garage quotes",
+      "font": "Gambetta, Georgia, serif",
+      "size": "32px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 16,
+        "y": 324,
+        "width": 358,
+        "height": 73.59375
+      }
+    },
+    "subheading": null,
+    "button": {
+      "text": "Continue",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "brand": {
+      "text": "M",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 16,
+        "y": 19,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": null,
+    "rating": null,
+    "area": null,
+    "facts": null
+  },
+  "07-photos-selected": {
+    "text": "M\nMyCarMechanic\nPune\nEnglish / हिंदी / मराठी \nEnglish\nहिंदी\nमराठी\nRAJU\nFair price, before the garage quotes\n\nA little clarity before your garage visit.\n\nRAJU\nPlease upload a close-up photo of the loose bumper and a wider photo of your Volkswagen Polo GT TSI so I can check the visible damage.\n\nVolkswagen Polo GT TSI\n\nJPG, PNG or HEIC, up to 8 MB each\n\nUpload car photos\nShow us the spot you're worried about. A close-up and a wider view are helpful.\n3 photos selected\nIMG-20260202-WA0010.jpg\nIMG-20260202-WA0012.jpg\nIMG-20260202-WA0014.jpg\nClear photos and choose different views Inspect\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(250, 250, 249)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 1209.359375
+      }
+    },
+    "headline": {
+      "text": "Fair price, before the garage quotes",
+      "font": "Gambetta, Georgia, serif",
+      "size": "32px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 16,
+        "y": 324,
+        "width": 358,
+        "height": 73.59375
+      }
+    },
+    "subheading": null,
+    "button": {
+      "text": "Continue",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "brand": {
+      "text": "M",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 16,
+        "y": 19,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": null,
+    "rating": null,
+    "area": null,
+    "facts": null
+  },
+  "08-loading": {
+    "text": "M\nMyCarMechanic\nPune\nEnglish / हिंदी / मराठी \nEnglish\nहिंदी\nमराठी\nRAJU\nFair price, before the garage quotes\n\nA little clarity before your garage visit.\n\nRAJU\nUploading your photos…\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(250, 250, 249)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 732.78125
+      }
+    },
+    "headline": {
+      "text": "Fair price, before the garage quotes",
+      "font": "Gambetta, Georgia, serif",
+      "size": "32px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 16,
+        "y": 324,
+        "width": 358,
+        "height": 73.59375
+      }
+    },
+    "subheading": null,
+    "button": {
+      "text": "Continue",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "brand": {
+      "text": "M",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 16,
+        "y": 19,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": null,
+    "rating": null,
+    "area": null,
+    "facts": null
+  },
+  "09-estimate": {
+    "text": "M\nMyCarMechanic\nPune\nEnglish / हिंदी / मराठी \nEnglish\nहिंदी\nमराठी\nRAJU\nFair price, before the garage quotes\n\nA little clarity before your garage visit.\n\nRAJU\nDesign audit, I've completed the estimate for your Volkswagen Polo GT TSI. Would you like me to share the details now?\nYour Volkswagen Polo GT TSI needs work on 2 parts: Front bumper, LHS fender. See the estimate below.\nRepair Estimate\n13 Oct 2026\nVolkswagen Polo GT TSI\nPART · WHAT IS WRONG · CHEAPEST FIX\nFront bumper\n\nFront bumper is visibly displaced at the left (car's right) wheel arch, with a stepped/open seam and gap; bumper shell appears intact.\n\nRe-clip / refit\n₹500–₹800\n\nReplace only if bumper shell or mounting points are cracked through or torn beyond safe fastening.\nReplacement: ₹4,500–₹6,000\n\nLHS fender\n\nVisible dent/crease above the wheel arch on the left fender.\n\nDent pull\n₹1,200–₹1,800\n\nReplace only if fender is torn or cracked through.\nReplacement: ₹3,500–₹4,500\n\nTotal ₹1,700–₹2,600\nCheapest fixes, including labour\nIf parts need replacing\n₹8,000–₹10,500\nAlternative total, not added to the cheapest fixes.\n\nAI estimate. Final work and price after a garage checks the car.\n\nSomething doesn’t look right?\n\nRAJU\nWhich part or price in the estimate seems wrong to you? I will recheck the photos accordingly.\n\nYour concern\nLet me check again\n\nRAJU\nDesign audit, would you like me to help you find nearby repair garages in Pune?\nFetch garagesNo, thank you\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(250, 250, 249)",
+      "rect": {
+        "x": 0,
+        "y": -458,
+        "width": 390,
+        "height": 2257.328125
+      }
+    },
+    "headline": {
+      "text": "Fair price, before the garage quotes",
+      "font": "Gambetta, Georgia, serif",
+      "size": "32px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 16,
+        "y": -134,
+        "width": 358,
+        "height": 73.59375
+      }
+    },
+    "subheading": {
+      "text": "Repair Estimate",
+      "font": "Gambetta, Georgia, serif",
+      "size": "20px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 39,
+        "y": 260.171875,
+        "width": 135.28125,
+        "height": 27
+      }
+    },
+    "button": {
+      "text": "Continue",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "brand": {
+      "text": "M",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 16,
+        "y": -439,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": null,
+    "rating": null,
+    "area": null,
+    "facts": null
+  },
+  "10-garage-location": {
+    "text": "M\nMyCarMechanic\nPune\nEnglish / हिंदी / मराठी \nEnglish\nहिंदी\nमराठी\nRAJU\nFair price, before the garage quotes\n\nA little clarity before your garage visit.\n\nGoogle Maps\nWhere should we look?\nUse my location\nSearch by area\nFetch garages\nUse your location or search an area to see nearby garages.\nUse your location or search an area to see nearby garages.\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(250, 250, 249)",
+      "rect": {
+        "x": 0,
+        "y": -154,
+        "width": 390,
+        "height": 997.546875
+      }
+    },
+    "headline": {
+      "text": "Fair price, before the garage quotes",
+      "font": "Gambetta, Georgia, serif",
+      "size": "32px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 16,
+        "y": 170,
+        "width": 358,
+        "height": 73.59375
+      }
+    },
+    "subheading": {
+      "text": "Repair Estimate",
+      "font": "Gambetta, Georgia, serif",
+      "size": "20px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "button": {
+      "text": "Continue",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "brand": {
+      "text": "M",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 16,
+        "y": -135,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": null,
+    "rating": null,
+    "area": null,
+    "facts": null
+  },
+  "11-garage-loading": {
+    "text": "M\nMyCarMechanic\nPune\nEnglish / हिंदी / मराठी \nEnglish\nहिंदी\nमराठी\nRAJU\nFair price, before the garage quotes\n\nA little clarity before your garage visit.\n\nGoogle Maps\nRAJU\nUse my location\nSearch by area\nFetch garages\nSearching nearby garages...\nGarages near Kharadi\n\nFinding garages near Kharadi…\n\nNearest\nTop rated (4+)\nOpen now\nMost reviewed\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(250, 250, 249)",
+      "rect": {
+        "x": 0,
+        "y": -172,
+        "width": 390,
+        "height": 2183.359375
+      }
+    },
+    "headline": {
+      "text": "Fair price, before the garage quotes",
+      "font": "Gambetta, Georgia, serif",
+      "size": "32px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 16,
+        "y": 152,
+        "width": 358,
+        "height": 73.59375
+      }
+    },
+    "subheading": {
+      "text": "Repair Estimate",
+      "font": "Gambetta, Georgia, serif",
+      "size": "20px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "button": {
+      "text": "Continue",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "brand": {
+      "text": "M",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 16,
+        "y": -153,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": null,
+    "rating": null,
+    "area": null,
+    "facts": null
+  },
+  "12-garages": {
+    "text": "M\nMyCarMechanic\nPune\nEnglish / हिंदी / मराठी \nEnglish\nहिंदी\nमराठी\nRAJU\nFair price, before the garage quotes\n\nA little clarity before your garage visit.\n\nGoogle Maps\nChange area\nGarages near Kharadi\n\n9 garages near Kharadi\n\nNearest\nTop rated (4+)\nOpen now\nMost reviewed\n\nPhoto: Dilip Kumar\n\nKGN MOTORS\n5.0 ★\n6 reviews\n\n1.1 km away\n·\nClosed now\n\nKharadi\n\nReplies to MyCarMechanic quotes\n\n6 reviews on Google\n\nView reviews\n\nPhoto: Morya Motors And Car Sarvice\n\nMorya Motors And Car Sarvice\n4.9 ★\n52 reviews\n\n1.5 km away\n·\nOpen now\n\nKharadi\n\nQuick service\nHonest pricing\nReplies to MyCarMechanic quotes\n\n52 reviews on Google\n\nView reviews\n\nPhoto: Rohan Sunil Kasar\n\nSai Car Care\n4.5 ★\n147 reviews\n\n1.6 km away\n·\nClosed now\n\nKharadi\n\nHonest pricing\nReplies to MyCarMechanic quotes\n\n147 reviews on Google\n\nView reviews\n\nPhoto: Auto Excellence Car Services\n\nAuto Excellence Car Services\n4.8 ★\n182 reviews\n\n2.5 km away\n·\nOpen now · Closes 12 am\n\nWagholi\n\nHonest pricing\nQuick service\nReplies to MyCarMechanic quotes\n\n182 reviews on Google\n\nView reviews\n\nPhoto: Ashoka Hajare\n\nAJ Auto Garage\n4.8 ★\n47 reviews\n\n0.0 km away\n·\nOpen now\n\nKharadi\n\nHelpful team\n\n47 reviews on Google\n\nView reviews\nGarage photo unavailable\nTushar Borse..\n5.0 ★\n1 review\n\n0.3 km away\n·\nHours unavailable\n\nMoshi\n\n1 review on Google\n\nView reviews\nGarage photo unavailable\nJaved Ahmed Shaikh\n5.0 ★\n3 reviews\n\n0.3 km away\n·\nHours unavailable\n\nVadgaon Sheri\n\n3 reviews on Google\n\nView reviews\n\nPhoto: Tejas Khairnar\n\nMittal Hyundai Service\n4.7 ★\n1,586 reviews\n\n2.0 km away\n·\nClosed now\n\nKharadi\n\nQuick service\nHelpful team\n\n1,586 reviews on Google\n\nView reviews\n\nPhoto: Tata Motors Cars Bodyshop - Rudra Motors\n\nTata Motors Cars Bodyshop - Rudra Motors\n4.6 ★\n517 reviews\n\n2.2 km away\n·\nClosed now\n\nWagholi\n\nQuick service\nDenting & painting\n\n517 reviews on Google\n\nView reviews\nGet quotes from these garages\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(250, 250, 249)",
+      "rect": {
+        "x": 0,
+        "y": -172,
+        "width": 390,
+        "height": 5235.421875
+      }
+    },
+    "headline": {
+      "text": "Fair price, before the garage quotes",
+      "font": "Gambetta, Georgia, serif",
+      "size": "32px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 16,
+        "y": 152,
+        "width": 358,
+        "height": 73.59375
+      }
+    },
+    "subheading": {
+      "text": "Repair Estimate",
+      "font": "Gambetta, Georgia, serif",
+      "size": "20px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "button": {
+      "text": "Continue",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "brand": {
+      "text": "M",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 16,
+        "y": -153,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": {
+      "text": "Photo: Dilip Kumar",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(237, 241, 237)",
+      "rect": {
+        "x": 34,
+        "y": 478.671875,
+        "width": 322,
+        "height": 188
+      }
+    },
+    "rating": {
+      "text": "5.0 ★",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "13px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(30, 58, 138)",
+      "rect": {
+        "x": 50,
+        "y": 719.671875,
+        "width": 49.078125,
+        "height": 23
+      }
+    },
+    "area": {
+      "text": "Kharadi",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "13px",
+      "color": "rgb(102, 107, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 50,
+        "y": 779.171875,
+        "width": 290,
+        "height": 19.5
+      }
+    },
+    "facts": {
+      "text": "1.1 km away·Closed now",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "13px",
+      "color": "rgb(102, 107, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 50,
+        "y": 753.671875,
+        "width": 290,
+        "height": 19.5
+      }
+    }
+  },
+  "13-consent": {
+    "text": "M\nMyCarMechanic\nPune\nEnglish / हिंदी / मराठी \nEnglish\nहिंदी\nमराठी\nRAJU\nFair price, before the garage quotes\n\nA little clarity before your garage visit.\n\nGoogle Maps\nChange area\nGarages near Kharadi\n\n9 garages near Kharadi\n\nNearest\nTop rated (4+)\nOpen now\nMost reviewed\n\nPhoto: Dilip Kumar\n\nKGN MOTORS\n5.0 ★\n6 reviews\n\n1.1 km away\n·\nClosed now\n\nKharadi\n\nReplies to MyCarMechanic quotes\n\n6 reviews on Google\n\nView reviews\n5.0 stars | 6 reviews\n\nClosed now\n\nOpp Radisson Hotel, Kharadi Mundhwa Bypass Road, Kharadi, HW4Q+536, Yashwant Nagar, Kharadi, Pune, Maharashtra 411014, India\n\n093078 04244\n\nGoogle reviews\n5.0 stars | a year ago\n\nBest service and best mechanical they take care of our cars and do safely work 👍\n\nBy Vihan Towing Crean service kharadi Kharadi | Google | View on Google Maps\n5.0 stars | 9 years ago\n\nVery good service!\n\nBy Sachin More | Google | View on Google Maps\n5.0 stars | 7 years ago\n\nVery good service !\n\nBy Kalim Sayyed | Google | View on Google Maps\n5.0 stars | 3 months ago\n\nBest service I've ever seen. Low budget and quality work\n\nBy farid khan | Google | View on Google Maps\n5.0 stars | 3 months ago\n\nBy Farhan Sayyad | Google | View on Google Maps\n\nReviews shown by Google Maps, ordered by relevance. Google does not verify reviews.\n\nGoogle Maps\n\nPhoto: Morya Motors And Car Sarvice\n\nMorya Motors And Car Sarvice\n4.9 ★\n52 reviews\n\n1.5 km away\n·\nOpen now\n\nKharadi\n\nQuick service\nHonest pricing\nReplies to MyCarMechanic quotes\n\n52 reviews on Google\n\nView reviews\n\nPhoto: Rohan Sunil Kasar\n\nSai Car Care\n4.5 ★\n147 reviews\n\n1.6 km away\n·\nClosed now\n\nKharadi\n\nHonest pricing\nReplies to MyCarMechanic quotes\n\n147 reviews on Google\n\nView reviews\n\nPhoto: Auto Excellence Car Services\n\nAuto Excellence Car Services\n4.8 ★\n182 reviews\n\n2.5 km away\n·\nOpen now · Closes 12 am\n\nWagholi\n\nHonest pricing\nQuick service\nReplies to MyCarMechanic quotes\n\n182 reviews on Google\n\nView reviews\n\nPhoto: Ashoka Hajare\n\nAJ Auto Garage\n4.8 ★\n47 reviews\n\n0.0 km away\n·\nOpen now\n\nKharadi\n\nHelpful team\n\n47 reviews on Google\n\nView reviews\nGarage photo unavailable\nTushar Borse..\n5.0 ★\n1 review\n\n0.3 km away\n·\nHours unavailable\n\nMoshi\n\n1 review on Google\n\nView reviews\nGarage photo unavailable\nJaved Ahmed Shaikh\n5.0 ★\n3 reviews\n\n0.3 km away\n·\nHours unavailable\n\nVadgaon Sheri\n\n3 reviews on Google\n\nView reviews\n\nPhoto: Tejas Khairnar\n\nMittal Hyundai Service\n4.7 ★\n1,586 reviews\n\n2.0 km away\n·\nClosed now\n\nKharadi\n\nQuick service\nHelpful team\n\n1,586 reviews on Google\n\nView reviews\n\nPhoto: Tata Motors Cars Bodyshop - Rudra Motors\n\nTata Motors Cars Bodyshop - Rudra Motors\n4.6 ★\n517 reviews\n\n2.2 km away\n·\nClosed now\n\nWagholi\n\nQuick service\nDenting & painting\n\n517 reviews on Google\n\nView reviews\nRAJU\nDesign audit, would you like me to save a repair request to share with garages near Pune for your Volkswagen Polo GT TSI?\n\nWith your permission, we’ll save your request for our team to share with garages. Your AI estimate stays with you.\n\nYes, request garage quotesNo, thank you\nGet quotes from these garages\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(250, 250, 249)",
+      "rect": {
+        "x": 0,
+        "y": -670,
+        "width": 390,
+        "height": 6483.8125
+      }
+    },
+    "headline": {
+      "text": "Fair price, before the garage quotes",
+      "font": "Gambetta, Georgia, serif",
+      "size": "32px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 16,
+        "y": -346,
+        "width": 358,
+        "height": 73.59375
+      }
+    },
+    "subheading": {
+      "text": "Repair Estimate",
+      "font": "Gambetta, Georgia, serif",
+      "size": "20px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "button": {
+      "text": "Continue",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "brand": {
+      "text": "M",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 16,
+        "y": -651,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": {
+      "text": "Photo: Dilip Kumar",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(237, 241, 237)",
+      "rect": {
+        "x": 34,
+        "y": -19.328125,
+        "width": 322,
+        "height": 188
+      }
+    },
+    "rating": {
+      "text": "5.0 ★",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "13px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(30, 58, 138)",
+      "rect": {
+        "x": 50,
+        "y": 221.671875,
+        "width": 49.078125,
+        "height": 23
+      }
+    },
+    "area": {
+      "text": "Kharadi",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "13px",
+      "color": "rgb(102, 107, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 50,
+        "y": 281.171875,
+        "width": 290,
+        "height": 19.5
+      }
+    },
+    "facts": {
+      "text": "1.1 km away·Closed now",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "13px",
+      "color": "rgb(102, 107, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 50,
+        "y": 255.671875,
+        "width": 290,
+        "height": 19.5
+      }
+    }
+  },
+  "14-phone": {
+    "text": "M\nMyCarMechanic\nPune\nEnglish / हिंदी / मराठी \nEnglish\nहिंदी\nमराठी\nRAJU\nFair price, before the garage quotes\n\nA little clarity before your garage visit.\n\nGet quotes from nearby garages\nCar year (optional)\nWhatsApp number\nSubmit\nNot now\n\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(250, 250, 249)",
+      "rect": {
+        "x": 0,
+        "y": -87,
+        "width": 390,
+        "height": 930.984375
+      }
+    },
+    "headline": {
+      "text": "Fair price, before the garage quotes",
+      "font": "Gambetta, Georgia, serif",
+      "size": "32px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 16,
+        "y": 237,
+        "width": 358,
+        "height": 73.59375
+      }
+    },
+    "subheading": {
+      "text": "Repair Estimate",
+      "font": "Gambetta, Georgia, serif",
+      "size": "20px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "button": {
+      "text": "Continue",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "brand": {
+      "text": "M",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(37, 41, 50)",
+      "rect": {
+        "x": 16,
+        "y": -68,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": {
+      "text": "Photo: Dilip Kumar",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "16px",
+      "color": "rgb(32, 36, 44)",
+      "background": "rgb(237, 241, 237)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "rating": {
+      "text": "5.0 ★",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "13px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(30, 58, 138)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "area": {
+      "text": "Kharadi",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "13px",
+      "color": "rgb(102, 107, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "facts": {
+      "text": "1.1 km away·Closed now",
+      "font": "Chivo, system-ui, sans-serif",
+      "size": "13px",
+      "color": "rgb(102, 107, 117)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    }
+  },
+  "requestReceivedTemplate": "✓Request receivedYour request is saved for our team to send to nearby garages. Allow us some time; our experts will get back to you with competitive rates. Thank you for trusting us to help you.Done",
+  "15-admin-login": {
+    "text": "F\nMyCarMechanic\nPune\nGARAGE QUOTES\nQuote requests\n\nSign in to manage customer quote requests.\n\nAdmin password\nOpen requests\n\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "size": "16px",
+      "color": "rgb(23, 37, 31)",
+      "background": "rgb(246, 245, 240)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 560.03125
+      }
+    },
+    "headline": {
+      "text": "Quote requests",
+      "font": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "size": "36px",
+      "color": "rgb(23, 37, 31)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 14,
+        "y": 130.5,
+        "width": 362,
+        "height": 37.4375
+      }
+    },
+    "subheading": {
+      "text": "Partner garages",
+      "font": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "size": "16px",
+      "color": "rgb(23, 37, 31)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      }
+    },
+    "button": {
+      "text": "Open requests",
+      "font": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "size": "13px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(23, 107, 74)",
+      "rect": {
+        "x": 33,
+        "y": 319.03125,
+        "width": 324,
+        "height": 48
+      }
+    },
+    "brand": {
+      "text": "F",
+      "font": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(23, 107, 74)",
+      "rect": {
+        "x": 14,
+        "y": 16.5,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": null,
+    "rating": null,
+    "area": null,
+    "facts": null
+  },
+  "adminPartnerCount": 4,
+  "adminFonts": {
+    "body": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+    "heading": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif"
+  },
+  "17-partner-form": {
+    "text": "F\nMyCarMechanic\nPune\nGARAGE PARTNERS\nShare your garage prices.\n\nAdd your details and prices for common body repairs. New garages are checked before appearing to car owners.\n\nGarage name\nArea\nPhone\nGoogle Maps link\nPrices (₹)\n\nEnter each price if available. Leave blank if you do not offer that work.\n\nPart\tSmall Car\tMedium Car\tLarge Car\n\tDent & paint\tReplace\tDent & paint\tReplace\tDent & paint\tReplace\nBumper\t\t\t\t\t\t\nDoor\t\t\t\t\t\t\nFender\t\t\t\t\t\t\nBonnet\t\t\t\t\t\t\nBoot\t\t\t\t\t\t\nSend garage details\n\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "size": "16px",
+      "color": "rgb(23, 37, 31)",
+      "background": "rgb(246, 245, 240)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 1155.5625
+      }
+    },
+    "headline": {
+      "text": "Share your garage prices.",
+      "font": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "size": "36px",
+      "color": "rgb(23, 37, 31)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 14,
+        "y": 130.5,
+        "width": 362,
+        "height": 74.875
+      }
+    },
+    "subheading": {
+      "text": "Prices (₹)",
+      "font": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "size": "24px",
+      "color": "rgb(23, 37, 31)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 33,
+        "y": 525.46875,
+        "width": 324,
+        "height": 32
+      }
+    },
+    "button": {
+      "text": "Send garage details",
+      "font": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "size": "13px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(23, 107, 74)",
+      "rect": {
+        "x": 33,
+        "y": 930.5625,
+        "width": 324,
+        "height": 48
+      }
+    },
+    "brand": {
+      "text": "F",
+      "font": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(23, 107, 74)",
+      "rect": {
+        "x": 14,
+        "y": 16.5,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": null,
+    "rating": null,
+    "area": null,
+    "facts": null
+  },
+  "18-garage-photo-page": {
+    "text": "F\nMyCarMechanic\nPune\nCAR REPAIR REQUEST\nPhotos and damage.\n\nVolkswagen Polo GT TSI · Kharadi, Pune\n\nDamage\nFront bumper – Repair\nPhotos\nPhoto estimates are a starting point. Confirm the final work and price with your garage.",
+    "overflow": false,
+    "body": {
+      "text": "Body styling",
+      "font": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "size": "16px",
+      "color": "rgb(23, 37, 31)",
+      "background": "rgb(246, 245, 240)",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 1686.03125
+      }
+    },
+    "headline": {
+      "text": "Photos and damage.",
+      "font": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "size": "36px",
+      "color": "rgb(23, 37, 31)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 14,
+        "y": 130.5,
+        "width": 362,
+        "height": 37.4375
+      }
+    },
+    "subheading": {
+      "text": "Damage",
+      "font": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "size": "16px",
+      "color": "rgb(23, 37, 31)",
+      "background": "rgba(0, 0, 0, 0)",
+      "rect": {
+        "x": 33,
+        "y": 255.03125,
+        "width": 324,
+        "height": 21
+      }
+    },
+    "button": null,
+    "brand": {
+      "text": "F",
+      "font": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+      "size": "15px",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(23, 107, 74)",
+      "rect": {
+        "x": 14,
+        "y": 16.5,
+        "width": 30,
+        "height": 30
+      }
+    },
+    "photo": null,
+    "rating": null,
+    "area": null,
+    "facts": null
+  }
+}

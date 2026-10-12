@@ -1,0 +1,99 @@
+/* DESIGN.md presentation only: no flow, inspection, price or analytics decisions. */
+:root { --ink:#20242c; --muted:#666b75; --green:#1E3A8A; --paper:#fff; --line:#e5e7eb; }
+body { background:#fafaf9; color:var(--ink); font-family:Chivo,system-ui,sans-serif; font-size:16px; }
+h1,h2,h3,h4 { font-family:Gambetta,Georgia,serif; font-weight:500; letter-spacing:-.02em; }
+h1 { font-size:32px; line-height:1.15; }
+h2,h3,h4 { font-size:20px; }
+label,input,select,textarea,button,.cta,.secondary,.intro,.chat-bubble { font-size:16px; }
+input[type=text],input[type=password],input[type=tel],input[type=number],input[type=url],select { max-width:100%; font:inherit; }
+.page { width:min(100% - 32px,820px); }
+.brand { font-size:16px; }
+.brand-mark,.customer-flow .brand-mark { width:32px; height:32px; background:transparent; color:#20242c; }
+.brand-mark svg { width:32px; height:32px; }
+.location,.eyebrow,.file-list,.upload-formats,.photo-error,.photo-converting,.photo-replace,.status,.result-meta,.reason,.price-range,.bill-head,.bill-row,.panel-name,.work-needed,.row-price,.bill-total-detail,.empty,.garage-meta,.admin-request p,.admin-damage,.partner-setting-row small,footer { font-size:13px; line-height:1.55; }
+.eyebrow,.eyebrow::before { color:#20242c; background:none; }
+.eyebrow::before { background:#666b75; }
+.cta,.cta:hover { background:#252932; font-size:16px; }
+.secondary,.chat-chips button { color:#30343b; font-size:16px; }
+.secondary,.garage-filter,select { min-height:44px; }
+.photo-error,.model-warning { color:#4b5563; background:#f3f4f6; border-color:#d1d5db; }
+.status:empty { display:none; }
+.admin-new-badge { color:#20242c; background:#f1f2f4; font-size:13px; }
+.quote-tick { color:#252932; background:#f1f2f4; }
+input:focus,select:focus,button:focus-visible,.customer-flow input:focus,.customer-flow button:focus-visible { outline:3px solid #9ca3af; outline-offset:2px; }
+.language-choice { font-size:13px!important; }
+.language-choice select { font-size:13px!important; min-height:44px; }
+.welcome-copy { max-width:540px; margin:14px auto 0; font-size:16px; line-height:1.6; }
+.customer-flow .hero > .mechanic-mascot { height:auto; }
+.customer-flow[data-flow-stage]:not([data-flow-stage=name]) .hero > :is(h1,.intro,.welcome-copy,.mechanic-mascot) { display:none; }
+.customer-flow[data-flow-stage]:not([data-flow-stage=name]) main { padding-top:12px; }
+.customer-flow[data-flow-stage]:not([data-flow-stage=name]) .hero { margin-bottom:12px; }
+.customer-flow[data-flow-stage]:not([data-flow-stage=name]) .language-choice { margin-bottom:0!important; }
+.customer-flow .summary-card { margin:14px 0; font-size:16px; }
+.customer-flow .model-choice { display:block; max-width:100%; padding:20px; border:1px solid var(--line); border-radius:16px; background:white; }
+.customer-flow .model-choice [data-choice-status]:empty { display:none; }
+.customer-flow .result-head { align-items:flex-start; flex-wrap:wrap; padding:18px 16px; }
+.customer-flow .result-meta { font-size:13px; }
+.customer-flow .bill-head,.customer-flow .cheapest-estimate .bill-head,.estimate-row-heading { display:grid; grid-template-columns:24px minmax(0,1fr) 96px 34px; gap:8px; align-items:start; }
+.customer-flow .bill-head { padding:12px 14px; text-transform:none; font-size:13px; letter-spacing:0; }
+.customer-flow .bill-row,.customer-flow .cheapest-estimate .bill-row { display:block; padding:16px 14px; }
+.customer-flow .panel-name { font-size:16px; }
+.estimate-number,.estimate-quantity,.estimate-price,.estimate-row-meta,.quantity-note { font-size:13px; line-height:1.55; }
+.estimate-number,.estimate-quantity { color:#666b75; }
+.estimate-price,.row-price { text-align:right; color:#20242c; min-width:0; overflow-wrap:anywhere; }
+.estimate-row-meta { display:flex; gap:12px; flex-wrap:wrap; margin-top:10px; color:#666b75; }
+.customer-flow .fix-line { margin:10px 0 0; font-size:16px; }
+.customer-flow .reason,.customer-flow .replacement-option,.customer-flow .replacement-total,.quantity-note { font-size:13px; }
+.quantity-note { padding:0 16px; color:#666b75; }
+.customer-flow .estimate-disclaimer { margin:16px; padding:0; font-size:13px; }
+.customer-flow .garage-item { position:relative; display:grid; grid-template-columns:110px minmax(0,1fr); gap:12px; padding:12px; border-radius:14px; }
+.customer-flow .garage-photo { grid-column:1; height:148px; border-radius:10px; }
+.customer-flow .garage-card-body { grid-column:2; padding:0; min-width:0; }
+.customer-flow .garage-item h3 { font-size:20px; margin:0 0 8px; }
+.customer-flow .garage-rating-chip { position:absolute; z-index:2; top:18px; left:18px; font-size:13px; }
+.customer-flow .garage-rating-row { margin:0 0 6px; }
+.customer-flow .garage-facts { flex-wrap:nowrap; gap:5px; margin:0 0 6px; }
+.customer-flow .garage-facts > span:first-child { flex:none; }
+.customer-flow .garage-area-name { min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.customer-flow .garage-open-state { display:block; margin:0 0 6px; }
+.customer-flow .garage-section :is(p,span,button,a,label,input),.customer-flow .garage-filter,.customer-flow .garage-status,.customer-flow .garage-suggestion,.quote-partner-label { font-size:13px; }
+.customer-flow .garage-tags { gap:4px; min-height:0; margin:8px 0; }
+.customer-flow .garage-tag { font-size:13px; padding:3px 5px; }
+.customer-flow .garage-trust { margin:8px 0; }
+.customer-flow .garage-review-button { min-height:44px; }
+.customer-flow .garage-photo-credit,.customer-flow .garage-photo-credit a { font-size:13px; line-height:1.3; }
+.customer-flow .garage-photo-credit { max-height:40px; overflow:auto; bottom:0; right:0; max-width:100%; }
+.customer-flow .garage-inline-detail,.customer-flow .garage-provider-attribution { grid-column:1 / -1; padding:0; }
+.customer-flow .garage-skeleton { display:grid; grid-template-columns:110px minmax(0,1fr); gap:12px; padding:12px; }
+.customer-flow .garage-skeleton-photo { height:148px; border-radius:10px; }
+.customer-flow .garage-skeleton-body { padding:0; }
+.customer-flow .garage-section .cta,.customer-flow .garage-quote-bar button { font-size:16px; }
+.customer-flow .garage-section .secondary,.customer-flow .garage-section a { color:#1E3A8A; }
+.customer-flow .garage-no-results,.customer-flow .garage-status,.customer-flow .garage-detail { font-size:13px; line-height:1.6; }
+.customer-flow .quote-consent h2,.customer-flow .quote-dialog h2,.flow-ending h2 { font-size:20px; }
+.customer-flow .quote-dialog { overflow-wrap:anywhere; }
+.partner-setting-row { font-size:16px; align-items:flex-start; }
+.partner-setting-row input { width:20px; height:20px; flex:none; margin-top:3px; }
+.admin-actions select { min-height:44px; font-size:16px; }
+.admin-card p { font-size:16px; line-height:1.6; }
+.admin-request-heading h3 { font-size:20px; }
+.public-quote-card :is(h2,h3),#partner-form h2 { font-size:20px; }
+.public-quote-card,.public-quote-card li,#partner-form { font-size:16px; line-height:1.6; }
+.customer-flow .garage-detail h4 { font-size:20px; }
+.customer-flow [data-quote-dismiss],#partner-form table { font-size:13px!important; }
+.customer-flow [data-quote-dismiss] { display:flex!important; justify-content:center; align-items:center; min-height:44px; }
+#partner-form input[type=number] { min-height:44px; }
+.admin-actions .secondary { font-size:16px; }
+@media(max-width:480px) {
+  main { padding-top:20px; }
+  .customer-flow .garage-item,.customer-flow .garage-skeleton { grid-template-columns:100px minmax(0,1fr); gap:10px; padding:10px; }
+  .customer-flow .garage-rating-chip { top:16px; left:16px; }
+  .customer-flow .bill-head,.customer-flow .cheapest-estimate .bill-head,.estimate-row-heading { grid-template-columns:20px minmax(0,1fr) 88px 28px; gap:5px; }
+  .customer-flow .result-meta { text-align:left; }
+  .city-input-row { flex-wrap:wrap; }
+  .city-input-row .model-search { flex-basis:100%; }
+  #city-location-button { width:100%; }
+  .admin-card { padding:18px; }
+}
+.garage-photo-credit a { color: #fff !important; }
+

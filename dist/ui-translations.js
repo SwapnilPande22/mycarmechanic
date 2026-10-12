@@ -246,7 +246,22 @@ window.UI_TRANSLATIONS = {
     "RHS fog light": "दाईं फॉग लाइट (rhs fog light)",
     "Windshield / glass": "विंडशील्ड / काँच (windshield / glass)",
     "Other / unclear panel": "अन्य / अस्पष्ट पैनल (other / unclear panel)",
-    "Replies to MyCarMechanic quotes": "MyCarMechanic के कोटेशन अनुरोधों का जवाब देता है"
+    "Replies to MyCarMechanic quotes": "MyCarMechanic के कोटेशन अनुरोधों का जवाब देता है",
+    "Welcome to Car mechanic – we take care of your car diagnosis.": "Car mechanic में आपका स्वागत है – हम आपकी कार की जाँच में मदद करते हैं।",
+    "I’m your AI mechanic. What’s your name?": "मैं आपका AI मैकेनिक हूँ। आपका नाम क्या है?",
+    "No.": "क्र.",
+    "Spare part / work": "पुर्जा / काम",
+    "Qty": "मात्रा",
+    "Garage to confirm": "गैराज पुष्टि करेगा",
+    "Not quoted": "कीमत शामिल नहीं",
+    "Job type:": "काम का प्रकार:",
+    "Labour included": "मज़दूरी शामिल",
+    "Quantity: garage to confirm": "मात्रा: गैराज पुष्टि करेगा",
+    "Quantity: garage to confirm. Each repair range includes labour, materials and applicable taxes; no separate labour breakdown is available.": "मात्रा: गैराज पुष्टि करेगा। हर मरम्मत सीमा में मज़दूरी, सामग्री और लागू कर शामिल हैं; मज़दूरी का अलग हिसाब उपलब्ध नहीं है।",
+    "No visibly damaged parts were confirmed. Ask a garage to check any area you are still worried about.": "दिखाई देने वाले किसी पुर्जे के नुकसान की पुष्टि नहीं हुई। जिस हिस्से को लेकर चिंता है, उसे गैराज से जाँच करवाएँ।",
+    "Job type: Repair": "काम का प्रकार: मरम्मत",
+    "Job type: Replacement": "काम का प्रकार: प्रतिस्थापन",
+    "Job type: Garage to confirm": "काम का प्रकार: गैराज पुष्टि करेगा"
   },
   "mr": {
     "Inspect car damage photos and get an AI repair estimate for your city.": "कार नुकसानाच्या फोटो तपासा आणि आपल्या शहरासाठी AI दुरुस्तीचा अंदाज मिळवा.",
@@ -493,6 +508,21 @@ window.UI_TRANSLATIONS = {
     "RHS fog light": "उजवीकडचा फॉग लाइट (rhs fog light)",
     "Windshield / glass": "विंडशील्ड / काच (windshield / glass)",
     "Other / unclear panel": "इतर / अस्पष्ट पॅनल (other / unclear panel)",
-    "Replies to MyCarMechanic quotes": "MyCarMechanic च्या कोटेशन विनंत्यांना उत्तर देते"
+    "Replies to MyCarMechanic quotes": "MyCarMechanic च्या कोटेशन विनंत्यांना उत्तर देते",
+    "Welcome to Car mechanic – we take care of your car diagnosis.": "Car mechanic मध्ये तुमचे स्वागत आहे – आम्ही तुमच्या कारच्या तपासणीत मदत करतो.",
+    "I’m your AI mechanic. What’s your name?": "मी तुमचा AI मेकॅनिक आहे. तुमचे नाव काय आहे?",
+    "No.": "क्र.",
+    "Spare part / work": "सुटा भाग / काम",
+    "Qty": "प्रमाण",
+    "Garage to confirm": "गॅरेज निश्चित करेल",
+    "Not quoted": "किंमत दिलेली नाही",
+    "Job type:": "कामाचा प्रकार:",
+    "Labour included": "मजुरी समाविष्ट",
+    "Quantity: garage to confirm": "प्रमाण: गॅरेज निश्चित करेल",
+    "Quantity: garage to confirm. Each repair range includes labour, materials and applicable taxes; no separate labour breakdown is available.": "प्रमाण: गॅरेज निश्चित करेल. प्रत्येक दुरुस्तीच्या किमतीत मजुरी, साहित्य आणि लागू कर समाविष्ट आहेत; मजुरीचा स्वतंत्र तपशील उपलब्ध नाही.",
+    "No visibly damaged parts were confirmed. Ask a garage to check any area you are still worried about.": "दिसणाऱ्या कोणत्याही भागाच्या नुकसानाची पुष्टी झाली नाही. ज्या भागाबद्दल अजून चिंता आहे, तो गॅरेजकडून तपासून घ्या.",
+    "Job type: Repair": "कामाचा प्रकार: दुरुस्ती",
+    "Job type: Replacement": "कामाचा प्रकार: बदलणे",
+    "Job type: Garage to confirm": "कामाचा प्रकार: गॅरेज निश्चित करेल"
   }
 };

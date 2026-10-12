@@ -27,6 +27,7 @@ fs.mkdirSync(output, { recursive: true });
 fs.writeFileSync(target, html.replaceAll(productionUrl, convexUrl), "utf8");
 fs.copyFileSync(heicConverter, path.join(output, "heic2any.min.js"));
 fs.copyFileSync(path.join(root, "node_modules", "heic2any", "LICENSE.md"), path.join(output, "heic2any.LICENSE.md"));
+fs.copyFileSync(path.join(root,"design.css"),path.join(output,"design.css"));
 fs.copyFileSync(path.join(root,"localization.js"),path.join(output,"localization.js"));
 fs.writeFileSync(path.join(output,"ui-translations.js"),"window.UI_TRANSLATIONS = "+fs.readFileSync(path.join(root,"ui-translations.json"),"utf8")+";\n");
 console.log(`Built ${path.relative(root, target)} for ${parsedUrl.hostname}`);

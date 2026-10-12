@@ -3,7 +3,7 @@ import { v } from "convex/values";
 
 // Presentation only: no database, inspection, pricing, search or quote calls.
 const purposes = {
-  name:"Welcome the customer warmly and ask their name.",
+  name:"Ask their name warmly. The screen already displays the approved welcome, so do not repeat the welcome.",
   help:"Ask how you can help with their car today.",
   story:"Acknowledge their concern, then ask what happened or for one useful detail. Do not ask for the car yet.",
   car:"Acknowledge what just happened before asking the car make, model and variant.",
@@ -22,7 +22,7 @@ const purposes = {
   clarify:"Reword the supplied fixedQuestion about the two possible car models. Preserve both exact car names and ask which is correct. Do not change the existing inspection's finding.",
 } as const;
 const fixed = {
-  name:"Welcome to Car mechanic — we take care of your car diagnosis. I’m your AI mechanic. What’s your name?",
+  name:"I’m your AI mechanic. What’s your name?",
   help:"How can I help you today?",
   story:"Tell me what happened. A little detail will help us understand your concern.",
   car:"Let’s take a closer look. What is your car’s make, model and variant?",
