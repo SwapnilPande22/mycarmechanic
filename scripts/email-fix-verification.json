@@ -1,0 +1,14 @@
+{
+  "requestId": "jd78222ywq5kkjj7fvkne5rrxn8g7vnn",
+  "name": "TEST email fix Kharadi (do not contact)",
+  "parts": 2,
+  "emailId": "01a135f5-9c3a-7a31-a3ee-fe179f8a78c5",
+  "emailStatus": "sent",
+  "whatsappMatchesSharedFunction": true,
+  "providerRetrieved": false,
+  "providerReadFailure": {
+    "httpStatus": 401,
+    "name": "restricted_api_key",
+    "message": "This API key is restricted to only send emails"
+  }
+}
