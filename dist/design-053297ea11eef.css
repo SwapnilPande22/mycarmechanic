@@ -46,16 +46,16 @@ input:focus,select:focus,button:focus-visible,.customer-flow input:focus,.custom
 .customer-flow .reason,.customer-flow .replacement-option,.customer-flow .replacement-total,.quantity-note { font-size:13px; }
 .quantity-note { padding:0 16px; color:#666b75; }
 .customer-flow .estimate-disclaimer { margin:16px; padding:0; font-size:13px; }
-.customer-flow .garage-item { position:relative; display:grid; grid-template-columns:110px minmax(0,1fr); gap:12px; padding:12px; border-radius:14px; }
-.customer-flow .garage-photo { grid-column:1; height:148px; border-radius:10px; }
-.customer-flow .garage-card-body { grid-column:2; padding:0; min-width:0; }
-.customer-flow .garage-item h3 { font-size:20px; margin:0 0 8px; }
-.customer-flow .garage-rating-chip { position:absolute; z-index:2; top:18px; left:18px; font-size:13px; }
+.customer-flow .garage-item { position:relative; display:block; padding:0; border-radius:14px; }
+.customer-flow .garage-photo { width:100%; height:188px; border-radius:0; }
+.customer-flow .garage-card-body { padding:16px; min-width:0; }
+.customer-flow .garage-item h3 { font-size:24px; margin:0 0 10px; }
+.customer-flow .garage-rating-chip { position:static; font-size:13px; }
 .customer-flow .garage-rating-row { margin:0 0 6px; }
 .customer-flow .garage-facts { flex-wrap:nowrap; gap:5px; margin:0 0 6px; }
 .customer-flow .garage-facts > span:first-child { flex:none; }
-.customer-flow .garage-area-name { min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.customer-flow .garage-open-state { display:block; margin:0 0 6px; }
+.customer-flow .garage-area-name { display:block; margin:0 0 6px; }
+.customer-flow .garage-open-state { display:inline; margin:0; }
 .customer-flow .garage-section :is(p,span,button,a,label,input),.customer-flow .garage-filter,.customer-flow .garage-status,.customer-flow .garage-suggestion,.quote-partner-label { font-size:13px; }
 .customer-flow .garage-tags { gap:4px; min-height:0; margin:8px 0; }
 .customer-flow .garage-tag { font-size:13px; padding:3px 5px; }
@@ -63,10 +63,10 @@ input:focus,select:focus,button:focus-visible,.customer-flow input:focus,.custom
 .customer-flow .garage-review-button { min-height:44px; }
 .customer-flow .garage-photo-credit,.customer-flow .garage-photo-credit a { font-size:13px; line-height:1.3; }
 .customer-flow .garage-photo-credit { max-height:40px; overflow:auto; bottom:0; right:0; max-width:100%; }
-.customer-flow .garage-inline-detail,.customer-flow .garage-provider-attribution { grid-column:1 / -1; padding:0; }
-.customer-flow .garage-skeleton { display:grid; grid-template-columns:110px minmax(0,1fr); gap:12px; padding:12px; }
-.customer-flow .garage-skeleton-photo { height:148px; border-radius:10px; }
-.customer-flow .garage-skeleton-body { padding:0; }
+.customer-flow .garage-inline-detail,.customer-flow .garage-provider-attribution { padding:0 16px; }
+.customer-flow .garage-skeleton { display:block; padding:0; }
+.customer-flow .garage-skeleton-photo { height:188px; border-radius:0; }
+.customer-flow .garage-skeleton-body { padding:16px; }
 .customer-flow .garage-section .cta,.customer-flow .garage-quote-bar button { font-size:16px; }
 .customer-flow .garage-section .secondary,.customer-flow .garage-section a { color:#1E3A8A; }
 .customer-flow .garage-no-results,.customer-flow .garage-status,.customer-flow .garage-detail { font-size:13px; line-height:1.6; }
@@ -86,8 +86,6 @@ input:focus,select:focus,button:focus-visible,.customer-flow input:focus,.custom
 .admin-actions .secondary { font-size:16px; }
 @media(max-width:480px) {
   main { padding-top:20px; }
-  .customer-flow .garage-item,.customer-flow .garage-skeleton { grid-template-columns:100px minmax(0,1fr); gap:10px; padding:10px; }
-  .customer-flow .garage-rating-chip { top:16px; left:16px; }
   .customer-flow .bill-head,.customer-flow .cheapest-estimate .bill-head,.estimate-row-heading { grid-template-columns:20px minmax(0,1fr) 88px 28px; gap:5px; }
   .customer-flow .result-meta { text-align:left; }
   .city-input-row { flex-wrap:wrap; }

@@ -10,7 +10,7 @@ The pop-ups should not appear immediately and no ads of garages to sell him or l
 
 ## 2. References, one per component
 Conversational AI like Vaani.ai from meesho who helps customers
-•	Take: photo on the left, rating chip on the photo, name, then distance and area on one line. 
+•	Take: full-width garage photo on top of the card with photo credit on it; below it, a large garage name, rating chip and review count, distance and open/closed status on one line, area, tags, partner quote label, Google reviews line and View reviews button.
 •	Ignore: offer pills, "Ad", "#4 in top deals", the bookmark, the Kotak banner. All of it feels like an ad.
 
 
