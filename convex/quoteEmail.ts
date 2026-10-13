@@ -14,7 +14,7 @@ export function quoteEmailText(request: EmailRequest, photoUrls: string[], admin
     "For owner only",
     `Customer name: ${request.name}`,
     `Phone number: ${request.whatsappNumber}`,
-    `Request time: ${new Date(request.createdAt).toISOString()}`,
+    `Request time: ${new Intl.DateTimeFormat("en-GB", {timeZone:"Asia/Kolkata",day:"numeric",month:"short",year:"numeric"}).format(request.createdAt)}, ${new Intl.DateTimeFormat("en-US", {timeZone:"Asia/Kolkata",hour:"numeric",minute:"2-digit",hour12:true}).format(request.createdAt)} IST`,
     ...(adminUrl ? [`Admin request: ${adminUrl}`] : []),
     "", "Copy for garage", garageMessage(request, photoLink),
   ].join("\n");

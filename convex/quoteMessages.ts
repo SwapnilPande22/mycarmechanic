@@ -9,12 +9,12 @@ function clean(value:string|undefined,request:Request):string {
     .join(" ").replace(/\s+/g," ").trim() || "Not provided";
 }
 export function garageMessage(request:Request,photoLink="Photos available in the request") {
-  const car=[request.make,request.model || request.carModel,request.year || "Year not provided"].filter(Boolean).join(" ");
-  const location=[request.area,request.city].filter(Boolean).flatMap(value=>value!.split(",")).map(value=>value.trim()).filter(Boolean).filter((value,index,values)=>values.findIndex(other=>other.toLowerCase()===value.toLowerCase())===index).join(", ");
-  const parts=request.parts.map((part,index)=>`${index+1}. ${clean(part.partName,request)}: ${clean(part.workNeeded,request)}`);
-  // Keep every part when unusually long requests need a compact final damage line.
-  const damage=parts.length>5 ? [...parts.slice(0,4),parts.slice(4).join("; ")] : parts;
-  return ["New repair request from MyCarMechanic",`A customer near ${clean(location,request)} needs a quote.`,`Car: ${clean(car,request)}`,`Area: ${clean(location,request)}`,...damage.map((line,index)=>index===0?"Damage: "+line:line),`Photos: ${photoLink}`,"Please reply with your total price and when you can take the car. I will share your quote with the customer."].join("\n");
+  const year=/^\d{4}$/.test(request.year?.trim() || "") ? request.year!.trim() : "";
+  const car=[request.make,request.model || request.carModel,year].filter(Boolean).join(" ");
+  // Use the location-step area only; discard an appended city, never fall back to it.
+  const locality=request.area.split(",").map(value=>value.trim()).find(value=>value && value.toLowerCase()!==request.city?.trim().toLowerCase()) || "";
+  const parts=request.parts.map((part,index)=>`${index+1}. ${clean(part.partName,request)} – ${clean(part.workNeeded,request)}`);
+  return ["New repair request from MyCarMechanic",`A customer near ${clean(locality,request)} needs a quote.`,`Car: ${clean(car,request)}`,`Area: ${clean(locality,request)}`,"Damage:",...parts,`Photos: ${photoLink}`,"Please reply with your total price and when you can take the car. I will share your quote with the customer."].join("\n");
 }
 export async function localizedGarageMessage(request:Request,photoLink:string,language:"en"|"hi"|"mr") {
   const source=garageMessage(request,photoLink).split("\n");
@@ -25,6 +25,5 @@ export async function localizedGarageMessage(request:Request,photoLink:string,la
     if(request.whatsappNumber)text=text.split(request.whatsappNumber).join("");
     return text;
   }).join("\n");
-  if(result.split("\n").length>=12)throw new Error("Garage message must be under twelve lines.");
   return result;
 }
