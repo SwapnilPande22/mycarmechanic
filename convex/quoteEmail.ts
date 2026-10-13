@@ -1,6 +1,6 @@
 export type EmailRequest = {
   name: string; whatsappNumber: string; createdAt: number;
-  carModel: string; make?: string; model?: string; year?: string;
+  carModel: string; make?: string; model?: string; variant?: string; year?: string;
   city?: string; area: string; customerConcern?: string;
   parts: { partName: string; workNeeded: string; customerDescription?: string; photoObservation?: string }[];
 };
