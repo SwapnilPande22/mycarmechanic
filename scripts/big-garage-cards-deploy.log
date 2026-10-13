@@ -1,0 +1,49 @@
+
+> build-sprint-app@1.0.0 deploy
+> convex deploy --env-file .env.local --yes && static-hosting upload --build --prod
+
+▌ Deploying code to deployment:
+▌ [Production] swapnilpan:build-sprint-app:production (prod) (dashboard: https://dashboard.convex.dev/t/swapnilpan/build-sprint-app/earnest-rhinoceros-454)
+▌ └─ https://earnest-rhinoceros-454.convex.cloud
+- Deploying to https://earnest-rhinoceros-454.convex.cloud...
+
+Convex AI files are not installed. Run npx convex ai-files install to get started or npx convex ai-files disable to hide this message.
+√ No indexes are deleted by this push
+Uploading functions to Convex...
+Generating TypeScript bindings...
+Running TypeScript...
+Pushing code to your Convex deployment...
+Schema validation complete.
+Finalizing push...
+✔ Deployed Convex functions to https://earnest-rhinoceros-454.convex.cloud
+🔨 Building for production...
+   Build command: npm run build
+   VITE_CONVEX_URL=https://earnest-rhinoceros-454.convex.cloud
+   STATIC_HOSTING_BASE_PATH=/
+
+
+> build-sprint-app@1.0.0 build
+> node scripts/build.js
+
+Built dist/index.html with content-versioned assets (one-year immutable cache).
+
+🚀 Deploying to production environment
+🔒 Using secure internal functions (requires Convex CLI auth)
+Uploading 6 files with deployment ID: cdb6160b-6426-48d6-bfa4-43c6eb25d1a7
+Component: staticHosting
+
+  Generating 6 upload URLs...
+  [1/6] /design-053297ea11eef.css (storage)
+  [2/6] /heic2any.LICENSE-017e4c847dac6.md (storage)
+  [3/6] /localization-0e2f21cfd80a1.js (storage)
+  [4/6] /index.html (storage/html)
+  [5/6] /ui-translations-0c83f61ca0f61.js (storage)
+  [6/6] /heic2any.min-00963cfa50e9e.js (storage)
+  Staging manifest chunk 1/1...
+  Publishing deployment...
+
+Cleaned up 6 old storage file(s) from previous deployments
+
+✨ Upload complete!
+
+Your app is now available at: https://earnest-rhinoceros-454.convex.site

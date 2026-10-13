@@ -1,0 +1,100 @@
+{
+  "width": 390,
+  "baselineCommit": "d2db8c0",
+  "liveUrl": "https://earnest-rhinoceros-454.convex.site",
+  "screens": {
+    "live-chat": {
+      "file": "live-chat.png",
+      "url": "https://earnest-rhinoceros-454.convex.site/"
+    },
+    "live-estimate": {
+      "file": "live-estimate.png",
+      "url": "https://earnest-rhinoceros-454.convex.site/"
+    },
+    "live-garages": {
+      "file": "live-garages.png",
+      "url": "https://earnest-rhinoceros-454.convex.site/"
+    }
+  },
+  "errors": [],
+  "estimateText": "Repair Estimate\n13 Oct 2026\nVolkswagen Polo GT TSI\nNo.\nSpare part / work\nPrice\nQty\n1.\nFront bumper\n₹500–₹800\n—\n\nFront bumper is visibly displaced at the left (car's right) wheel arch, with a stepped/open seam and gap; bumper shell appears intact.\n\nRe-clip / refit\nJob type: Repair\nLabour included\n\nReplace only if bumper shell or mounting points are cracked through or torn beyond safe fastening.\nReplacement: ₹4,500–₹6,000\n\n2.\nLHS fender\n₹1,200–₹1,800\n—\n\nVisible dent/crease above the wheel arch on the left fender.\n\nDent pull\nJob type: Repair\nLabour included\n\nReplace only if fender is torn or cracked through.\nReplacement: ₹3,500–₹4,500\n\nTotal ₹1,700–₹2,600\nCheapest fixes, including labour\nIf parts need replacing\n₹8,000–₹10,500\nAlternative total, not added to the cheapest fixes.\n\nQuantity: garage to confirm. Each repair range includes labour, materials and applicable taxes; no separate labour breakdown is available.\n\nAI estimate. Final work and price after a garage checks the car.",
+  "garages": [
+    {
+      "width": 324,
+      "height": 453.578125,
+      "photoWidth": 322,
+      "photoHeight": 188,
+      "imageWidth": 667,
+      "imageHeight": 500,
+      "text": "Photo: Dilip Kumar\n\nKGN MOTORS\n5.0 ★\n6 reviews\n\n1.1 km away\n·\nOpen now · Closes 10 pm\n\nKharadi\n\nReplies to MyCarMechanic quotes\n\n6 reviews on Google\n\nView reviews"
+    },
+    {
+      "width": 324,
+      "height": 506.96875,
+      "photoWidth": 322,
+      "photoHeight": 188,
+      "imageWidth": 800,
+      "imageHeight": 450,
+      "text": "Photo: Morya Motors And Car Sarvice\n\nMorya Motors And Car Sarvice\n4.9 ★\n53 reviews\n\n1.5 km away\n·\nOpen now\n\nKharadi\n\nQuick service\nHonest pricing\nReplies to MyCarMechanic quotes\n\n53 reviews on Google\n\nView reviews"
+    },
+    {
+      "width": 324,
+      "height": 474.578125,
+      "photoWidth": 322,
+      "photoHeight": 188,
+      "imageWidth": 800,
+      "imageHeight": 424,
+      "text": "Photo: Rohan Sunil Kasar\n\nSai Car Care\n4.5 ★\n147 reviews\n\n1.6 km away\n·\nClosed now\n\nKharadi\n\nHonest pricing\nReplies to MyCarMechanic quotes\n\n147 reviews on Google\n\nView reviews"
+    },
+    {
+      "width": 324,
+      "height": 474.578125,
+      "photoWidth": 322,
+      "photoHeight": 188,
+      "imageWidth": 800,
+      "imageHeight": 450,
+      "text": "Photo: Auto Excellence Car Services\n\nAuto Excellence Car Services\n4.8 ★\n182 reviews\n\n2.5 km away\n·\nOpen now · Closes 12 am\n\nWagholi\n\nHonest pricing\nQuick service\nReplies to MyCarMechanic quotes\n\n182 reviews on Google\n\nView reviews"
+    },
+    {
+      "width": 324,
+      "height": 442.390625,
+      "photoWidth": 322,
+      "photoHeight": 188,
+      "imageWidth": 667,
+      "imageHeight": 500,
+      "text": "Photo: Ashoka Hajare\n\nAJ Auto Garage\n4.8 ★\n47 reviews\n\n0.0 km away\n·\nOpen now\n\nKharadi\n\nHelpful team\n\n47 reviews on Google\n\nView reviews"
+    },
+    {
+      "width": 324,
+      "height": 421.390625,
+      "photoWidth": 322,
+      "photoHeight": 188,
+      "text": "Garage photo unavailable\nTushar Borse..\n5.0 ★\n1 review\n\n0.3 km away\n·\nHours unavailable\n\nMoshi\n\n1 review on Google\n\nView reviews"
+    },
+    {
+      "width": 324,
+      "height": 421.390625,
+      "photoWidth": 322,
+      "photoHeight": 188,
+      "text": "Garage photo unavailable\nJaved Ahmed Shaikh\n5.0 ★\n3 reviews\n\n0.3 km away\n·\nHours unavailable\n\nVadgaon Sheri\n\n3 reviews on Google\n\nView reviews"
+    },
+    {
+      "width": 324,
+      "height": 442.390625,
+      "photoWidth": 322,
+      "photoHeight": 188,
+      "imageWidth": 667,
+      "imageHeight": 500,
+      "text": "Photo: Tejas Khairnar\n\nMittal Hyundai Service\n4.7 ★\n1,586 reviews\n\n2.0 km away\n·\nClosed now\n\nKharadi\n\nQuick service\nHelpful team\n\n1,586 reviews on Google\n\nView reviews"
+    },
+    {
+      "width": 324,
+      "height": 474.78125,
+      "photoWidth": 322,
+      "photoHeight": 188,
+      "imageWidth": 667,
+      "imageHeight": 500,
+      "text": "Photo: Tata Motors Cars Bodyshop - Rudra Motors\n\nTata Motors Cars Bodyshop - Rudra Motors\n4.6 ★\n517 reviews\n\n2.2 km away\n·\nClosed now\n\nWagholi\n\nQuick service\nDenting & painting\n\n517 reviews on Google\n\nView reviews"
+    }
+  ]
+}
