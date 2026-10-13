@@ -1,0 +1,63 @@
+{
+  "name": "TEST message match Polo GT TSI Kharadi",
+  "requestId": "jd701gpaf3p1vedv0sctpg1nnh8g7rc0",
+  "emailId": "01a135ff-f83f-7c07-a991-ca753acd38cb",
+  "emailStatus": "sent",
+  "providerRetrieved": false,
+  "emailEvidence": "Formatted from saved request; provider key is send-only",
+  "sameOriginalPhotos": true,
+  "estimateParts": [
+    {
+      "panel": "front_bumper",
+      "name": "Front bumper",
+      "job": "Repair"
+    },
+    {
+      "panel": "front_lhs_door",
+      "name": "Front LHS door",
+      "job": "Repair"
+    },
+    {
+      "panel": "lhs_fender",
+      "name": "LHS fender",
+      "job": "Repair"
+    }
+  ],
+  "analysisParts": [
+    {
+      "panel": "front_bumper",
+      "repairType": "repair",
+      "cheapestFix": "reclip"
+    },
+    {
+      "panel": "front_lhs_door",
+      "repairType": "repair",
+      "cheapestFix": "dent_pull"
+    },
+    {
+      "panel": "lhs_fender",
+      "repairType": "repair",
+      "cheapestFix": "dent_pull"
+    }
+  ],
+  "savedParts": [
+    {
+      "partName": "Front bumper",
+      "workNeeded": "Repair"
+    },
+    {
+      "partName": "Front LHS door",
+      "workNeeded": "Repair"
+    },
+    {
+      "partName": "LHS fender",
+      "workNeeded": "Repair"
+    }
+  ],
+  "variant": "GT TSI",
+  "area": "Kharadi, Pune",
+  "estimateAndRequestPartsMatch": true,
+  "garageEmailAndWhatsAppMatch": true,
+  "lastLineInBody": true,
+  "errors": []
+}

@@ -1,0 +1,100 @@
+[
+  {
+    "id": "jh797kfbr3h3j8s41pk16qks6x8g4xkq",
+    "createdAt": 1791827526314,
+    "photoHash": "7621224a0d918f8896dba480e03509621924be662180946566d1f1cfb5e1638a",
+    "parts": [
+      {
+        "panel": "front_bumper",
+        "repairType": "repair",
+        "cheapestFix": "reclip"
+      },
+      {
+        "panel": "front_lhs_door",
+        "repairType": "repair",
+        "cheapestFix": "dent_pull"
+      },
+      {
+        "panel": "lhs_fender",
+        "repairType": "repair",
+        "cheapestFix": "dent_pull"
+      }
+    ]
+  },
+  {
+    "id": "jh7e2r24vptc1zxq57v8yw6a758g5rjf",
+    "createdAt": 1791827448854,
+    "photoHash": "7621224a0d918f8896dba480e03509621924be662180946566d1f1cfb5e1638a",
+    "parts": [
+      {
+        "panel": "front_bumper",
+        "repairType": "repair",
+        "cheapestFix": "reclip"
+      },
+      {
+        "panel": "front_lhs_door",
+        "repairType": "repair",
+        "cheapestFix": "dent_pull"
+      },
+      {
+        "panel": "lhs_fender",
+        "repairType": "repair",
+        "cheapestFix": "dent_pull"
+      }
+    ]
+  },
+  {
+    "id": "jh755z7jp8efrchac3cps7kc9x8fz58v",
+    "createdAt": 1791573821197,
+    "photoHash": "7621224a0d918f8896dba480e03509621924be662180946566d1f1cfb5e1638a",
+    "parts": [
+      {
+        "panel": "front_bumper",
+        "repairType": "denting_painting"
+      },
+      {
+        "panel": "bonnet",
+        "repairType": "denting_painting"
+      },
+      {
+        "panel": "front_lhs_door",
+        "repairType": "repair"
+      },
+      {
+        "panel": "lhs_fender",
+        "repairType": "denting_painting"
+      },
+      {
+        "panel": "lhs_mirror",
+        "repairType": "replacement"
+      }
+    ]
+  },
+  {
+    "id": "jh7dc8cqd915g6w130czm2gvw18fz3s8",
+    "createdAt": 1791572509295,
+    "photoHash": "7621224a0d918f8896dba480e03509621924be662180946566d1f1cfb5e1638a",
+    "parts": [
+      {
+        "panel": "front_bumper",
+        "repairType": "denting_painting"
+      },
+      {
+        "panel": "bonnet",
+        "repairType": "denting_painting"
+      },
+      {
+        "panel": "front_lhs_door",
+        "repairType": "denting_painting"
+      },
+      {
+        "panel": "lhs_fender",
+        "repairType": "denting_painting"
+      },
+      {
+        "panel": "lhs_mirror",
+        "repairType": "replacement"
+      }
+    ]
+  }
+]

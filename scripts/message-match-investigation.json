@@ -1,0 +1,72 @@
+{
+  "latest": {
+    "id": "jd74nqa4547jx3rehr9rg1sw6d8g6ggw",
+    "createdAt": 1791906866606,
+    "carModel": "Volkswagen Polo GT TSI",
+    "make": "Volkswagen",
+    "model": "Polo",
+    "variant": "GT TSI",
+    "year": "2018",
+    "area": "Pune",
+    "city": "Pune",
+    "parts": [
+      {
+        "panel": "front_bumper",
+        "partName": "Front bumper",
+        "workNeeded": "Repair"
+      },
+      {
+        "panel": "front_lhs_door",
+        "partName": "Front LHS door",
+        "workNeeded": "Repair"
+      },
+      {
+        "panel": "lhs_fender",
+        "partName": "LHS fender",
+        "workNeeded": "Repair"
+      }
+    ]
+  },
+  "older": {
+    "id": "jd74cc195p7sf22pg06xm52yks8g2ymj",
+    "createdAt": 1791743916619,
+    "carModel": "Volkswagen Polo GT TSI",
+    "make": "Volkswagen",
+    "model": "Polo",
+    "variant": "GT TSI",
+    "area": "Pune",
+    "city": "Pune",
+    "parts": [
+      {
+        "panel": "front_bumper",
+        "partName": "Front bumper",
+        "workNeeded": "Dent & paint"
+      },
+      {
+        "panel": "bonnet",
+        "partName": "Bonnet",
+        "workNeeded": "Dent & paint"
+      },
+      {
+        "panel": "front_lhs_door",
+        "partName": "Front LHS door",
+        "workNeeded": "Repair"
+      },
+      {
+        "panel": "lhs_fender",
+        "partName": "LHS fender",
+        "workNeeded": "Dent & paint"
+      },
+      {
+        "panel": "lhs_mirror",
+        "partName": "LHS mirror",
+        "workNeeded": "Replace"
+      }
+    ]
+  },
+  "samePhotoBytes": true,
+  "formatterDropsVariant": true,
+  "formatterSuppressesCityFallback": true,
+  "formatterPreservesSavedPartsAndJobs": true,
+  "savedInspectionChanged": true
+}
