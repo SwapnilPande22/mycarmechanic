@@ -6,7 +6,7 @@ export function createQuickEntry({showStep,askMechanic,saveName}) {
   document.body.classList.add('quick-entry');
   const upload=document.createElement('button');
   upload.id='quick-upload';upload.className='cta';upload.type='button';
-  upload.textContent=({en:'Upload photos of the damage',hi:'नुकसान की तस्वीरें अपलोड करें',mr:'नुकसानीचे फोटो अपलोड करा'})[window.i18n.language] || 'Upload photos of the damage';
+  upload.textContent=({en:'Upload photos of what needs fixing',hi:'जहाँ ठीक करवाना है उसकी तस्वीरें अपलोड करें',mr:'जे दुरुस्त करायचे आहे त्याचे फोटो अपलोड करा'})[window.i18n.language] || 'Upload photos of what needs fixing';
   document.getElementById('headline').after(upload);
   upload.addEventListener('click',()=>input.click());
   const fileList=document.getElementById('file-list'),clear=document.getElementById('clear-photos');

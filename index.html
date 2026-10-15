@@ -590,7 +590,13 @@
       };
       const showStep = step => { document.body.dataset.flowStage=step; document.querySelectorAll('[data-chat-step]').forEach(el=>el.hidden=el.dataset.chatStep!==step);history.closest('.card').hidden=false;history.hidden=false;chatStep=step;window.scrollTo({top:0,behavior:'smooth'}); };
       const makeBubble=()=>{history.replaceChildren();const bubble=document.createElement('div');bubble.className='chat-bubble app-bubble';history.append(bubble);return bubble;};
+      window.mechanicQuestionCopy = step => {
+        const copy={en:{help:'Hi! What can I help with?',story:'Got it. What happened?',recheck:'What should I check again?',location:'Which area should I look in?',estimate:'Here’s the repair range for your car.',garages:'Nearby garages'},hi:{help:'बताइए, कार में क्या ठीक करवाना है?',story:'अच्छा, कार के साथ क्या हुआ?',recheck:'मैं क्या दोबारा देखूँ?',location:'किस इलाके में गैराज ढूँढूँ?',estimate:'आपकी कार ठीक कराने का अनुमान यह है।',garages:'आस-पास के गैराज'},mr:{help:'कारमध्ये काय ठीक करायचे आहे?',story:'बरं, कारला काय झालं?',recheck:'मी पुन्हा काय तपासू?',location:'कोणत्या भागात गॅरेज शोधू?',estimate:'कार दुरुस्तीचा अंदाज इथे आहे.',garages:'जवळची गॅरेज'}};
+        return (copy[window.i18n.language] || copy.en)[step];
+      };
       const askMechanic = async (step,fallback,target=makeBubble()) => {
+        const shortQuestion=window.mechanicQuestionCopy(step);
+        if(shortQuestion){decorateMessage(target,shortQuestion);previousMechanicQuestion=shortQuestion;return shortQuestion;}
         if(step==='loading')decorateMessage(target,window.i18n.fallback(step,fallback));else decorateMessage(target,'',true);
         const strings=[...new Set([...commonLabels,...(stageLabels[step]||[])])];
         // Include current screen labels; input values, contacts and garage results are never sent.
@@ -634,7 +640,7 @@
       document.querySelector('[data-chat-skip]').addEventListener('click',()=>advanceChat('story',true));
       ['name','help','story'].forEach(step=>document.getElementById('chat-'+step).addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();advanceChat(step);}}));
       cityInput.addEventListener('keydown',event=>{if(event.key==='Enter'&&citySuggestions.hidden){event.preventDefault();advanceChat('city');}});
-      const dynamicSteps={'#result > .app-bubble:not(.model-choice)':'estimate','.recheck-card p:first-of-type':'recheck','.garage-invite h2':'garages','.garage-controls h2':'location','#quote-invitation h2':'quotes','#quote-prompt-title':'phone','[data-quote-followup] p':'thanks','.flow-ending p':'end'};
+      const dynamicSteps={'#result > .app-bubble:not(.model-choice)':'estimate','.recheck-card p:first-of-type':'recheck','.garage-controls h2':'location','#quote-invitation h2':'quotes','#quote-prompt-title':'phone','[data-quote-followup] p':'thanks','.flow-ending p':'end'};
       let presentationScheduled=false;
       const updatePresentation=()=>{
         presentationScheduled=false;translateControls();
@@ -655,7 +661,7 @@
         conversationBusy=true;document.querySelectorAll('[data-chat-step] input,[data-chat-step] button').forEach(el=>el.disabled=true);
         const step=customerName?'help':'name';showStep(step);
         const initialQuestion=await askMechanic(step,customerName?customerName+', how can we help you today?':'Welcome to Car mechanic — we take care of your car diagnosis. I’m your AI mechanic. What’s your name?');
-        if(customerName&&!initialQuestion.includes(customerName))decorateMessage(history.querySelector('.chat-bubble'),customerName+', '+initialQuestion);
+        if(step!=='help'&&customerName&&!initialQuestion.includes(customerName))decorateMessage(history.querySelector('.chat-bubble'),customerName+', '+initialQuestion);
         conversationBusy=false;document.querySelectorAll('[data-chat-step] input,[data-chat-step] button').forEach(el=>el.disabled=false);
       });
 
@@ -1559,6 +1565,8 @@
           clearButton.disabled = false;
         }
       });
+      const {setupChatQuestions}=await import('/chat-questions.js');
+      setupChatQuestions();
       }
     </script>
   </body>

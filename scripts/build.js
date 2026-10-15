@@ -1,8 +1,9 @@
 ﻿const fs=require('fs'),path=require('path'),crypto=require('crypto');const root=path.resolve(__dirname,'..'),output=path.join(root,'dist');const convexUrl=process.env.VITE_CONVEX_URL;if(!convexUrl||!/^https:\/\/[^/]+\.convex\.cloud$/.test(convexUrl))throw Error('VITE_CONVEX_URL must be an HTTPS Convex deployment URL.');
 fs.mkdirSync(output,{recursive:true});
 // All names below are generated assets within dist; HTML is always revalidated.
-for(const file of fs.readdirSync(output))if(['customer-controls.js','quick-entry.js','design.css','localization.js','ui-translations.js','heic2any.min.js','heic2any.LICENSE.md'].includes(file)||/^(?:customer-controls|quick-entry|design|localization|ui-translations|heic2any)[-.].*\.(?:css|js|md)$/.test(file))fs.unlinkSync(path.join(output,file));
+for(const file of fs.readdirSync(output))if(['chat-questions.js','customer-controls.js','quick-entry.js','design.css','localization.js','ui-translations.js','heic2any.min.js','heic2any.LICENSE.md'].includes(file)||/^(?:chat-questions|customer-controls|quick-entry|design|localization|ui-translations|heic2any)[-.].*\.(?:css|js|md)$/.test(file))fs.unlinkSync(path.join(output,file));
 const assets={
+ 'chat-questions.js':fs.readFileSync(path.join(root,'chat-questions.js')),
  'design.css':fs.readFileSync(path.join(root,'design.css')),
  'quick-entry.js':fs.readFileSync(path.join(root,'quick-entry.js')),
  'localization.js':fs.readFileSync(path.join(root,'localization.js')),

@@ -1,0 +1,41 @@
+{
+  "live": false,
+  "width": 390,
+  "allBackendCodeUnchanged": true,
+  "carCityYearUnchanged": true,
+  "pages": [
+    {
+      "variant": "original",
+      "answers": [
+        "Body repair",
+        "Dent",
+        "The price seems high",
+        "Kharadi"
+      ],
+      "oneQuestionAtATime": true,
+      "replyBubblesRetained": true,
+      "realRefineUsesOriginalHandler": true,
+      "otherTypedExceptionTested": false,
+      "areaUsesOriginalGarageSearch": true,
+      "quoteFormReached": true,
+      "noQuoteSubmitted": true,
+      "errors": []
+    },
+    {
+      "variant": "quick",
+      "answers": [
+        "The price seems high",
+        "Kharadi"
+      ],
+      "quickPhotoFirst": true,
+      "oneQuestionAtATime": true,
+      "replyBubblesRetained": true,
+      "realRefineUsesOriginalHandler": true,
+      "otherTypedExceptionTested": true,
+      "areaUsesOriginalGarageSearch": true,
+      "quoteFormReached": true,
+      "noQuoteSubmitted": true,
+      "errors": []
+    }
+  ]
+}
