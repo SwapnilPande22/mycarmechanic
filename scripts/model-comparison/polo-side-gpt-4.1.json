@@ -1,0 +1,486 @@
+{
+  "case": "polo-side",
+  "file": "IMG-20260202-WA0012.jpg",
+  "photoSha256": "e8560f092e07f163d260eb614b9d01683e5ce562b2cf94983d8b0ba365263af9",
+  "model": "gpt-4.1",
+  "car": "Volkswagen Polo GT TSI",
+  "city": "Pune",
+  "calls": [
+    {
+      "model": "gpt-4.1",
+      "responseModel": "gpt-4.1-2025-04-14",
+      "status": "completed",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": 6500,
+        "imageDetail": "high",
+        "format": "json_object"
+      },
+      "instructionSha256": "da34e948f441d237e46031c370fc1e945ab08994d8ba653c71d4e586372b317b",
+      "usage": {
+        "input_tokens": 1988,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1847,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3835
+      },
+      "costUsd": 0.018752,
+      "elapsedMs": 11868,
+      "answer": {
+        "isCarPhoto": true,
+        "detectedModel": "Volkswagen Polo GT TSI",
+        "modelConfidence": "high",
+        "modelMatchesSelected": "same",
+        "modelReason": "GT TSI badge and Polo styling visible",
+        "checklist": [
+          {
+            "panel": "front_bumper",
+            "status": "damaged",
+            "confidence": "high",
+            "reason": "Front bumper is visibly pulled away from the lhs fender with a gap at the wheel arch, but the shell appears intact.",
+            "repairType": "repair",
+            "cheapestFix": "reclip",
+            "replacementCondition": "replace only if bumper shell or mounting points are cracked through or torn beyond safe fastening",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rear_bumper",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Rear bumper not visible in this view",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "bonnet",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "Bonnet appears intact with no visible dents or damage; reflections only.",
+            "repairType": "repair",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "boot",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Boot not visible in this view",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "front_lhs_door",
+            "status": "damaged",
+            "confidence": "high",
+            "reason": "Visible dent and deformation near the front edge of the door, adjacent to the fender.",
+            "repairType": "repair",
+            "cheapestFix": "dent_pull",
+            "replacementCondition": "replace only if dent cannot be pulled or door is structurally compromised",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "front_rhs_door",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "No visible damage to the front right door.",
+            "repairType": "repair",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rear_lhs_door",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "No visible damage to the rear left door.",
+            "repairType": "repair",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rear_rhs_door",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "No visible damage to the rear right door.",
+            "repairType": "repair",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_fender",
+            "status": "damaged",
+            "confidence": "high",
+            "reason": "Visible dent and deformation at the rear edge of the fender near the door and wheel arch.",
+            "repairType": "repair",
+            "cheapestFix": "dent_pull",
+            "replacementCondition": "replace only if dent cannot be pulled or fender is structurally compromised",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_fender",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Right fender not visible in this view",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_quarter_panel",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Left quarter panel not visible in this view",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_quarter_panel",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Right quarter panel not visible in this view",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_mirror",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "Left mirror appears intact with no visible damage.",
+            "repairType": "repair",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_mirror",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Right mirror not visible in this view",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_headlight",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "Left headlight appears intact; no cracks or breakage visible.",
+            "repairType": "repair",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_headlight",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Right headlight not visible in this view",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_tail_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Left tail light not visible in this view",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_tail_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Right tail light not visible in this view",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_fog_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Left fog light not visible in this view",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_fog_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Right fog light not visible in this view",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "windshield",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "Windshield appears intact with no visible cracks or chips.",
+            "repairType": "repair",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          }
+        ],
+        "needsMorePhotos": true
+      }
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "responseModel": "gpt-4.1-mini-2025-04-14",
+      "status": "completed",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": 4000,
+        "format": "json_object"
+      },
+      "instructionSha256": "57a8a2d991d8b8da3d4905b974e63056cc6a2d447fe5072007462f70bdc94ebb",
+      "usage": {
+        "input_tokens": 812,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 193,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1005
+      },
+      "costUsd": 0.0006336,
+      "elapsedMs": 2245,
+      "answer": {
+        "estimates": [
+          {
+            "itemId": "front_bumper:repair",
+            "panel": "front_bumper",
+            "repairType": "repair",
+            "low": 500,
+            "high": 700
+          },
+          {
+            "itemId": "front_bumper:replacement",
+            "panel": "front_bumper",
+            "repairType": "replacement",
+            "low": 6500,
+            "high": 8500
+          },
+          {
+            "itemId": "front_lhs_door:repair",
+            "panel": "front_lhs_door",
+            "repairType": "repair",
+            "low": 2500,
+            "high": 3500
+          },
+          {
+            "itemId": "front_lhs_door:replacement",
+            "panel": "front_lhs_door",
+            "repairType": "replacement",
+            "low": 9000,
+            "high": 12000
+          },
+          {
+            "itemId": "lhs_fender:repair",
+            "panel": "lhs_fender",
+            "repairType": "repair",
+            "low": 2000,
+            "high": 3000
+          },
+          {
+            "itemId": "lhs_fender:replacement",
+            "panel": "lhs_fender",
+            "repairType": "replacement",
+            "low": 7000,
+            "high": 9000
+          }
+        ]
+      }
+    }
+  ],
+  "result": {
+    "photoHash": "7621224a0d918f8896dba480e03509621924be662180946566d1f1cfb5e1638a",
+    "isCarPhoto": true,
+    "estimateFormat": "cheapest-fix-v1",
+    "checks": [],
+    "selectedModel": "Volkswagen Polo GT TSI",
+    "variant": "GT TSI",
+    "detectedModel": "Volkswagen Polo GT TSI",
+    "modelConfidence": "high",
+    "modelReason": "GT TSI badge and Polo styling visible",
+    "confidentMismatch": false,
+    "panels": [
+      {
+        "panel": "front_bumper",
+        "status": "damaged",
+        "confidence": "high",
+        "reason": "Front bumper is visibly pulled away from the lhs fender with a gap at the wheel arch, but the shell appears intact.",
+        "repairType": "repair",
+        "cheapestFix": "reclip",
+        "replacementEvidence": "none",
+        "replacementReason": "",
+        "replacementCondition": "replace only if bumper shell or mounting points are cracked through or torn beyond safe fastening",
+        "needsAnotherPhoto": false
+      },
+      {
+        "panel": "front_lhs_door",
+        "status": "damaged",
+        "confidence": "high",
+        "reason": "Visible dent and deformation near the front edge of the door, adjacent to the fender.",
+        "repairType": "repair",
+        "cheapestFix": "dent_pull",
+        "replacementEvidence": "none",
+        "replacementReason": "",
+        "replacementCondition": "replace only if dent cannot be pulled or door is structurally compromised",
+        "needsAnotherPhoto": false
+      },
+      {
+        "panel": "lhs_fender",
+        "status": "damaged",
+        "confidence": "high",
+        "reason": "Visible dent and deformation at the rear edge of the fender near the door and wheel arch.",
+        "repairType": "repair",
+        "cheapestFix": "dent_pull",
+        "replacementEvidence": "none",
+        "replacementReason": "",
+        "replacementCondition": "replace only if dent cannot be pulled or fender is structurally compromised",
+        "needsAnotherPhoto": false
+      }
+    ],
+    "estimates": [
+      {
+        "panel": "front_bumper",
+        "repairType": "repair",
+        "cheapestFix": "reclip",
+        "reason": "Front bumper is visibly pulled away from the lhs fender with a gap at the wheel arch, but the shell appears intact.",
+        "itemId": "front_bumper:repair",
+        "low": 500,
+        "high": 700
+      },
+      {
+        "panel": "front_bumper",
+        "repairType": "replacement",
+        "cheapestFix": "replacement",
+        "reason": "Front bumper is visibly pulled away from the lhs fender with a gap at the wheel arch, but the shell appears intact.",
+        "itemId": "front_bumper:replacement",
+        "low": 6500,
+        "high": 8500
+      },
+      {
+        "panel": "front_lhs_door",
+        "repairType": "repair",
+        "cheapestFix": "dent_pull",
+        "reason": "Visible dent and deformation near the front edge of the door, adjacent to the fender.",
+        "itemId": "front_lhs_door:repair",
+        "low": 2500,
+        "high": 3500
+      },
+      {
+        "panel": "front_lhs_door",
+        "repairType": "replacement",
+        "cheapestFix": "replacement",
+        "reason": "Visible dent and deformation near the front edge of the door, adjacent to the fender.",
+        "itemId": "front_lhs_door:replacement",
+        "low": 9000,
+        "high": 12000
+      },
+      {
+        "panel": "lhs_fender",
+        "repairType": "repair",
+        "cheapestFix": "dent_pull",
+        "reason": "Visible dent and deformation at the rear edge of the fender near the door and wheel arch.",
+        "itemId": "lhs_fender:repair",
+        "low": 2000,
+        "high": 3000
+      },
+      {
+        "panel": "lhs_fender",
+        "repairType": "replacement",
+        "cheapestFix": "replacement",
+        "reason": "Visible dent and deformation at the rear edge of the fender near the door and wheel arch.",
+        "itemId": "lhs_fender:replacement",
+        "low": 7000,
+        "high": 9000
+      }
+    ]
+  },
+  "parts": [
+    {
+      "panel": "front_bumper",
+      "repairType": "repair",
+      "cheapestFix": "reclip",
+      "reason": "Front bumper is visibly pulled away from the lhs fender with a gap at the wheel arch, but the shell appears intact.",
+      "low": 500,
+      "high": 700,
+      "replacementCondition": "replace only if bumper shell or mounting points are cracked through or torn beyond safe fastening"
+    },
+    {
+      "panel": "front_lhs_door",
+      "repairType": "repair",
+      "cheapestFix": "dent_pull",
+      "reason": "Visible dent and deformation near the front edge of the door, adjacent to the fender.",
+      "low": 2500,
+      "high": 3500,
+      "replacementCondition": "replace only if dent cannot be pulled or door is structurally compromised"
+    },
+    {
+      "panel": "lhs_fender",
+      "repairType": "repair",
+      "cheapestFix": "dent_pull",
+      "reason": "Visible dent and deformation at the rear edge of the fender near the door and wheel arch.",
+      "low": 2000,
+      "high": 3000,
+      "replacementCondition": "replace only if dent cannot be pulled or fender is structurally compromised"
+    }
+  ],
+  "totalLow": 5000,
+  "totalHigh": 7200,
+  "totalCostUsd": 0.019385600000000003
+}

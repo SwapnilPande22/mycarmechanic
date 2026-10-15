@@ -1,0 +1,55 @@
+{
+  "live": true,
+  "width": 390,
+  "protectedCodeUnchanged": true,
+  "pages": [
+    {
+      "variant": "original",
+      "url": "https://earnest-rhinoceros-454.convex.site/",
+      "screens": [
+        "01-help",
+        "02-story",
+        "02-story-other",
+        "03-car",
+        "04-city",
+        "05-photos-back",
+        "06-estimate-back",
+        "07-refine",
+        "08-area",
+        "09-year",
+        "10-quote-back"
+      ],
+      "backKeepsAnswersAndPhotos": true,
+      "unchangedEstimateReused": true,
+      "selectionsReachOriginalAIFields": true,
+      "quoteInputsRetained": true,
+      "phoneAndNameRemainText": true,
+      "noQuoteSubmitted": true,
+      "noForbiddenWord": true,
+      "errors": []
+    },
+    {
+      "variant": "quick",
+      "url": "https://earnest-rhinoceros-454.convex.site/quick",
+      "screens": [
+        "00-upload-back",
+        "03-car",
+        "04-city",
+        "05-loading-back",
+        "06-estimate-back",
+        "07-refine",
+        "08-area",
+        "09-year",
+        "10-quote-back"
+      ],
+      "backKeepsAnswersAndPhotos": true,
+      "unchangedEstimateReused": true,
+      "selectionsReachOriginalAIFields": true,
+      "quoteInputsRetained": true,
+      "phoneAndNameRemainText": true,
+      "noQuoteSubmitted": true,
+      "noForbiddenWord": true,
+      "errors": []
+    }
+  ]
+}

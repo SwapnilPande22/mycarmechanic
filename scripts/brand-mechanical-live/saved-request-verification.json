@@ -1,0 +1,8 @@
+{
+  "testOnly": true,
+  "requestType": "mechanical",
+  "savedWithoutPhotosOrEstimate": true,
+  "carAndProblemRetained": true,
+  "emailStatus": "sent",
+  "providerTextRetrieved": false
+}

@@ -1,0 +1,27 @@
+{
+  "live": true,
+  "width": 390,
+  "protectedEstimatePricingAndModelsUnchanged": true,
+  "pages": [
+    {
+      "variant": "original",
+      "brandsAndScopedModels": true,
+      "backRetainsEachBrandsAnswer": true,
+      "mileageSkipsPhotosAndAI": true,
+      "mechanicalFormPayloadCorrect": true,
+      "dentStillAsksPhotos": true,
+      "testQuoteSubmitted": false,
+      "errors": []
+    },
+    {
+      "variant": "quick",
+      "brandsAndScopedModels": true,
+      "backRetainsEachBrandsAnswer": true,
+      "mileageSkipsPhotosAndAI": true,
+      "mechanicalFormPayloadCorrect": true,
+      "dentStillAsksPhotos": true,
+      "testQuoteSubmitted": false,
+      "errors": []
+    }
+  ]
+}

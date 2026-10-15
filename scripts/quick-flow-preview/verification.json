@@ -1,0 +1,49 @@
+{
+  "live": false,
+  "url": "https://earnest-rhinoceros-454.convex.site/quick",
+  "width": 390,
+  "steps": [
+    {
+      "screen": "01-upload",
+      "description": "Upload photos of the damage; no name or phone."
+    },
+    {
+      "screen": "02-car",
+      "description": "Car make/model/variant; the first photo is retained."
+    },
+    {
+      "screen": "03-city",
+      "description": "Pune already filled; one Continue tap confirms it."
+    },
+    {
+      "screen": "04-estimate",
+      "description": "Estimate displayed automatically without another photo prompt."
+    },
+    {
+      "screen": "05-garages",
+      "description": "Kharadi garage cards and partner labels; no contact fields."
+    },
+    {
+      "screen": "06-quote",
+      "description": "Name and WhatsApp appear together only after requesting a quote."
+    }
+  ],
+  "photoAskedExactlyOnce": true,
+  "photoSelections": 1,
+  "fileChooserCount": 1,
+  "repeatPhotoQuestions": 0,
+  "inspections": 1,
+  "initialPhotoBytesUsed": true,
+  "photoSha256": "e8560f092e07f163d260eb614b9d01683e5ce562b2cf94983d8b0ba365263af9",
+  "stages": [
+    "quick-upload",
+    "car",
+    "city",
+    "loading",
+    "estimate",
+    "garages",
+    "quote"
+  ],
+  "noQuoteSubmitted": true,
+  "errors": []
+}

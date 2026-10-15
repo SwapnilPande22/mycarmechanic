@@ -1,0 +1,12 @@
+const fs=require('fs'),path=require('path'),assert=require('assert/strict'),vm=require('vm');const root=path.resolve(__dirname,'..');
+const routing=fs.readFileSync(path.join(root,'index.html'),'utf8').match(/const isMechanicalProblem = text => \{[\s\S]*?\n      \};/)[0];
+const route=vm.runInNewContext(routing+'\nisMechanicalProblem;');
+for(const problem of ['Mileage','Engine noise','AC','Brakes','Battery','Service','Air conditioning is not cooling'])assert(route(problem),problem+' must skip photos');
+for(const problem of ['Dent','Scratch','Broken part','Part hanging','Glass','Lights','Dent; AC','Something needs fixing'])assert(!route(problem),problem+' must keep photos');
+// Bundle the shared formatter for offline checks; no AI, email or database call is made.
+const esbuild=require('esbuild');const bundle=esbuild.buildSync({entryPoints:[path.join(root,'convex/quoteEmail.ts')],bundle:true,write:false,platform:'node',format:'cjs'}).outputFiles[0].text;
+const mod={exports:{}};vm.runInNewContext(bundle,{module:mod,exports:mod.exports,require,process,console,URL,TextEncoder,TextDecoder,fetch,setTimeout,clearTimeout});
+const request={name:'TEST mechanical message',whatsappNumber:'9000000000',createdAt:1791488400000,carModel:'Maruti Swift VXi',make:'Maruti',model:'Swift',variant:'VXi',year:'2018',city:'Pune',area:'Kharadi',customerConcern:'Mileage is low',parts:[]};
+const mechanical=mod.exports.quoteEmailText({...request,requestType:'mechanical'},[],'https://example.convex.site/admin?request=TEST');assert(mechanical.includes('No photo, mechanical'));assert(mechanical.includes('Problem: Mileage is low'));assert(mechanical.includes('Car: Maruti Swift VXi 2018'));assert(!mechanical.includes('Damage:'));assert(!mechanical.includes('Photos:'));assert(mechanical.endsWith('Please reply with your total price and when you can take the car. I will share your quote with the customer.'));
+const body=mod.exports.quoteEmailText({...request,parts:[{partName:'Front bumper',workNeeded:'Repair'},{partName:'LHS fender',workNeeded:'Dent & paint'}]},['https://example/photo'],'https://example.convex.site/admin?request=TEST');
+assert(!body.includes('No photo, mechanical'));assert(body.includes('Damage:\n1. Front bumper – Repair\n2. LHS fender – Dent & paint\nPhotos: https://example.convex.site/quotes/TEST'));assert(body.includes('Area: Kharadi'));console.log('PASS: mechanical label and saved concern; body garage message keeps technical names, parts, jobs and photo link.');

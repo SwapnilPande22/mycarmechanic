@@ -1,0 +1,295 @@
+{
+  "case": "polo-front-angle",
+  "file": "IMG-20260202-WA0014.jpg",
+  "photoSha256": "b48dfd442327b2e3aedb30607d306f0fa7e6f9f0cf417b759ffd6442468eb86c",
+  "model": "gpt-4.1",
+  "car": "Volkswagen Polo GT TSI",
+  "city": "Pune",
+  "calls": [
+    {
+      "model": "gpt-4.1",
+      "responseModel": "gpt-4.1-2025-04-14",
+      "status": "completed",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": 6500,
+        "imageDetail": "high",
+        "format": "json_object"
+      },
+      "instructionSha256": "da34e948f441d237e46031c370fc1e945ab08994d8ba653c71d4e586372b317b",
+      "usage": {
+        "input_tokens": 1988,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1775,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 3763
+      },
+      "costUsd": 0.018176,
+      "elapsedMs": 12058,
+      "answer": {
+        "isCarPhoto": true,
+        "detectedModel": "Volkswagen Polo",
+        "modelConfidence": "high",
+        "modelMatchesSelected": "same",
+        "modelReason": "Visible Volkswagen badge and Polo styling match selected model.",
+        "checklist": [
+          {
+            "panel": "front_bumper",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "No visible cracks, displacement, or major scuffs; panel alignment appears normal.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rear_bumper",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Rear bumper not visible in this view.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "bonnet",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "No dents or scratches visible; reflections only.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "boot",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Boot not visible in this view.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "front_lhs_door",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "No visible dents, scratches, or misalignment.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "front_rhs_door",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "No visible dents, scratches, or misalignment.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rear_lhs_door",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Rear left door not visible in this view.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rear_rhs_door",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "No visible dents, scratches, or misalignment.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_fender",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Left fender not visible in this view.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_fender",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "No visible dents, scratches, or misalignment.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_quarter_panel",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Left quarter panel not visible in this view.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_quarter_panel",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Right quarter panel not visible in this view.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_mirror",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Left mirror not visible in this view.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_mirror",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "Right mirror appears intact with no visible damage.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_headlight",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "No cracks or displacement visible; only internal reflector patterns.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_headlight",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "No cracks or displacement visible; only internal reflector patterns.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_tail_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Left tail light not visible in this view.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_tail_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Right tail light not visible in this view.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_fog_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Left fog light not visible in this view.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_fog_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Right fog light not visible in this view.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "windshield",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "No visible cracks or chips.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          }
+        ],
+        "needsMorePhotos": true
+      }
+    }
+  ],
+  "result": {
+    "photoHash": "269d791cbfbccd64a674fc5177f8f6eceafca4c48a8140a4c58b72b9db994210",
+    "isCarPhoto": true,
+    "estimateFormat": "cheapest-fix-v1",
+    "checks": [],
+    "selectedModel": "Volkswagen Polo GT TSI",
+    "variant": "GT TSI",
+    "detectedModel": "Volkswagen Polo",
+    "modelConfidence": "high",
+    "modelReason": "Visible Volkswagen badge and Polo styling match selected model.",
+    "confidentMismatch": false,
+    "panels": [],
+    "estimates": []
+  },
+  "parts": [],
+  "totalLow": 0,
+  "totalHigh": 0,
+  "totalCostUsd": 0.018176
+}

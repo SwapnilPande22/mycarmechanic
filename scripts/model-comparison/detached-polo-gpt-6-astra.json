@@ -1,0 +1,382 @@
+{
+  "case": "detached-polo",
+  "file": "TEST-detached-Polo.jpg",
+  "photoSha256": "2ced37198485f8f69f144db2b780bd0d76149bb3c0646b6c19e3ca1e079fc1f6",
+  "model": "gpt-6-astra",
+  "car": "Volkswagen Polo GT TSI",
+  "city": "Pune",
+  "calls": [
+    {
+      "model": "gpt-6-astra",
+      "responseModel": "gpt-6-astra",
+      "status": "completed",
+      "settings": {
+        "reasoning": {
+          "effort": "medium"
+        },
+        "max_output_tokens": 6500,
+        "imageDetail": "high",
+        "format": "json_object"
+      },
+      "instructionSha256": "da34e948f441d237e46031c370fc1e945ab08994d8ba653c71d4e586372b317b",
+      "usage": {
+        "input_tokens": 3503,
+        "input_tokens_details": {
+          "cache_write_tokens": 3500,
+          "cached_tokens": 0
+        },
+        "output_tokens": 1965,
+        "output_tokens_details": {
+          "reasoning_tokens": 85
+        },
+        "total_tokens": 5468
+      },
+      "costUsd": 0.14203000000000002,
+      "elapsedMs": 45319,
+      "answer": {
+        "isCarPhoto": true,
+        "detectedModel": "Volkswagen Polo",
+        "modelConfidence": "high",
+        "modelMatchesSelected": "same",
+        "modelReason": "VW badges, grille and headlight styling support Volkswagen Polo. GT TSI variant is not independently verifiable from this view.",
+        "checklist": [
+          {
+            "panel": "front_bumper",
+            "status": "damaged",
+            "confidence": "high",
+            "reason": "Bumper is detached and hanging forward, with the left wheel-arch fastening area completely separated and mounting rail exposed. Shell appears substantially intact; incidental scuffs do not justify replacement or repainting for secure mounting.",
+            "repairType": "repair",
+            "cheapestFix": "refit",
+            "replacementCondition": "Replace only if inspection confirms a through-cracked shell or shell mounting points torn beyond safe refastening.",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rear_bumper",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Rear bumper is outside this front three-quarter view.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "bonnet",
+            "status": "not_damaged",
+            "confidence": "medium",
+            "reason": "Visible bonnet surface shows reflections without a confirmed dent or paint defect.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "boot",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Boot is not shown.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "front_lhs_door",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Left front door is outside the frame.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "front_rhs_door",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Right front door is on the unseen side.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rear_lhs_door",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Left rear door is outside the frame.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rear_rhs_door",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Right rear door is not shown.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_fender",
+            "status": "not_damaged",
+            "confidence": "medium",
+            "reason": "Visible left fender and wheel-arch contour show no distinct deformed-metal crease. Exposed lower mounting area results from the detached bumper.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_fender",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Opposite front fender is not shown.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_quarter_panel",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Left rear quarter panel is outside the frame.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_quarter_panel",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Right rear quarter panel is not shown.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_mirror",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Subject car's left mirror is outside the frame.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_mirror",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Subject car's right mirror is not shown.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_headlight",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "Left headlight lens appears intact and the assembly remains seated. Reflections and internal optical patterns are not visible cracks.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_headlight",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Opposite headlight cannot be assessed from this angle.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_tail_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Left tail light is not shown.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_tail_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Right tail light is not shown.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_fog_light",
+            "status": "not_damaged",
+            "confidence": "medium",
+            "reason": "Visible fog light remains seated in the detached bumper, with no clear lens breakage or independent displacement.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_fog_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Opposite fog light is not visible for assessment.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "windshield",
+            "status": "not_damaged",
+            "confidence": "medium",
+            "reason": "Visible windshield portion shows no clear crack or chip.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          }
+        ],
+        "needsMorePhotos": true
+      }
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "responseModel": "gpt-4.1-mini-2025-04-14",
+      "status": "completed",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": 4000,
+        "format": "json_object"
+      },
+      "instructionSha256": "6cd0ca52a223f922a60eba660a01a8102494015532aa3bdfc0d8a08c2f243f18",
+      "usage": {
+        "input_tokens": 650,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 65,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 715
+      },
+      "costUsd": 0.000364,
+      "elapsedMs": 1226,
+      "answer": {
+        "estimates": [
+          {
+            "itemId": "front_bumper:repair",
+            "panel": "front_bumper",
+            "repairType": "repair",
+            "low": 500,
+            "high": 800
+          },
+          {
+            "itemId": "front_bumper:replacement",
+            "panel": "front_bumper",
+            "repairType": "replacement",
+            "low": 4500,
+            "high": 6000
+          }
+        ]
+      }
+    }
+  ],
+  "result": {
+    "photoHash": "3840152135a5a86347dadce3141bf4cc7439955c4d2d7fac6843b4af61afe209",
+    "isCarPhoto": true,
+    "estimateFormat": "cheapest-fix-v1",
+    "checks": [],
+    "selectedModel": "Volkswagen Polo GT TSI",
+    "variant": "GT TSI",
+    "detectedModel": "Volkswagen Polo",
+    "modelConfidence": "high",
+    "modelReason": "VW badges, grille and headlight styling support Volkswagen Polo. GT TSI variant is not independently verifiable from this view.",
+    "confidentMismatch": false,
+    "panels": [
+      {
+        "panel": "front_bumper",
+        "status": "damaged",
+        "confidence": "high",
+        "reason": "Bumper is detached and hanging forward, with the left wheel-arch fastening area completely separated and mounting rail exposed. Shell appears substantially intact; incidental scuffs do not justify replacement or repainting for secure mounting.",
+        "repairType": "repair",
+        "cheapestFix": "refit",
+        "replacementEvidence": "none",
+        "replacementReason": "",
+        "replacementCondition": "Replace only if inspection confirms a through-cracked shell or shell mounting points torn beyond safe refastening.",
+        "needsAnotherPhoto": false
+      }
+    ],
+    "estimates": [
+      {
+        "panel": "front_bumper",
+        "repairType": "repair",
+        "cheapestFix": "refit",
+        "reason": "Bumper is detached and hanging forward, with the left wheel-arch fastening area completely separated and mounting rail exposed. Shell appears substantially intact; incidental scuffs do not justify replacement or repainting for secure mounting.",
+        "itemId": "front_bumper:repair",
+        "low": 500,
+        "high": 800
+      },
+      {
+        "panel": "front_bumper",
+        "repairType": "replacement",
+        "cheapestFix": "replacement",
+        "reason": "Bumper is detached and hanging forward, with the left wheel-arch fastening area completely separated and mounting rail exposed. Shell appears substantially intact; incidental scuffs do not justify replacement or repainting for secure mounting.",
+        "itemId": "front_bumper:replacement",
+        "low": 4500,
+        "high": 6000
+      }
+    ]
+  },
+  "parts": [
+    {
+      "panel": "front_bumper",
+      "repairType": "repair",
+      "cheapestFix": "refit",
+      "reason": "Bumper is detached and hanging forward, with the left wheel-arch fastening area completely separated and mounting rail exposed. Shell appears substantially intact; incidental scuffs do not justify replacement or repainting for secure mounting.",
+      "low": 500,
+      "high": 800,
+      "replacementCondition": "Replace only if inspection confirms a through-cracked shell or shell mounting points torn beyond safe refastening."
+    }
+  ],
+  "totalLow": 500,
+  "totalHigh": 800,
+  "totalCostUsd": 0.14239400000000002
+}

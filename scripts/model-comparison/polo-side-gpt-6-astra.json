@@ -1,0 +1,541 @@
+{
+  "case": "polo-side",
+  "file": "IMG-20260202-WA0012.jpg",
+  "photoSha256": "e8560f092e07f163d260eb614b9d01683e5ce562b2cf94983d8b0ba365263af9",
+  "model": "gpt-6-astra",
+  "car": "Volkswagen Polo GT TSI",
+  "city": "Pune",
+  "calls": [
+    {
+      "model": "gpt-6-astra",
+      "responseModel": "gpt-6-astra",
+      "status": "completed",
+      "settings": {
+        "reasoning": {
+          "effort": "medium"
+        },
+        "max_output_tokens": 6500,
+        "imageDetail": "high",
+        "format": "json_object"
+      },
+      "instructionSha256": "da34e948f441d237e46031c370fc1e945ab08994d8ba653c71d4e586372b317b",
+      "usage": {
+        "input_tokens": 4164,
+        "input_tokens_details": {
+          "cache_write_tokens": 4161,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2185,
+        "output_tokens_details": {
+          "reasoning_tokens": 166
+        },
+        "total_tokens": 6349
+      },
+      "costUsd": 0.1612925,
+      "elapsedMs": 53603,
+      "answer": {
+        "isCarPhoto": true,
+        "detectedModel": "Volkswagen Polo GT TSI",
+        "modelConfidence": "high",
+        "modelMatchesSelected": "same",
+        "modelReason": "Polo body styling, Volkswagen wheel emblems and the visible GT TSI badge support the selected model.",
+        "checklist": [
+          {
+            "panel": "front_bumper",
+            "status": "damaged",
+            "confidence": "high",
+            "reason": "Left corner has an open, stepped bumper-to-fender seam with exposed fastening locations near the wheel arch. The shell appears intact; securing it takes priority over the accompanying scuffs.",
+            "repairType": "repair",
+            "cheapestFix": "refit",
+            "replacementCondition": "Replace only if inspection confirms the shell is cracked through or its mounting points are torn beyond safe fastening.",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rear_bumper",
+            "status": "not_damaged",
+            "confidence": "medium",
+            "reason": "Only the left side return is visible; no clear damage is evident in that portion.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "bonnet",
+            "status": "not_damaged",
+            "confidence": "medium",
+            "reason": "Visible surface shows canopy and structural reflections without a clearly established dent or paint defect.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "boot",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Tailgate is facing away from the camera.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "front_lhs_door",
+            "status": "damaged",
+            "confidence": "high",
+            "reason": "Upper leading corner below the mirror has a localized crumpled area with conspicuous paint loss and an irregular edge.",
+            "repairType": "denting_painting",
+            "cheapestFix": "repair_paint",
+            "replacementCondition": "Replace only if the door's leading-edge structure or mirror mounting metal is torn or cannot be straightened to retain safe mounting and alignment.",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "front_rhs_door",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Opposite side of the car is not shown.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rear_lhs_door",
+            "status": "not_damaged",
+            "confidence": "medium",
+            "reason": "Visible door skin and edges show reflections but no distinct damage.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rear_rhs_door",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Opposite side of the car is not shown.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_fender",
+            "status": "damaged",
+            "confidence": "high",
+            "reason": "A distinct sharp crease deforms the upper front area above the headlight. Paint abrasion is also visible along the rear upper edge beside the mirror and around the wheel arch.",
+            "repairType": "denting_painting",
+            "cheapestFix": "repair_paint",
+            "replacementCondition": "Replace only if the creased metal is split or stretched beyond a sound repair, or mounting edges cannot be restored securely.",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_fender",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Opposite front fender is hidden.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_quarter_panel",
+            "status": "not_damaged",
+            "confidence": "medium",
+            "reason": "Visible rear wheel-arch bodywork has no clearly established crease, break or paint damage.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_quarter_panel",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Opposite rear quarter is not shown.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_mirror",
+            "status": "damaged",
+            "confidence": "medium",
+            "reason": "Localized pale abrasion is visible on the outer lower edge of the black housing. The housing remains present without a clearly visible through-crack.",
+            "repairType": "denting_painting",
+            "cheapestFix": "touch_up",
+            "replacementCondition": "Replace only if inspection confirms an irreparable housing or mounting-pivot fracture that prevents secure mirror retention.",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_mirror",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Far-side mirror cannot be assessed.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_headlight",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "Visible lens is intact; internal reflector boundaries do not show a confirmed crack.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_headlight",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Opposite headlight is outside the visible angle.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_tail_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Rear-facing lamp lens is not sufficiently exposed to assess.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_tail_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Opposite rear lamp is hidden.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_fog_light",
+            "status": "not_damaged",
+            "confidence": "medium",
+            "reason": "Partially visible lamp in the lower bumper has no evident broken lens or displacement.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_fog_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "Opposite lower bumper lamp is not shown.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "windshield",
+            "status": "not_damaged",
+            "confidence": "medium",
+            "reason": "Visible glass shows reflections and stickers but no confirmed crack or impact damage.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          }
+        ],
+        "needsMorePhotos": true
+      }
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "responseModel": "gpt-4.1-mini-2025-04-14",
+      "status": "completed",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": 4000,
+        "format": "json_object"
+      },
+      "instructionSha256": "888dd6f29d1f7852467b7f180c3a66175ce3f0952642dfbe13d4db602f402162",
+      "usage": {
+        "input_tokens": 1008,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 273,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1281
+      },
+      "costUsd": 0.00084,
+      "elapsedMs": 2933,
+      "answer": {
+        "estimates": [
+          {
+            "itemId": "front_bumper:repair",
+            "panel": "front_bumper",
+            "repairType": "repair",
+            "low": 500,
+            "high": 700
+          },
+          {
+            "itemId": "front_bumper:replacement",
+            "panel": "front_bumper",
+            "repairType": "replacement",
+            "low": 4500,
+            "high": 5500
+          },
+          {
+            "itemId": "front_lhs_door:denting_painting",
+            "panel": "front_lhs_door",
+            "repairType": "denting_painting",
+            "low": 3500,
+            "high": 4500
+          },
+          {
+            "itemId": "front_lhs_door:replacement",
+            "panel": "front_lhs_door",
+            "repairType": "replacement",
+            "low": 9000,
+            "high": 11000
+          },
+          {
+            "itemId": "lhs_fender:denting_painting",
+            "panel": "lhs_fender",
+            "repairType": "denting_painting",
+            "low": 3000,
+            "high": 4000
+          },
+          {
+            "itemId": "lhs_fender:replacement",
+            "panel": "lhs_fender",
+            "repairType": "replacement",
+            "low": 7000,
+            "high": 8500
+          },
+          {
+            "itemId": "lhs_mirror:denting_painting",
+            "panel": "lhs_mirror",
+            "repairType": "denting_painting",
+            "low": 700,
+            "high": 1000
+          },
+          {
+            "itemId": "lhs_mirror:replacement",
+            "panel": "lhs_mirror",
+            "repairType": "replacement",
+            "low": 2500,
+            "high": 3500
+          }
+        ]
+      }
+    }
+  ],
+  "result": {
+    "photoHash": "7621224a0d918f8896dba480e03509621924be662180946566d1f1cfb5e1638a",
+    "isCarPhoto": true,
+    "estimateFormat": "cheapest-fix-v1",
+    "checks": [],
+    "selectedModel": "Volkswagen Polo GT TSI",
+    "variant": "GT TSI",
+    "detectedModel": "Volkswagen Polo GT TSI",
+    "modelConfidence": "high",
+    "modelReason": "Polo body styling, Volkswagen wheel emblems and the visible GT TSI badge support the selected model.",
+    "confidentMismatch": false,
+    "panels": [
+      {
+        "panel": "front_bumper",
+        "status": "damaged",
+        "confidence": "high",
+        "reason": "Left corner has an open, stepped bumper-to-fender seam with exposed fastening locations near the wheel arch. The shell appears intact; securing it takes priority over the accompanying scuffs.",
+        "repairType": "repair",
+        "cheapestFix": "refit",
+        "replacementEvidence": "none",
+        "replacementReason": "",
+        "replacementCondition": "Replace only if inspection confirms the shell is cracked through or its mounting points are torn beyond safe fastening.",
+        "needsAnotherPhoto": false
+      },
+      {
+        "panel": "front_lhs_door",
+        "status": "damaged",
+        "confidence": "high",
+        "reason": "Upper leading corner below the mirror has a localized crumpled area with conspicuous paint loss and an irregular edge.",
+        "repairType": "denting_painting",
+        "cheapestFix": "repair_paint",
+        "replacementEvidence": "none",
+        "replacementReason": "",
+        "replacementCondition": "Replace only if the door's leading-edge structure or mirror mounting metal is torn or cannot be straightened to retain safe mounting and alignment.",
+        "needsAnotherPhoto": false
+      },
+      {
+        "panel": "lhs_fender",
+        "status": "damaged",
+        "confidence": "high",
+        "reason": "A distinct sharp crease deforms the upper front area above the headlight. Paint abrasion is also visible along the rear upper edge beside the mirror and around the wheel arch.",
+        "repairType": "denting_painting",
+        "cheapestFix": "repair_paint",
+        "replacementEvidence": "none",
+        "replacementReason": "",
+        "replacementCondition": "Replace only if the creased metal is split or stretched beyond a sound repair, or mounting edges cannot be restored securely.",
+        "needsAnotherPhoto": false
+      },
+      {
+        "panel": "lhs_mirror",
+        "status": "damaged",
+        "confidence": "medium",
+        "reason": "Localized pale abrasion is visible on the outer lower edge of the black housing. The housing remains present without a clearly visible through-crack.",
+        "repairType": "denting_painting",
+        "cheapestFix": "touch_up",
+        "replacementEvidence": "none",
+        "replacementReason": "",
+        "replacementCondition": "Replace only if inspection confirms an irreparable housing or mounting-pivot fracture that prevents secure mirror retention.",
+        "needsAnotherPhoto": false
+      }
+    ],
+    "estimates": [
+      {
+        "panel": "front_bumper",
+        "repairType": "repair",
+        "cheapestFix": "refit",
+        "reason": "Left corner has an open, stepped bumper-to-fender seam with exposed fastening locations near the wheel arch. The shell appears intact; securing it takes priority over the accompanying scuffs.",
+        "itemId": "front_bumper:repair",
+        "low": 500,
+        "high": 700
+      },
+      {
+        "panel": "front_bumper",
+        "repairType": "replacement",
+        "cheapestFix": "replacement",
+        "reason": "Left corner has an open, stepped bumper-to-fender seam with exposed fastening locations near the wheel arch. The shell appears intact; securing it takes priority over the accompanying scuffs.",
+        "itemId": "front_bumper:replacement",
+        "low": 4500,
+        "high": 5500
+      },
+      {
+        "panel": "front_lhs_door",
+        "repairType": "denting_painting",
+        "cheapestFix": "repair_paint",
+        "reason": "Upper leading corner below the mirror has a localized crumpled area with conspicuous paint loss and an irregular edge.",
+        "itemId": "front_lhs_door:denting_painting",
+        "low": 3500,
+        "high": 4500
+      },
+      {
+        "panel": "front_lhs_door",
+        "repairType": "replacement",
+        "cheapestFix": "replacement",
+        "reason": "Upper leading corner below the mirror has a localized crumpled area with conspicuous paint loss and an irregular edge.",
+        "itemId": "front_lhs_door:replacement",
+        "low": 9000,
+        "high": 11000
+      },
+      {
+        "panel": "lhs_fender",
+        "repairType": "denting_painting",
+        "cheapestFix": "repair_paint",
+        "reason": "A distinct sharp crease deforms the upper front area above the headlight. Paint abrasion is also visible along the rear upper edge beside the mirror and around the wheel arch.",
+        "itemId": "lhs_fender:denting_painting",
+        "low": 3000,
+        "high": 4000
+      },
+      {
+        "panel": "lhs_fender",
+        "repairType": "replacement",
+        "cheapestFix": "replacement",
+        "reason": "A distinct sharp crease deforms the upper front area above the headlight. Paint abrasion is also visible along the rear upper edge beside the mirror and around the wheel arch.",
+        "itemId": "lhs_fender:replacement",
+        "low": 7000,
+        "high": 8500
+      },
+      {
+        "panel": "lhs_mirror",
+        "repairType": "denting_painting",
+        "cheapestFix": "touch_up",
+        "reason": "Localized pale abrasion is visible on the outer lower edge of the black housing. The housing remains present without a clearly visible through-crack.",
+        "itemId": "lhs_mirror:denting_painting",
+        "low": 700,
+        "high": 1000
+      },
+      {
+        "panel": "lhs_mirror",
+        "repairType": "replacement",
+        "cheapestFix": "replacement",
+        "reason": "Localized pale abrasion is visible on the outer lower edge of the black housing. The housing remains present without a clearly visible through-crack.",
+        "itemId": "lhs_mirror:replacement",
+        "low": 2500,
+        "high": 3500
+      }
+    ]
+  },
+  "parts": [
+    {
+      "panel": "front_bumper",
+      "repairType": "repair",
+      "cheapestFix": "refit",
+      "reason": "Left corner has an open, stepped bumper-to-fender seam with exposed fastening locations near the wheel arch. The shell appears intact; securing it takes priority over the accompanying scuffs.",
+      "low": 500,
+      "high": 700,
+      "replacementCondition": "Replace only if inspection confirms the shell is cracked through or its mounting points are torn beyond safe fastening."
+    },
+    {
+      "panel": "front_lhs_door",
+      "repairType": "denting_painting",
+      "cheapestFix": "repair_paint",
+      "reason": "Upper leading corner below the mirror has a localized crumpled area with conspicuous paint loss and an irregular edge.",
+      "low": 3500,
+      "high": 4500,
+      "replacementCondition": "Replace only if the door's leading-edge structure or mirror mounting metal is torn or cannot be straightened to retain safe mounting and alignment."
+    },
+    {
+      "panel": "lhs_fender",
+      "repairType": "denting_painting",
+      "cheapestFix": "repair_paint",
+      "reason": "A distinct sharp crease deforms the upper front area above the headlight. Paint abrasion is also visible along the rear upper edge beside the mirror and around the wheel arch.",
+      "low": 3000,
+      "high": 4000,
+      "replacementCondition": "Replace only if the creased metal is split or stretched beyond a sound repair, or mounting edges cannot be restored securely."
+    },
+    {
+      "panel": "lhs_mirror",
+      "repairType": "denting_painting",
+      "cheapestFix": "touch_up",
+      "reason": "Localized pale abrasion is visible on the outer lower edge of the black housing. The housing remains present without a clearly visible through-crack.",
+      "low": 700,
+      "high": 1000,
+      "replacementCondition": "Replace only if inspection confirms an irreparable housing or mounting-pivot fracture that prevents secure mirror retention."
+    }
+  ],
+  "totalLow": 7700,
+  "totalHigh": 10200,
+  "totalCostUsd": 0.1621325
+}

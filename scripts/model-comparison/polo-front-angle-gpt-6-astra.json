@@ -1,0 +1,501 @@
+{
+  "case": "polo-front-angle",
+  "file": "IMG-20260202-WA0014.jpg",
+  "photoSha256": "b48dfd442327b2e3aedb30607d306f0fa7e6f9f0cf417b759ffd6442468eb86c",
+  "model": "gpt-6-astra",
+  "car": "Volkswagen Polo GT TSI",
+  "city": "Pune",
+  "calls": [
+    {
+      "model": "gpt-6-astra",
+      "responseModel": "gpt-6-astra",
+      "status": "completed",
+      "settings": {
+        "reasoning": {
+          "effort": "medium"
+        },
+        "max_output_tokens": 6500,
+        "imageDetail": "high",
+        "format": "json_object"
+      },
+      "instructionSha256": "da34e948f441d237e46031c370fc1e945ab08994d8ba653c71d4e586372b317b",
+      "usage": {
+        "input_tokens": 4164,
+        "input_tokens_details": {
+          "cache_write_tokens": 4161,
+          "cached_tokens": 0
+        },
+        "output_tokens": 2284,
+        "output_tokens_details": {
+          "reasoning_tokens": 257
+        },
+        "total_tokens": 6448
+      },
+      "costUsd": 0.1662425,
+      "elapsedMs": 51058,
+      "answer": {
+        "isCarPhoto": true,
+        "detectedModel": "Volkswagen Polo",
+        "modelConfidence": "high",
+        "modelMatchesSelected": "same",
+        "modelReason": "Volkswagen grille badge and Polo headlight, grille and body styling are visible. GT TSI trim cannot be independently confirmed.",
+        "checklist": [
+          {
+            "panel": "front_bumper",
+            "status": "damaged",
+            "confidence": "medium",
+            "reason": "The left bumper-to-fender seam is stepped/open near the wheel arch, with exposed fastening positions. The visible bumper shell remains intact; securing this corner takes priority over its scuffs.",
+            "repairType": "repair",
+            "cheapestFix": "refit",
+            "replacementCondition": "Replace only if inspection finds the bumper shell cracked through or its mounting points torn beyond safe fastening.",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rear_bumper",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "The rear bumper is outside this front three-quarter view.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "bonnet",
+            "status": "damaged",
+            "confidence": "high",
+            "reason": "A narrow, pale paint scratch crosses the front-left bonnet edge beside the left fender. Roof and tree reflections elsewhere are not damage.",
+            "repairType": "denting_painting",
+            "cheapestFix": "touch_up",
+            "replacementCondition": "Replace only if physical inspection establishes an irreparable tear or structural deformation; the visible scratch does not justify replacement.",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "boot",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "The tailgate is not shown.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "front_lhs_door",
+            "status": "uncertain",
+            "confidence": "medium",
+            "reason": "Distortion and paint loss are visible at the fender/door junction below the mirror, but this angle does not establish whether the door's leading edge is also affected. Check at garage.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "front_rhs_door",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "The opposite front door is hidden.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rear_lhs_door",
+            "status": "not_damaged",
+            "confidence": "medium",
+            "reason": "The visible rear-left door has no clearly supported crease, scrape or displacement; bright bands follow surrounding reflections.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rear_rhs_door",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "The opposite rear door is hidden.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_fender",
+            "status": "damaged",
+            "confidence": "high",
+            "reason": "The rear-upper fender below the mirror has a distinct crushed crease and chipped paint, with an irregular trailing edge. A separate long paint scratch is visible above the headlight.",
+            "repairType": "denting_painting",
+            "cheapestFix": "repair_paint",
+            "replacementCondition": "Replace only if inspection finds torn metal or severely stretched mounting edges that cannot be safely straightened and secured.",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_fender",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "The right front fender is outside the assessable view.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_quarter_panel",
+            "status": "not_damaged",
+            "confidence": "medium",
+            "reason": "The limited visible section around the left rear wheel and behind the rear door shows no clear damage.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_quarter_panel",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "The right rear quarter panel is hidden.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_mirror",
+            "status": "not_damaged",
+            "confidence": "medium",
+            "reason": "The left mirror housing and stalk appear intact and attached. Adjacent body damage does not establish mirror damage.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_mirror",
+            "status": "not_visible",
+            "confidence": "medium",
+            "reason": "Only a small obscured sliver of the opposite mirror is visible, insufficient to assess its condition.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_headlight",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "The left headlight lens is present and intact. Bright shapes are reflections and internal reflector surfaces, not visible cracks.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_headlight",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "The opposite headlight is cropped out.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_tail_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "The left tail light is not shown.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_tail_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "The right tail light is not shown.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "lhs_fog_light",
+            "status": "not_damaged",
+            "confidence": "medium",
+            "reason": "The visible left lower lamp appears seated, with no clearly visible lens breakage.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "rhs_fog_light",
+            "status": "not_visible",
+            "confidence": "high",
+            "reason": "The opposite lower lamp is outside the image.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          },
+          {
+            "panel": "windshield",
+            "status": "not_damaged",
+            "confidence": "high",
+            "reason": "The windshield is visible without a clear crack or chip; reflections and stickers are present.",
+            "repairType": "unclear",
+            "cheapestFix": "check",
+            "replacementCondition": "",
+            "replacementEvidence": "none",
+            "replacementReason": ""
+          }
+        ],
+        "needsMorePhotos": true
+      }
+    },
+    {
+      "model": "gpt-4.1-mini",
+      "responseModel": "gpt-4.1-mini-2025-04-14",
+      "status": "completed",
+      "settings": {
+        "temperature": 0,
+        "max_output_tokens": 4000,
+        "format": "json_object"
+      },
+      "instructionSha256": "1f0f5f89a4319a3324e8f153b3fc2b5c00e43a7b9e81797124f6a1e8cb653906",
+      "usage": {
+        "input_tokens": 889,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 194,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1083
+      },
+      "costUsd": 0.000666,
+      "elapsedMs": 2219,
+      "answer": {
+        "estimates": [
+          {
+            "itemId": "front_bumper:repair",
+            "panel": "front_bumper",
+            "repairType": "repair",
+            "low": 500,
+            "high": 800
+          },
+          {
+            "itemId": "front_bumper:replacement",
+            "panel": "front_bumper",
+            "repairType": "replacement",
+            "low": 4500,
+            "high": 6000
+          },
+          {
+            "itemId": "bonnet:denting_painting",
+            "panel": "bonnet",
+            "repairType": "denting_painting",
+            "low": 800,
+            "high": 1200
+          },
+          {
+            "itemId": "bonnet:replacement",
+            "panel": "bonnet",
+            "repairType": "replacement",
+            "low": 7000,
+            "high": 9000
+          },
+          {
+            "itemId": "lhs_fender:denting_painting",
+            "panel": "lhs_fender",
+            "repairType": "denting_painting",
+            "low": 2500,
+            "high": 3500
+          },
+          {
+            "itemId": "lhs_fender:replacement",
+            "panel": "lhs_fender",
+            "repairType": "replacement",
+            "low": 6000,
+            "high": 8000
+          }
+        ]
+      }
+    }
+  ],
+  "result": {
+    "photoHash": "269d791cbfbccd64a674fc5177f8f6eceafca4c48a8140a4c58b72b9db994210",
+    "isCarPhoto": true,
+    "estimateFormat": "cheapest-fix-v1",
+    "checks": [
+      {
+        "panel": "front_lhs_door",
+        "status": "uncertain",
+        "confidence": "medium",
+        "reason": "Distortion and paint loss are visible at the fender/door junction below the mirror, but this angle does not establish whether the door's leading edge is also affected. Check at garage.",
+        "repairType": "unclear",
+        "cheapestFix": "check",
+        "replacementEvidence": "none",
+        "replacementReason": "",
+        "replacementCondition": "the part itself is broken beyond safe repair, cracked through or missing",
+        "needsAnotherPhoto": true
+      }
+    ],
+    "selectedModel": "Volkswagen Polo GT TSI",
+    "variant": "GT TSI",
+    "detectedModel": "Volkswagen Polo",
+    "modelConfidence": "high",
+    "modelReason": "Volkswagen grille badge and Polo headlight, grille and body styling are visible. GT TSI trim cannot be independently confirmed.",
+    "confidentMismatch": false,
+    "panels": [
+      {
+        "panel": "front_bumper",
+        "status": "damaged",
+        "confidence": "medium",
+        "reason": "The left bumper-to-fender seam is stepped/open near the wheel arch, with exposed fastening positions. The visible bumper shell remains intact; securing this corner takes priority over its scuffs.",
+        "repairType": "repair",
+        "cheapestFix": "refit",
+        "replacementEvidence": "none",
+        "replacementReason": "",
+        "replacementCondition": "Replace only if inspection finds the bumper shell cracked through or its mounting points torn beyond safe fastening.",
+        "needsAnotherPhoto": false
+      },
+      {
+        "panel": "bonnet",
+        "status": "damaged",
+        "confidence": "high",
+        "reason": "A narrow, pale paint scratch crosses the front-left bonnet edge beside the left fender. Roof and tree reflections elsewhere are not damage.",
+        "repairType": "denting_painting",
+        "cheapestFix": "touch_up",
+        "replacementEvidence": "none",
+        "replacementReason": "",
+        "replacementCondition": "Replace only if physical inspection establishes an irreparable tear or structural deformation; the visible scratch does not justify replacement.",
+        "needsAnotherPhoto": false
+      },
+      {
+        "panel": "lhs_fender",
+        "status": "damaged",
+        "confidence": "high",
+        "reason": "The rear-upper fender below the mirror has a distinct crushed crease and chipped paint, with an irregular trailing edge. A separate long paint scratch is visible above the headlight.",
+        "repairType": "denting_painting",
+        "cheapestFix": "repair_paint",
+        "replacementEvidence": "none",
+        "replacementReason": "",
+        "replacementCondition": "Replace only if inspection finds torn metal or severely stretched mounting edges that cannot be safely straightened and secured.",
+        "needsAnotherPhoto": false
+      }
+    ],
+    "estimates": [
+      {
+        "panel": "front_bumper",
+        "repairType": "repair",
+        "cheapestFix": "refit",
+        "reason": "The left bumper-to-fender seam is stepped/open near the wheel arch, with exposed fastening positions. The visible bumper shell remains intact; securing this corner takes priority over its scuffs.",
+        "itemId": "front_bumper:repair",
+        "low": 500,
+        "high": 800
+      },
+      {
+        "panel": "front_bumper",
+        "repairType": "replacement",
+        "cheapestFix": "replacement",
+        "reason": "The left bumper-to-fender seam is stepped/open near the wheel arch, with exposed fastening positions. The visible bumper shell remains intact; securing this corner takes priority over its scuffs.",
+        "itemId": "front_bumper:replacement",
+        "low": 4500,
+        "high": 6000
+      },
+      {
+        "panel": "bonnet",
+        "repairType": "denting_painting",
+        "cheapestFix": "touch_up",
+        "reason": "A narrow, pale paint scratch crosses the front-left bonnet edge beside the left fender. Roof and tree reflections elsewhere are not damage.",
+        "itemId": "bonnet:denting_painting",
+        "low": 800,
+        "high": 1200
+      },
+      {
+        "panel": "bonnet",
+        "repairType": "replacement",
+        "cheapestFix": "replacement",
+        "reason": "A narrow, pale paint scratch crosses the front-left bonnet edge beside the left fender. Roof and tree reflections elsewhere are not damage.",
+        "itemId": "bonnet:replacement",
+        "low": 7000,
+        "high": 9000
+      },
+      {
+        "panel": "lhs_fender",
+        "repairType": "denting_painting",
+        "cheapestFix": "repair_paint",
+        "reason": "The rear-upper fender below the mirror has a distinct crushed crease and chipped paint, with an irregular trailing edge. A separate long paint scratch is visible above the headlight.",
+        "itemId": "lhs_fender:denting_painting",
+        "low": 2500,
+        "high": 3500
+      },
+      {
+        "panel": "lhs_fender",
+        "repairType": "replacement",
+        "cheapestFix": "replacement",
+        "reason": "The rear-upper fender below the mirror has a distinct crushed crease and chipped paint, with an irregular trailing edge. A separate long paint scratch is visible above the headlight.",
+        "itemId": "lhs_fender:replacement",
+        "low": 6000,
+        "high": 8000
+      }
+    ]
+  },
+  "parts": [
+    {
+      "panel": "front_bumper",
+      "repairType": "repair",
+      "cheapestFix": "refit",
+      "reason": "The left bumper-to-fender seam is stepped/open near the wheel arch, with exposed fastening positions. The visible bumper shell remains intact; securing this corner takes priority over its scuffs.",
+      "low": 500,
+      "high": 800,
+      "replacementCondition": "Replace only if inspection finds the bumper shell cracked through or its mounting points torn beyond safe fastening."
+    },
+    {
+      "panel": "bonnet",
+      "repairType": "denting_painting",
+      "cheapestFix": "touch_up",
+      "reason": "A narrow, pale paint scratch crosses the front-left bonnet edge beside the left fender. Roof and tree reflections elsewhere are not damage.",
+      "low": 800,
+      "high": 1200,
+      "replacementCondition": "Replace only if physical inspection establishes an irreparable tear or structural deformation; the visible scratch does not justify replacement."
+    },
+    {
+      "panel": "lhs_fender",
+      "repairType": "denting_painting",
+      "cheapestFix": "repair_paint",
+      "reason": "The rear-upper fender below the mirror has a distinct crushed crease and chipped paint, with an irregular trailing edge. A separate long paint scratch is visible above the headlight.",
+      "low": 2500,
+      "high": 3500,
+      "replacementCondition": "Replace only if inspection finds torn metal or severely stretched mounting edges that cannot be safely straightened and secured."
+    }
+  ],
+  "totalLow": 3800,
+  "totalHigh": 5500,
+  "totalCostUsd": 0.1669085
+}

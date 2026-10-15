@@ -94,4 +94,33 @@ input:focus,select:focus,button:focus-visible,.customer-flow input:focus,.custom
   .admin-card { padding:18px; }
 }
 .garage-photo-credit a { color: #fff !important; }
+.customer-flow.quick-entry[data-flow-stage=quick-upload] .hero > :is(h1,.intro,.mechanic-mascot) { display:block; }
+.quick-entry #quick-upload { display:none; }
+.quick-entry[data-flow-stage=quick-upload] #quick-upload { display:block; width:100%; margin:20px 0; min-height:56px; }
 
+
+.customer-flow .garage-name-rating { display:flex; align-items:baseline; gap:10px; margin-bottom:8px; }
+.customer-flow .garage-name-rating h3 { flex:1; min-width:0; margin:0; }
+.customer-flow .garage-name-rating .garage-rating-chip { flex:none; white-space:nowrap; }
+.customer-flow .garage-request-button { display:block; width:100%; min-height:44px; margin-top:8px; border:1px solid #1E3A8A; border-radius:9px; background:#1E3A8A; color:#fff; font:inherit; font-weight:750; cursor:pointer; }
+.customer-flow .garage-quote-note { margin:10px 0 0; line-height:1.5; color:#666b75; }
+.customer-flow .refine-summary { margin:12px 0 18px; padding:14px 16px; border-left:3px solid #1E3A8A; background:#f4f6fa; font-size:16px; line-height:1.6; }
+
+.customer-flow .main-repair-range { text-align:left; padding:18px 16px; background:#f4f6fa; }
+.customer-flow .main-repair-range > span { display:block; font-size:13px; color:#666b75; margin-bottom:6px; }
+.customer-flow .main-repair-range > strong { display:block; font-size:30px; line-height:1.25; color:#1E3A8A; }
+.customer-flow details.replacement-option { margin-top:14px; }
+.customer-flow details.replacement-option summary,.customer-flow details.replacement-total summary { min-height:44px; display:list-item; align-content:center; cursor:pointer; font-size:13px; font-weight:700; color:#1E3A8A; }
+.customer-flow details.replacement-option p,.customer-flow details.replacement-total p { font-size:13px; line-height:1.6; }
+.customer-flow .tap-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:12px 0; }
+.customer-flow .tap-choice { min-height:52px; padding:12px; border:1px solid #d1d5db; border-radius:9px; background:#fff; color:#20242c; font:inherit; font-size:16px; cursor:pointer; overflow-wrap:anywhere; }
+.customer-flow .tap-choice[aria-pressed=true] { border-color:#1E3A8A; background:#eef2f8; color:#1E3A8A; box-shadow:inset 0 0 0 1px #1E3A8A; }
+.customer-flow .tap-other { min-height:44px; padding:8px 0; border:0; background:none; color:#1E3A8A; font:inherit; font-size:13px; text-decoration:underline; cursor:pointer; }
+.customer-flow .tap-note { font-size:13px; color:#666b75; margin:8px 0; }
+.customer-flow .tap-more { margin:8px 0; }.customer-flow .tap-more summary { min-height:44px; align-content:center; font-size:16px; cursor:pointer; }
+.customer-flow .tap-more > details { margin-left:8px; }
+.customer-flow .customer-back { margin:0 0 14px; min-height:44px; min-width:80px; }
+.customer-flow [data-chat-step=help] > .chat-chips { display:none; }
+.customer-flow .tap-question { margin-bottom:12px; }
+.quick-entry #quick-resume-photos { display:none; }.quick-entry[data-flow-stage=quick-upload] #quick-resume-photos:not([hidden]) { display:block; width:100%; }
+.customer-flow .customer-back { position:sticky; top:8px; z-index:8; background:#fff; }

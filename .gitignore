@@ -12,3 +12,4 @@ test-photos/
 *.[tT][iI][fF]
 *.[tT][iI][fF][fF]
 *.[pP][dD][fF]
+/today_requests.csv

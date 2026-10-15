@@ -1,0 +1,240 @@
+{
+  "width": 390,
+  "preview": true,
+  "pages": [
+    {
+      "url": "https://earnest-rhinoceros-454.convex.site/",
+      "variant": "original",
+      "events": [
+        {
+          "event": "$pageview",
+          "properties": {
+            "variant": "original"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "page_view",
+          "properties": {
+            "variant": "original"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "landing_opened",
+          "properties": {
+            "variant": "original"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "chat_name_given",
+          "properties": {
+            "variant": "original"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "chat_help_given",
+          "properties": {
+            "variant": "original"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "chat_story_skipped",
+          "properties": {
+            "variant": "original"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "chat_car_given",
+          "properties": {
+            "variant": "original"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "chat_city_given",
+          "properties": {
+            "variant": "original"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "photos_uploaded",
+          "properties": {
+            "variant": "original"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "estimate_shown",
+          "properties": {
+            "variant": "original"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "garage_or_quote_tapped",
+          "properties": {
+            "variant": "original"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "chat_garages_given",
+          "properties": {
+            "variant": "original"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        }
+      ],
+      "errors": []
+    },
+    {
+      "url": "https://earnest-rhinoceros-454.convex.site/quick",
+      "variant": "quick",
+      "events": [
+        {
+          "event": "$pageview",
+          "properties": {
+            "variant": "quick"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "page_view",
+          "properties": {
+            "variant": "quick"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "landing_opened",
+          "properties": {
+            "variant": "quick"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "chat_car_given",
+          "properties": {
+            "variant": "quick"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "chat_city_given",
+          "properties": {
+            "variant": "quick"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "photos_uploaded",
+          "properties": {
+            "variant": "quick"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "estimate_shown",
+          "properties": {
+            "variant": "quick"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "chat_name_given",
+          "properties": {
+            "variant": "quick"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "garage_or_quote_tapped",
+          "properties": {
+            "variant": "quick"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        },
+        {
+          "event": "chat_garages_given",
+          "properties": {
+            "variant": "quick"
+          },
+          "status": 200,
+          "response": {
+            "status": "Ok"
+          }
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

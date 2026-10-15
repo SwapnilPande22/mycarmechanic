@@ -1,0 +1,256 @@
+[
+  {
+    "photo": "detached-polo",
+    "file": "TEST-detached-Polo.jpg",
+    "model": "gpt-4.1",
+    "parts": [
+      {
+        "panel": "front_bumper",
+        "repairType": "repair",
+        "cheapestFix": "refit",
+        "reason": "Front bumper is fully detached and lying on the ground, but the shell appears intact and not cracked through.",
+        "low": 500,
+        "high": 700,
+        "replacementCondition": "replace only if bumper shell or mounting points are cracked through or torn beyond safe fastening"
+      }
+    ],
+    "total": [
+      500,
+      700
+    ],
+    "costVision": 0.018368,
+    "costPricing": 0.00034720000000000004,
+    "costTotal": 0.018715199999999998,
+    "rawConsistencyFlags": [],
+    "checks": [],
+    "sameInstructionsAndPhoto": true
+  },
+  {
+    "photo": "detached-polo",
+    "file": "TEST-detached-Polo.jpg",
+    "model": "gpt-6-astra",
+    "parts": [
+      {
+        "panel": "front_bumper",
+        "repairType": "repair",
+        "cheapestFix": "refit",
+        "reason": "Bumper is detached and hanging forward, with the left wheel-arch fastening area completely separated and mounting rail exposed. Shell appears substantially intact; incidental scuffs do not justify replacement or repainting for secure mounting.",
+        "low": 500,
+        "high": 800,
+        "replacementCondition": "Replace only if inspection confirms a through-cracked shell or shell mounting points torn beyond safe refastening."
+      }
+    ],
+    "total": [
+      500,
+      800
+    ],
+    "costVision": 0.14203000000000002,
+    "costPricing": 0.000364,
+    "costTotal": 0.14239400000000002,
+    "rawConsistencyFlags": [],
+    "checks": [],
+    "sameInstructionsAndPhoto": true
+  },
+  {
+    "photo": "polo-side",
+    "file": "IMG-20260202-WA0012.jpg",
+    "model": "gpt-4.1",
+    "parts": [
+      {
+        "panel": "front_bumper",
+        "repairType": "repair",
+        "cheapestFix": "reclip",
+        "reason": "Front bumper is visibly pulled away from the lhs fender with a gap at the wheel arch, but the shell appears intact.",
+        "low": 500,
+        "high": 700,
+        "replacementCondition": "replace only if bumper shell or mounting points are cracked through or torn beyond safe fastening"
+      },
+      {
+        "panel": "front_lhs_door",
+        "repairType": "repair",
+        "cheapestFix": "dent_pull",
+        "reason": "Visible dent and deformation near the front edge of the door, adjacent to the fender.",
+        "low": 2500,
+        "high": 3500,
+        "replacementCondition": "replace only if dent cannot be pulled or door is structurally compromised"
+      },
+      {
+        "panel": "lhs_fender",
+        "repairType": "repair",
+        "cheapestFix": "dent_pull",
+        "reason": "Visible dent and deformation at the rear edge of the fender near the door and wheel arch.",
+        "low": 2000,
+        "high": 3000,
+        "replacementCondition": "replace only if dent cannot be pulled or fender is structurally compromised"
+      }
+    ],
+    "total": [
+      5000,
+      7200
+    ],
+    "costVision": 0.018752,
+    "costPricing": 0.0006336,
+    "costTotal": 0.019385600000000003,
+    "rawConsistencyFlags": [
+      {
+        "panel": "bonnet",
+        "issue": "Job type disagrees with chosen fix",
+        "repairType": "repair",
+        "cheapestFix": "check"
+      },
+      {
+        "panel": "front_rhs_door",
+        "issue": "Job type disagrees with chosen fix",
+        "repairType": "repair",
+        "cheapestFix": "check"
+      },
+      {
+        "panel": "rear_lhs_door",
+        "issue": "Job type disagrees with chosen fix",
+        "repairType": "repair",
+        "cheapestFix": "check"
+      },
+      {
+        "panel": "rear_rhs_door",
+        "issue": "Job type disagrees with chosen fix",
+        "repairType": "repair",
+        "cheapestFix": "check"
+      },
+      {
+        "panel": "lhs_mirror",
+        "issue": "Job type disagrees with chosen fix",
+        "repairType": "repair",
+        "cheapestFix": "check"
+      },
+      {
+        "panel": "lhs_headlight",
+        "issue": "Job type disagrees with chosen fix",
+        "repairType": "repair",
+        "cheapestFix": "check"
+      },
+      {
+        "panel": "windshield",
+        "issue": "Job type disagrees with chosen fix",
+        "repairType": "repair",
+        "cheapestFix": "check"
+      }
+    ],
+    "checks": [],
+    "sameInstructionsAndPhoto": true
+  },
+  {
+    "photo": "polo-side",
+    "file": "IMG-20260202-WA0012.jpg",
+    "model": "gpt-6-astra",
+    "parts": [
+      {
+        "panel": "front_bumper",
+        "repairType": "repair",
+        "cheapestFix": "refit",
+        "reason": "Left corner has an open, stepped bumper-to-fender seam with exposed fastening locations near the wheel arch. The shell appears intact; securing it takes priority over the accompanying scuffs.",
+        "low": 500,
+        "high": 700,
+        "replacementCondition": "Replace only if inspection confirms the shell is cracked through or its mounting points are torn beyond safe fastening."
+      },
+      {
+        "panel": "front_lhs_door",
+        "repairType": "denting_painting",
+        "cheapestFix": "repair_paint",
+        "reason": "Upper leading corner below the mirror has a localized crumpled area with conspicuous paint loss and an irregular edge.",
+        "low": 3500,
+        "high": 4500,
+        "replacementCondition": "Replace only if the door's leading-edge structure or mirror mounting metal is torn or cannot be straightened to retain safe mounting and alignment."
+      },
+      {
+        "panel": "lhs_fender",
+        "repairType": "denting_painting",
+        "cheapestFix": "repair_paint",
+        "reason": "A distinct sharp crease deforms the upper front area above the headlight. Paint abrasion is also visible along the rear upper edge beside the mirror and around the wheel arch.",
+        "low": 3000,
+        "high": 4000,
+        "replacementCondition": "Replace only if the creased metal is split or stretched beyond a sound repair, or mounting edges cannot be restored securely."
+      },
+      {
+        "panel": "lhs_mirror",
+        "repairType": "denting_painting",
+        "cheapestFix": "touch_up",
+        "reason": "Localized pale abrasion is visible on the outer lower edge of the black housing. The housing remains present without a clearly visible through-crack.",
+        "low": 700,
+        "high": 1000,
+        "replacementCondition": "Replace only if inspection confirms an irreparable housing or mounting-pivot fracture that prevents secure mirror retention."
+      }
+    ],
+    "total": [
+      7700,
+      10200
+    ],
+    "costVision": 0.1612925,
+    "costPricing": 0.00084,
+    "costTotal": 0.1621325,
+    "rawConsistencyFlags": [],
+    "checks": [],
+    "sameInstructionsAndPhoto": true
+  },
+  {
+    "photo": "polo-front-angle",
+    "file": "IMG-20260202-WA0014.jpg",
+    "model": "gpt-4.1",
+    "parts": [],
+    "total": null,
+    "costVision": 0.018176,
+    "costPricing": 0,
+    "costTotal": 0.018176,
+    "rawConsistencyFlags": [],
+    "checks": [],
+    "sameInstructionsAndPhoto": true
+  },
+  {
+    "photo": "polo-front-angle",
+    "file": "IMG-20260202-WA0014.jpg",
+    "model": "gpt-6-astra",
+    "parts": [
+      {
+        "panel": "front_bumper",
+        "repairType": "repair",
+        "cheapestFix": "refit",
+        "reason": "The left bumper-to-fender seam is stepped/open near the wheel arch, with exposed fastening positions. The visible bumper shell remains intact; securing this corner takes priority over its scuffs.",
+        "low": 500,
+        "high": 800,
+        "replacementCondition": "Replace only if inspection finds the bumper shell cracked through or its mounting points torn beyond safe fastening."
+      },
+      {
+        "panel": "bonnet",
+        "repairType": "denting_painting",
+        "cheapestFix": "touch_up",
+        "reason": "A narrow, pale paint scratch crosses the front-left bonnet edge beside the left fender. Roof and tree reflections elsewhere are not damage.",
+        "low": 800,
+        "high": 1200,
+        "replacementCondition": "Replace only if physical inspection establishes an irreparable tear or structural deformation; the visible scratch does not justify replacement."
+      },
+      {
+        "panel": "lhs_fender",
+        "repairType": "denting_painting",
+        "cheapestFix": "repair_paint",
+        "reason": "The rear-upper fender below the mirror has a distinct crushed crease and chipped paint, with an irregular trailing edge. A separate long paint scratch is visible above the headlight.",
+        "low": 2500,
+        "high": 3500,
+        "replacementCondition": "Replace only if inspection finds torn metal or severely stretched mounting edges that cannot be safely straightened and secured."
+      }
+    ],
+    "total": [
+      3800,
+      5500
+    ],
+    "costVision": 0.1662425,
+    "costPricing": 0.000666,
+    "costTotal": 0.1669085,
+    "rawConsistencyFlags": [],
+    "checks": [
+      {
+        "panel": "front_lhs_door",
+        "reason": "Distortion and paint loss are visible at the fender/door junction below the mirror, but this angle does not establish whether the door's leading edge is also affected. Check at garage."
+      }
+    ],
+    "sameInstructionsAndPhoto": true
+  }
+]

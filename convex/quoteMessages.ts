@@ -1,6 +1,6 @@
 import { garageSafe } from "./garageSafety";
 import { translateTexts } from "./presentation";
-type Request={name?:string;whatsappNumber?:string;carModel:string;make?:string;model?:string;variant?:string;year?:string;area:string;city?:string;customerConcern?:string;parts:{partName:string;workNeeded:string;photoObservation?:string}[]};
+type Request={name?:string;whatsappNumber?:string;carModel:string;make?:string;model?:string;variant?:string;year?:string;area:string;city?:string;customerConcern?:string;requestType?:"mechanical";parts:{partName:string;workNeeded:string;photoObservation?:string}[]};
 function clean(value:string|undefined,request:Request):string {
   let text=garageSafe(value || " ",request.whatsappNumber || "0000000000");
   if(request.name)text=text.split(request.name).join("");
@@ -22,6 +22,7 @@ export function garageMessage(request:Request,photoLink="Photos available in the
   const city=clean(request.city,request);
   const locality=request.area.split(",").map(value=>clean(value.trim(),request)).find(value=>usable(value) && value.toLowerCase()!==city.toLowerCase()) || (usable(city) ? city : "");
   const parts=request.parts.map((part,index)=>`${index+1}. ${clean(part.partName,request)} – ${clean(part.workNeeded,request)}`);
+  if(request.requestType === "mechanical") return ["New repair request from MyCarMechanic", "No photo, mechanical", `A customer near ${clean(locality,request)} needs a quote.`, `Car: ${clean(car,request)}`, `Area: ${clean(locality,request)}`, `Problem: ${clean(request.customerConcern,request)}`, "Please reply with your total price and when you can take the car. I will share your quote with the customer."].join("\n");
   return ["New repair request from MyCarMechanic",`A customer near ${clean(locality,request)} needs a quote.`,`Car: ${clean(car,request)}`,`Area: ${clean(locality,request)}`,"Damage:",...parts,`Photos: ${photoLink}`,"Please reply with your total price and when you can take the car. I will share your quote with the customer."].join("\n");
 }
 export async function localizedGarageMessage(request:Request,photoLink:string,language:"en"|"hi"|"mr") {

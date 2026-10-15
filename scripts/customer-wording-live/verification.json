@@ -1,0 +1,42 @@
+{
+  "live": true,
+  "width": 390,
+  "protectedCodeUnchanged": true,
+  "summaryChangedAndUnchangedChecks": true,
+  "pages": [
+    {
+      "variant": "original",
+      "url": "https://earnest-rhinoceros-454.convex.site/",
+      "names": [
+        "Front bumper",
+        "Left front door",
+        "Front left side (LHS fender)"
+      ],
+      "refinement": "What changed: removed Front bumper; updated repair work for Left front door, Front left side (LHS fender); total range changed from ₹4,900–₹7,200 to ₹6,000–₹8,000.",
+      "earlierInputsPreserved": true,
+      "samePhotosUsed": true,
+      "detailsOnlyOnTap": true,
+      "twoGarageButtons": true,
+      "bigPhotosPreserved": true,
+      "noQuoteSubmitted": true,
+      "errors": []
+    },
+    {
+      "variant": "quick",
+      "url": "https://earnest-rhinoceros-454.convex.site/quick",
+      "names": [
+        "Front bumper",
+        "Left front door",
+        "Front left side (LHS fender)"
+      ],
+      "refinement": "What changed: removed Front bumper; updated repair work for Left front door, Front left side (LHS fender); total range changed from ₹4,900–₹7,200 to ₹6,000–₹8,000.",
+      "earlierInputsPreserved": true,
+      "samePhotosUsed": true,
+      "detailsOnlyOnTap": true,
+      "twoGarageButtons": true,
+      "bigPhotosPreserved": true,
+      "noQuoteSubmitted": true,
+      "errors": []
+    }
+  ]
+}
