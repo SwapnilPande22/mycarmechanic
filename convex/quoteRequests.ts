@@ -12,7 +12,6 @@ export const isAvailable = action({
 
 export const create = action({
   args: {
-    requestType: v.optional(v.literal("mechanical")),
     name: v.string(), whatsappNumber: v.string(), carModel: v.string(), year: v.optional(v.string()), customerConcern: v.optional(v.string()), make: v.optional(v.string()), model: v.optional(v.string()), variant: v.optional(v.string()), vehicleSize: v.union(v.literal("small"), v.literal("medium"), v.literal("large")),
     area: v.string(), city: v.optional(v.string()), parts: v.array(part), totalLow: v.optional(v.number()), totalHigh: v.optional(v.number()), garages: v.array(v.string()), photos: v.array(v.id("_storage")), siteOrigin: v.string(),
   },
@@ -33,14 +32,11 @@ export const create = action({
     const name = args.name.trim().slice(0, 100);
     const whatsappNumber = args.whatsappNumber.trim();
     if (!/^[6-9]\d{9}$/.test(whatsappNumber)) throw new Error("Please enter a valid 10-digit WhatsApp number.");
-    const mechanical = args.requestType === "mechanical";
-    if (mechanical && (!args.customerConcern?.trim() || args.parts.length || args.photos.length)) throw new Error("Describe the problem before requesting a mechanical quote.");
-    if (!name || !whatsappNumber || !args.carModel || !args.area || (!mechanical && !args.parts.length) || args.parts.length > 20 || args.garages.length > 20 || args.photos.length > 8) {
+    if (!name || !whatsappNumber || !args.carModel || !args.area || !args.parts.length || args.parts.length > 20 || args.garages.length > 20 || args.photos.length > 8) {
       throw new Error("Complete your details and make sure the estimate is ready.");
     }
     
     const id = await ctx.runMutation(internal.quoteRequests.insert, {
-      ...(mechanical ? {requestType: "mechanical" as const} : {}),
       name, whatsappNumber, carModel: args.carModel.slice(0, 100),
       ...(args.year ? {year:args.year.slice(0,4)} : {}), ...(args.customerConcern ? {customerConcern:args.customerConcern.slice(0,2000)} : {}),
       ...(args.make ? {make:args.make.trim().slice(0,100)} : {}), ...(args.model ? {model:args.model.trim().slice(0,100)} : {}), ...(args.variant ? {variant:args.variant.trim().slice(0,100)} : {}), vehicleSize: args.vehicleSize, area: args.area.slice(0, 160), ...(args.city ? { city:args.city.trim().slice(0, 100) } : {}), parts: args.parts.map(({panel,partName,workNeeded,customerDescription,photoObservation}) => ({panel,partName,workNeeded,...(customerDescription ? {customerDescription:customerDescription.slice(0,2000)} : {}),...(photoObservation ? {photoObservation:photoObservation.slice(0,2000)} : {})})),
@@ -56,7 +52,7 @@ export const create = action({
       const response = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {Authorization: "Bearer " + key, "Content-Type": "application/json", "Idempotency-Key": "quote-request-" + id},
-        body: JSON.stringify({from: process.env.RESEND_FROM || "MyCarMechanic <onboarding@resend.dev>", to: ["swapnilraymond@gmail.com"], subject: "New MyCarMechanic quote request" + (mechanical ? " — No photo, mechanical" : ""), text: quoteEmailText(request, urls, origin.origin + "/admin?request=" + id)}),
+        body: JSON.stringify({from: process.env.RESEND_FROM || "MyCarMechanic <onboarding@resend.dev>", to: ["swapnilraymond@gmail.com"], subject: "New MyCarMechanic quote request", text: quoteEmailText(request, urls, origin.origin + "/admin?request=" + id)}),
         signal: AbortSignal.timeout(15000),
       });
       if (!response.ok) throw new Error("Email provider rejected the request.");
@@ -73,7 +69,6 @@ export const create = action({
 
 export const insert = internalMutation({
   args: {
-    requestType: v.optional(v.literal("mechanical")),
     name: v.string(), whatsappNumber: v.string(), carModel: v.string(), year: v.optional(v.string()), customerConcern: v.optional(v.string()), make: v.optional(v.string()), model: v.optional(v.string()), variant: v.optional(v.string()), vehicleSize: v.union(v.literal("small"), v.literal("medium"), v.literal("large")),
     area: v.string(), city: v.optional(v.string()), parts: v.array(part), totalLow: v.optional(v.number()), totalHigh: v.optional(v.number()), garages: v.array(v.string()), photos: v.array(v.id("_storage")),
   },

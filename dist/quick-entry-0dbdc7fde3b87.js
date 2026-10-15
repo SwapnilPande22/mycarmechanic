@@ -6,22 +6,16 @@ export function createQuickEntry({showStep,askMechanic,saveName}) {
   document.body.classList.add('quick-entry');
   const upload=document.createElement('button');
   upload.id='quick-upload';upload.className='cta';upload.type='button';
-  upload.textContent=({en:'Upload photos of what needs fixing',hi:'जहाँ ठीक करवाना है उसकी तस्वीरें अपलोड करें',mr:'जे दुरुस्त करायचे आहे त्याचे फोटो अपलोड करा'})[window.i18n.language] || 'Upload photos of what needs fixing';
+  upload.textContent=({en:'Upload photos of the damage',hi:'नुकसान की तस्वीरें अपलोड करें',mr:'नुकसानीचे फोटो अपलोड करा'})[window.i18n.language] || 'Upload photos of the damage';
   document.getElementById('headline').after(upload);
   upload.addEventListener('click',()=>input.click());
   const fileList=document.getElementById('file-list'),clear=document.getElementById('clear-photos');
   upload.after(fileList,clear);
-  const resume=document.createElement('button');resume.id='quick-resume-photos';resume.className='secondary';resume.type='button';resume.textContent='Continue with these photos';resume.hidden=true;clear.after(resume);
-  resume.addEventListener('click',()=>entry.photosReady());
-  // Describe the problem before any upload, so mechanical requests need no photos.
-  upload.hidden=true;resume.hidden=true;document.getElementById('analyze').before(fileList,clear);
-  showStep('story');void askMechanic('story','What needs fixing? Choose any that fit, or type it.');
+  showStep('quick-upload');formCard.hidden=true;
   let uploaded=false,cityConfirmed=false;
-  clear.addEventListener('click',()=>{uploaded=false;resume.hidden=true;});
   const confirmCity=event=>{
     if(document.body.dataset.flowStage!=='city' || !document.getElementById('customer-city').value.trim() || !uploaded)return;
     event.preventDefault();event.stopImmediatePropagation();
-    if(document.getElementById('analyze').disabled)return;
     if(cityConfirmed)return;
     cityConfirmed=true;
     window.trackAnalytics('chat_city_given');
@@ -45,12 +39,11 @@ export function createQuickEntry({showStep,askMechanic,saveName}) {
     name.addEventListener('change',()=>{if(!name.value.trim())return;saveName(name.value.trim());if(!tracked){tracked=true;window.trackAnalytics('chat_name_given');}});
   };
   new MutationObserver(quoteOpened).observe(document.getElementById('result'),{childList:true,subtree:true,attributes:true,attributeFilter:['hidden']});
-  const entry={resumeStep(){cityConfirmed=false;},returnToUpload(){upload.after(fileList,clear,resume);resume.hidden=!uploaded;},async photosReady(){
+  return {async photosReady(){
     if(document.body.dataset.flowStage!=='quick-upload')return;
     if(!fileList.querySelector('.photo-file') || fileList.querySelector('.photo-error,.photo-converting'))return;
     uploaded=true;
-    resume.hidden=true;cityConfirmed=false;
     const inspect=document.getElementById('analyze');inspect.before(fileList,clear);
     showStep('car');await askMechanic('car','What is your car’s make, model and variant?');
-  }};return entry;
+  }};
 }

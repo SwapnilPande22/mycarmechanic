@@ -25,6 +25,7 @@ export default defineSchema({
     carModel: v.string(),
     year: v.optional(v.string()),
     customerConcern: v.optional(v.string()),
+    // Retained only so existing requests remain valid after removing the mechanical flow.
     requestType: v.optional(v.literal("mechanical")),
     emailStatus: v.optional(v.union(v.literal("sent"), v.literal("failed"))),
     emailId: v.optional(v.string()),
