@@ -8,6 +8,7 @@ export function createQuickEntry({showStep,askMechanic,saveName}) {
   upload.id='quick-upload';upload.className='cta';upload.type='button';
   upload.textContent=({en:'Upload photos of what needs fixing',hi:'जहाँ ठीक करवाना है उसकी तस्वीरें अपलोड करें',mr:'जे दुरुस्त करायचे आहे त्याचे फोटो अपलोड करा'})[window.i18n.language] || 'Upload photos of what needs fixing';
   document.getElementById('headline').after(upload);
+  const invitation=document.createElement('p');invitation.className='quick-photo-message';invitation.textContent="Send me a photo and I'll suggest the repair.";upload.before(invitation);
   upload.addEventListener('click',()=>input.click());
   const fileList=document.getElementById('file-list'),clear=document.getElementById('clear-photos');
   upload.after(fileList,clear);

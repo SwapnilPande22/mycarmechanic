@@ -125,3 +125,6 @@ input:focus,select:focus,button:focus-visible,.customer-flow input:focus,.custom
 .reply-optional { color:var(--muted); font-size:13px; line-height:1.5; }.mechanic-replies[hidden] { display:none; }
 .customer-flow .garage-controls > h2.app-bubble,.customer-flow .recheck-card > p.app-bubble { padding:12px; border:1px solid var(--line); border-radius:16px 16px 16px 4px; background:white; font-family:Chivo,system-ui,sans-serif; font-size:16px; line-height:1.5; }
 .customer-flow .garage-controls > h2.app-bubble .ai-text,.customer-flow .recheck-card > p.app-bubble .ai-text { font-size:16px; }
+.quick-photo-message { display:none; }.quick-entry[data-flow-stage=quick-upload] .quick-photo-message { display:block; margin:18px 0 10px; padding:14px; border:1px solid var(--line); border-radius:16px 16px 16px 4px; background:white; text-align:left; font-size:16px; line-height:1.5; }
+.customer-flow[data-flow-stage=car] .conversation-form { padding:0; border:0; background:transparent; box-shadow:none; }
+.customer-flow[data-flow-stage=car] #chat-history .app-bubble { padding:14px 16px; border:1px solid var(--line); border-radius:16px 16px 16px 4px; background:white; }

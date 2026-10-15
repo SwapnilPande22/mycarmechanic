@@ -276,7 +276,7 @@
     .customer-flow .mechanic-mascot{width:145px;height:163px;display:block;margin:0 auto 14px;animation:mechanic-idle 5s ease-in-out infinite}.customer-flow .app-bubble{background:transparent;display:flex;align-items:flex-start;gap:12px}.customer-flow .app-bubble .mechanic-mascot{width:40px;height:45px;flex-shrink:0;margin:0}.customer-flow .ai-text{min-width:0;line-height:1.55}.typing-dots{display:flex;gap:5px;align-items:center;min-height:40px}.typing-dots i{width:6px;height:6px;border-radius:50%;background:#666b75;animation:mechanic-dot 1s ease-in-out infinite}.typing-dots i:nth-child(2){animation-delay:.15s}.typing-dots i:nth-child(3){animation-delay:.3s}@keyframes mechanic-idle{50%{transform:translateY(-3px) rotate(1deg)}}@keyframes mechanic-dot{50%{opacity:.25;transform:translateY(-2px)}}@media(prefers-reduced-motion:reduce){.customer-flow .mechanic-mascot,.typing-dots i{animation:none!important}}
       .quote-partner-label{display:inline-block;font-size:11px;line-height:1.4;color:#1E3A8A;padding:3px 7px;background:#eef2f8;border-radius:4px}.partner-setting-row{display:flex;align-items:center;gap:10px;margin:12px 0;font-size:14px}.partner-setting-row small{display:block;font-weight:400;color:var(--muted)}
     </style>
-    <link rel="stylesheet" href="/design-0970a4e50d974.css" />
+    <link rel="stylesheet" href="/design-0a84b857313d7.css" />
   </head>
   <body>
     <div class="page">
@@ -591,6 +591,21 @@
       const showStep = step => { document.body.dataset.flowStage=step; document.querySelectorAll('[data-chat-step]').forEach(el=>el.hidden=el.dataset.chatStep!==step);history.closest('.card').hidden=false;history.hidden=false;chatStep=step;window.scrollTo({top:0,behavior:'smooth'}); };
       const makeBubble=()=>{history.replaceChildren();const bubble=document.createElement('div');bubble.className='chat-bubble app-bubble';history.append(bubble);return bubble;};
       window.mechanicQuestionCopy = step => {
+        const help=document.getElementById('chat-help').value.trim();
+        const story=document.getElementById('chat-story').value.trim();
+        if(window.i18n.language==='en'){
+          if(step==='story')return help==='Body repair'?'Got it. What happened?':help==='Mechanical problem'?"Okay, a mechanical issue. What's happening?":help==='I have a garage quote'?'Got it, a garage quote. What needs checking?':'Got it. What happened?';
+          if(step==='car'){
+            const choices={Dent:'a dent',Scratch:'a scratch','Broken or hanging part':'a broken or hanging part',Glass:'the glass',Lights:'the lights',Engine:'the engine',AC:'the AC',Brakes:'the brakes',Battery:'the battery',Service:'a service'};
+            return choices[story]?'Okay, '+choices[story]+'. Which car is it?':story?'Got it: '+story.slice(0,70)+'. Which car is it?':isQuick?'Thanks for the photo. Which car is it?':'Which car is it?';
+          }
+          if(step==='city')return 'Got it, '+modelInput.value.trim()+'. Which city?';
+          if(step==='photos')return cityInput.value.trim()+", got it. Send a photo of what needs fixing.";
+          if(step==='loading')return "Photo received. I'll check it now.";
+          if(step==='estimate'||step==='recheck')return "Here's the repair range. Anything look wrong?";
+          if(step==='garages')return 'Shall I find garages near you?';
+          if(step==='location')return 'Nearby garages, got it. Which area?';
+        }
         const copy={en:{help:'Hi! What can I help with?',story:'Got it. What happened?',recheck:'What should I check again?',location:'Which area should I look in?',estimate:'Here’s the repair range for your car.',garages:'Nearby garages'},hi:{help:'बताइए, कार में क्या ठीक करवाना है?',story:'अच्छा, कार के साथ क्या हुआ?',recheck:'मैं क्या दोबारा देखूँ?',location:'किस इलाके में गैराज ढूँढूँ?',estimate:'आपकी कार ठीक कराने का अनुमान यह है।',garages:'आस-पास के गैराज'},mr:{help:'कारमध्ये काय ठीक करायचे आहे?',story:'बरं, कारला काय झालं?',recheck:'मी पुन्हा काय तपासू?',location:'कोणत्या भागात गॅरेज शोधू?',estimate:'कार दुरुस्तीचा अंदाज इथे आहे.',garages:'जवळची गॅरेज'}};
         return (copy[window.i18n.language] || copy.en)[step];
       };
@@ -653,7 +668,7 @@
       new MutationObserver(()=>{if(!presentationScheduled){presentationScheduled=true;requestAnimationFrame(updatePresentation);}}).observe(document.querySelector('main'),{childList:true,subtree:true,attributes:true,attributeFilter:['hidden'],characterData:true});
       queueMicrotask(async()=>{
         if(isQuick){
-          const {createQuickEntry}=await import("/quick-entry-0aec9c9a23f32.js");
+          const {createQuickEntry}=await import("/quick-entry-0383d3eae901c.js");
           quickEntry=createQuickEntry({showStep,askMechanic,saveName:name=>{customerName=name;try{localStorage.setItem("mycarmechanic-name",name);}catch{}}});
           return;
         }
@@ -1565,7 +1580,7 @@
           clearButton.disabled = false;
         }
       });
-      const {setupChatQuestions}=await import('/chat-questions-0c7090edc1b08.js');
+      const {setupChatQuestions}=await import('/chat-questions-0500468987566.js');
       setupChatQuestions();
       }
     </script>

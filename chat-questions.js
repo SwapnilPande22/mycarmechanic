@@ -11,13 +11,19 @@ export function setupChatQuestions() {
     'estimate-concern':{step:'recheck',question:'What should I check again?',options:['A part is missing','A listed part looks fine','The suggested work seems wrong','The price seems high','The price seems low','Looks right'],send:()=>document.getElementById('recheck-estimate')},
     'garage-area':{step:'location',question:'Which area should I look in?',send:()=>document.getElementById('garage-search-button')}
   };
-  let pending=false;const turns=[];
+  let pending=false,previousStage=document.body.dataset.flowStage;const turns=[];
   function record(config,answer){
     const question=document.createElement('div');question.className='chat-bubble app-bubble conversation-question';
-    const text=document.createElement('span');text.className='ai-text';text.textContent=window.mechanicQuestionCopy(config.step)||config.question;question.append(text);
+    const text=document.createElement('span');text.className='ai-text';text.textContent=window.mechanicQuestionCopy(config.step)||config.question||({car:'Which car is it?',city:'Which city?',photos:'Send a photo of what needs fixing.'}[config.step])||'';question.append(text);
     const reply=document.createElement('div');reply.className='chat-bubble conversation-answer ph-no-capture';reply.textContent=soft(answer);
     log.append(question,reply);log.hidden=false;turns.push({step:config.step,question:text.textContent,answer:soft(answer)});
     log.dispatchEvent(new CustomEvent('conversation-answer',{detail:{step:config.step}}));
+    if(config.step==='recheck'||config.step==='location'){
+      const acknowledgement=document.createElement('div');acknowledgement.className='chat-bubble app-bubble conversation-question';
+      const text=document.createElement('span');text.className='ai-text';
+      const replies={'The price seems high':"Okay, I'll check why the price feels high.",'The price seems low':"Okay, I'll check why the price feels low.",'A part is missing':"Okay, I'll check for the missing part.",'A listed part looks fine':"Okay, I'll check that part again.",'The suggested work seems wrong':"Okay, I'll check the suggested work again.",'Looks right':'Glad that looks right.'};
+      text.textContent=config.step==='location'?'Okay, I’ll look for garages in '+soft(answer).slice(0,70)+'.':replies[answer]||'Okay, I’ll check: '+soft(answer).slice(0,70)+'.';acknowledgement.append(text);log.append(acknowledgement);
+    }
   }
   function install(input,id,config){
     if(input.dataset.chatReplies)return;input.dataset.chatReplies='ready';
@@ -28,10 +34,11 @@ export function setupChatQuestions() {
     if(id==='chat-help')input.closest('[data-chat-step]').querySelector('.chat-chips').hidden=true;
     if(id==='estimate-concern'){
       const card=input.closest('.recheck-card');card.querySelector('h2').hidden=true;
+      const introduction=result.querySelector(':scope > .app-bubble:not(.model-choice)');if(introduction){card.querySelector('p:first-of-type').textContent=window.mechanicQuestionCopy('estimate');introduction.remove();}
       const optional=document.createElement('p');optional.className='reply-optional';optional.textContent='You can also go straight to nearby garages.';controls.after(optional);
       if(turns.some(turn=>turn.step==='recheck')){
         card.hidden=true;const again=document.createElement('button');again.type='button';again.className='secondary chat-refine-again';again.textContent='Add more details to refine my estimate';card.before(again);
-        again.addEventListener('click',()=>{card.hidden=false;again.hidden=true;const invite=result.querySelector('.garage-invite h2');if(invite)invite.textContent='Nearby garages';card.scrollIntoView({block:'center',behavior:'smooth'});});
+        again.addEventListener('click',()=>{card.hidden=false;again.hidden=true;card.scrollIntoView({block:'center',behavior:'smooth'});});
       }
     }
     const suggestions=input.getAttribute('aria-controls');
@@ -47,7 +54,7 @@ export function setupChatQuestions() {
       send.click();
     };
     const add=(label,value=label,parent=controls)=>{const button=document.createElement('button');button.type='button';button.className='mechanic-reply';button.dataset.replyValue=value;button.textContent=label;parent.append(button);button.addEventListener('click',()=>choose(value,button.textContent));};
-    if(config.groups){for(const [heading,options]of config.groups){const group=document.createElement('div');group.className='reply-group';const title=document.createElement('p');title.className='reply-group-title';title.textContent=heading;group.append(title);const buttons=document.createElement('div');buttons.className='reply-grid';group.append(buttons);controls.append(group);options.forEach(option=>add(option,option,buttons));}}
+    if(config.groups){for(const [index,[heading,options]]of config.groups.entries()){const group=document.createElement('div');group.className='reply-group';group.dataset.problemGroup=index===0?'body':'mechanical';const title=document.createElement('p');title.className='reply-group-title';title.textContent=heading;group.append(title);const buttons=document.createElement('div');buttons.className='reply-grid';group.append(buttons);controls.append(group);options.forEach(option=>add(option,option,buttons));}}
     else {const grid=document.createElement('div');grid.className='reply-grid';controls.append(grid);let options=config.options;if(id==='garage-area'){const city=document.getElementById('customer-city').value.trim();options=city.toLowerCase()==='pune'?['Kharadi','Viman Nagar','Hadapsar','Kothrud','Hinjewadi','Wakad']:[city];}options.forEach(option=>add(option,option,grid));}
     const other=document.createElement('button');other.type='button';other.className='mechanic-reply reply-other';other.textContent='Other, type it';other.setAttribute('aria-expanded','false');controls.append(other);
     other.addEventListener('click',()=>{wrapper.hidden=false;send.hidden=false;send.textContent='Send';other.setAttribute('aria-expanded','true');input.setAttribute('aria-label',config.question);input.placeholder='Tell me in your own words';input.focus();});
@@ -61,15 +68,28 @@ export function setupChatQuestions() {
     }
   }
   function refresh(){pending=false;
+    const stage=document.body.dataset.flowStage;
+    if(stage!==previousStage){
+      if(previousStage==='car'&&stage==='city')record({step:'car'},document.getElementById('car-model').value);
+      if(previousStage==='city'&&(stage==='photos'||stage==='loading'))record({step:'city'},document.getElementById('customer-city').value);
+      if(previousStage==='quick-upload'&&stage==='car')record({step:'quick-photo',question:"Send me a photo and I'll suggest the repair."},'Photo sent');
+      if(previousStage==='photos'&&stage==='loading')record({step:'photos'},'Photo sent');
+      previousStage=stage;
+    }
     for(const [id,config]of Object.entries(configs)){const input=document.getElementById(id);if(input)install(input,id,config);}
+    const category=document.getElementById('chat-help').value.trim();
+    for(const group of main.querySelectorAll('[data-problem-group]')){const hide=(category==='Body repair'&&group.dataset.problemGroup!=='body')||(category==='Mechanical problem'&&group.dataset.problemGroup!=='mechanical');if(group.hidden!==hide)group.hidden=hide;}
+    const carLabel=main.querySelector('label[for="car-model"]');if(carLabel&&!carLabel.hidden)carLabel.hidden=true;
     // The garage invitation is an optional action, so it does not compete with
     // the one active refine question. Its search and quote handlers stay intact.
-    const invite=result.querySelector('.garage-invite h2');if(invite){const next=result.querySelector('.recheck-card')?.hidden;const key=next?'next':'optional';if(invite.dataset.chatHeading!==key){invite.dataset.aiStarted='true';invite.dataset.chatHeading=key;invite.textContent=next?'Shall I find nearby garages?':'Nearby garages';}}
+    const invite=result.querySelector('.garage-invite h2');if(invite&&invite.dataset.chatHeading!=='listening'){invite.dataset.aiStarted='true';invite.dataset.chatHeading='listening';invite.textContent='Shall I find garages near you?';const yes=document.getElementById('show-nearby-garages');yes.textContent='Find nearby garages';document.getElementById('decline-garages').hidden=true;}
+    if(stage==='estimate'&&invite){const hidden=!result.querySelector('.recheck-card')?.hidden;if(invite.parentElement.hidden!==hidden)invite.parentElement.hidden=hidden;}
     // If a refine/search fails, keep its existing retry path and typed answer.
     for(const id of ['estimate-concern','garage-area']){const input=document.getElementById(id),config=configs[id];if(!input)continue;const send=config.send(),controls=input.parentElement.querySelector('[data-quick-replies="'+id+'"]')||input.closest('.recheck-card,.garage-controls')?.querySelector('[data-quick-replies="'+id+'"]');const status=document.getElementById(id==='estimate-concern'?'recheck-status':'garage-status');if(controls?.hidden&&!send.disabled&&status?.textContent&&/could not|couldn't|try again|failed|unavailable/i.test(status.textContent)){controls.hidden=false;input.closest('.recheck-card')?.querySelector('p:first-of-type')?.removeAttribute('hidden');}}
     const walker=document.createTreeWalker(main,NodeFilter.SHOW_TEXT);let node;while(node=walker.nextNode()){if(node.parentElement.closest('script,style,.admin-request,.garage-review,.garage-photo-credit,.garage-name-rating h3'))continue;const text=soft(node.textContent);if(text!==node.textContent)node.textContent=text;}
     for(const el of main.querySelectorAll('[placeholder],[aria-label],[title]'))for(const attr of ['placeholder','aria-label','title'])if(el.hasAttribute(attr)){const old=el.getAttribute(attr),text=soft(old);if(old!==text)el.setAttribute(attr,text);}
   }
   function schedule(){if(!pending){pending=true;queueMicrotask(refresh);}}
-  new MutationObserver(schedule).observe(main,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['hidden']});refresh();
+  main.addEventListener('click',event=>{if(event.target.closest('#show-nearby-garages'))record({step:'garages',question:'Shall I find garages near you?'},'Find nearby garages');},true);
+  new MutationObserver(schedule).observe(main,{childList:true,subtree:true,characterData:true,attributes:true,attributeFilter:['hidden']});new MutationObserver(schedule).observe(document.body,{attributes:true,attributeFilter:['data-flow-stage']});refresh();
 }

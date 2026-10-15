@@ -591,6 +591,21 @@
       const showStep = step => { document.body.dataset.flowStage=step; document.querySelectorAll('[data-chat-step]').forEach(el=>el.hidden=el.dataset.chatStep!==step);history.closest('.card').hidden=false;history.hidden=false;chatStep=step;window.scrollTo({top:0,behavior:'smooth'}); };
       const makeBubble=()=>{history.replaceChildren();const bubble=document.createElement('div');bubble.className='chat-bubble app-bubble';history.append(bubble);return bubble;};
       window.mechanicQuestionCopy = step => {
+        const help=document.getElementById('chat-help').value.trim();
+        const story=document.getElementById('chat-story').value.trim();
+        if(window.i18n.language==='en'){
+          if(step==='story')return help==='Body repair'?'Got it. What happened?':help==='Mechanical problem'?"Okay, a mechanical issue. What's happening?":help==='I have a garage quote'?'Got it, a garage quote. What needs checking?':'Got it. What happened?';
+          if(step==='car'){
+            const choices={Dent:'a dent',Scratch:'a scratch','Broken or hanging part':'a broken or hanging part',Glass:'the glass',Lights:'the lights',Engine:'the engine',AC:'the AC',Brakes:'the brakes',Battery:'the battery',Service:'a service'};
+            return choices[story]?'Okay, '+choices[story]+'. Which car is it?':story?'Got it: '+story.slice(0,70)+'. Which car is it?':isQuick?'Thanks for the photo. Which car is it?':'Which car is it?';
+          }
+          if(step==='city')return 'Got it, '+modelInput.value.trim()+'. Which city?';
+          if(step==='photos')return cityInput.value.trim()+", got it. Send a photo of what needs fixing.";
+          if(step==='loading')return "Photo received. I'll check it now.";
+          if(step==='estimate'||step==='recheck')return "Here's the repair range. Anything look wrong?";
+          if(step==='garages')return 'Shall I find garages near you?';
+          if(step==='location')return 'Nearby garages, got it. Which area?';
+        }
         const copy={en:{help:'Hi! What can I help with?',story:'Got it. What happened?',recheck:'What should I check again?',location:'Which area should I look in?',estimate:'Here’s the repair range for your car.',garages:'Nearby garages'},hi:{help:'बताइए, कार में क्या ठीक करवाना है?',story:'अच्छा, कार के साथ क्या हुआ?',recheck:'मैं क्या दोबारा देखूँ?',location:'किस इलाके में गैराज ढूँढूँ?',estimate:'आपकी कार ठीक कराने का अनुमान यह है।',garages:'आस-पास के गैराज'},mr:{help:'कारमध्ये काय ठीक करायचे आहे?',story:'बरं, कारला काय झालं?',recheck:'मी पुन्हा काय तपासू?',location:'कोणत्या भागात गॅरेज शोधू?',estimate:'कार दुरुस्तीचा अंदाज इथे आहे.',garages:'जवळची गॅरेज'}};
         return (copy[window.i18n.language] || copy.en)[step];
       };
