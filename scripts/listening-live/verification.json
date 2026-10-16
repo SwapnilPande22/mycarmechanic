@@ -1,0 +1,55 @@
+{
+  "live": true,
+  "width": 390,
+  "allBackendCodeUnchanged": true,
+  "carCityYearInputsUnchanged": true,
+  "pages": [
+    {
+      "variant": "original",
+      "answers": [
+        "Body repair",
+        "Dent",
+        "Volkswagen Polo GT TSI",
+        "Pune",
+        "Photo sent",
+        "The price seems high",
+        "Find nearby garages",
+        "Kharadi"
+      ],
+      "contextAcknowledged": true,
+      "onlyMatchingProblemOptions": true,
+      "oneGarageButton": true,
+      "oneQuestionAtATime": true,
+      "replyBubblesRetained": true,
+      "realRefineUsesOriginalHandler": true,
+      "otherTypedExceptionTested": false,
+      "areaUsesOriginalGarageSearch": true,
+      "quoteFormReached": true,
+      "noQuoteSubmitted": true,
+      "errors": []
+    },
+    {
+      "variant": "quick",
+      "answers": [
+        "Photo sent",
+        "Volkswagen Polo GT TSI",
+        "Pune",
+        "The price seems high",
+        "Find nearby garages",
+        "Kharadi"
+      ],
+      "quickPhotoFirst": true,
+      "contextAcknowledged": true,
+      "onlyMatchingProblemOptions": true,
+      "oneGarageButton": true,
+      "oneQuestionAtATime": true,
+      "replyBubblesRetained": true,
+      "realRefineUsesOriginalHandler": true,
+      "otherTypedExceptionTested": true,
+      "areaUsesOriginalGarageSearch": true,
+      "quoteFormReached": true,
+      "noQuoteSubmitted": true,
+      "errors": []
+    }
+  ]
+}

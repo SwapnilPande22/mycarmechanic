@@ -1,4 +1,19 @@
+# Local environment files and private credentials
+.env
+.env.local
+.env.*
 .env*
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+credentials-*.json
+credentials_*.json
+service-account*.json
+service_account*.json
+secrets.json
+secrets.*
 node_modules/
 test-photos/
 *.[jJ][pP][gG]
